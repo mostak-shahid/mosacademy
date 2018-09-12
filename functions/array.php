@@ -16,6 +16,7 @@ $section_list = array(
     'widgets' => 'Widget Section',
     'blog' => 'Blog Section',
     'button' => 'Linking Section',      
+    'none' => 'Blank Section',      
 );
 $animations = array(
     'Attention Seekers' => array(
