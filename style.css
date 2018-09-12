@@ -264,26 +264,6 @@ ul.mobile-menu ul {
     padding: 0;
     display: inline-block;
 }
-/* .title:after,
-.title:before {
-    display: inline-block;
-    margin-bottom: 8px;
-    height: 16px;
-    content: "";
-    text-shadow: none;
-    width: 174px;
-}
-.title:before {
-    margin-right: 20px;
-    background-image: url(images/title-before.png);
-    background-position: right center;
-}
-.title:after {
-	margin-left: 20px;
-    background-image: url(images/title-after.png);
-	background-position: left center;
-} */
-
 .img-centered,
 img.aligncenter {
     display: block;
