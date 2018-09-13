@@ -1,11 +1,11 @@
 <?php 
 
-/*require_once('functions/theme-init/plugin-update-checker.php');
+require_once('functions/theme-init/plugin-update-checker.php');
 $themeInit = Puc_v4_Factory::buildUpdateChecker(
-	'https://raw.githubusercontent.com/mostak-shahid/mosacademy/master/theme.json',
+	'https://raw.githubusercontent.com/mostak-shahid/update/master/mosacademy.json',
 	__FILE__,
 	'mosacademy'
-);*/
+);
 
 
 require_once('functions/scripts.php');
