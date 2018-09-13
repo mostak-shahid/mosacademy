@@ -542,6 +542,9 @@ img.alignright {
 .list-inline li {
 	vertical-align:top;
 }
+.btn-search i {
+    font-size: 20px;
+}
 /*Common*/
 /*Admin Bar*/
 #wpadminbar #wp-admin-bar-theme-option>.ab-item:before {
