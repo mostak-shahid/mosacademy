@@ -26,7 +26,7 @@ function shortcodes_page(){
 			<li>[this_year] <span class="sdetagils">displays current year</span></li>
 			<li>[home_url] <span class="sdetagils">displays home page URL</span></li>
 			<li>[phone_number] <span class="sdetagils">displays the 1st phone number from theme option</span></li>
-			<li>[social_menu google_review=''] <span class="sdetagils">displays social media from theme option</span></li>
+			<li>[social_menu google_review='' display='inline/block' title='0/1'] <span class="sdetagils">displays social media from theme option</span></li>
 			<li>[feature_image wrapper_element='div' wrapper_atts='' height='' width=''] <span class="sdetagils">displays feature image of post</span></li>
 			<li>[title wrapper_element='div' wrapper_atts='' link='' link_field='' link_atts=''] <span class="sdetagils">displays title of post</span></li>
 			<li>[meta wrapper_element='div' wrapper_atts='' field=''] <span class="sdetagils">displays title of post</span></li>
@@ -202,9 +202,12 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 	$contact_address = $mosacademy_options['contact-address'];
 	$atts = shortcode_atts( array(
 		'google_review' => '',
+		'display' => '',
+		'title' => 1,
 	), $atts, 'social_menu' );
-
-	$html .= '<ul class="list-unstyled social-menu">';
+	if ($atts['display'] == 'inline') $display = 'list-inline';
+	else  $display = 'list-unstyled';
+	$html .= '<ul class="'.$display.' social-menu">';
 	foreach ($contact_social as $social) :	
 		if ($social['link_url'] AND $social['basic_icon']) :
 			$str = '';
@@ -221,7 +224,9 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 			$html .= '<li class="social-list '.strtolower(preg_replace('/\s+/', '_', $social['title'])).'"><a href="'.esc_url( $social['link_url'] ).'"';
 			if ($social['target'])
 				$html .= ' target="_blank"';
-			$html .= '>' . $str . '<span class="social-title">' . $social['title'] .'</span></a></li>';
+			$html .= '>' . $str;
+			if ($atts['title']) $html .= '<span class="social-title">' . $social['title'] .'</span>';
+			$html .= '</a></li>';
 		endif;	
 	endforeach;
 	if ($atts['google_review']) {

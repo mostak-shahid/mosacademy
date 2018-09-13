@@ -563,7 +563,14 @@ img.alignright {
 .site-branding .site-title a {}
 .site-branding .site-description {}
 /*General Logo Area*/
-
+.social-menu li:hover .social-img,
+.social-menu li .social-img-hover {
+    display: none;    
+}
+.social-menu li .social-img,
+.social-menu li:hover .social-img-hover {
+    display: block;    
+}
 
 /*Sections*/
 #main-header .is-sticky .sticky_menu {
