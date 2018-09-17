@@ -7,7 +7,7 @@ if($sections ) {
 ?>
 <?php get_header(); ?>
 <?php $page_layout = get_post_meta( get_the_ID(), '_mospress_page_layout', true )? get_post_meta( get_the_ID(), '_mospress_page_layout', true ) : $mosacademy_options['blog-archive-layout']; ?>
-<section id="page" class="page-content">
+<section id="single-blog-page" class="page-content">
 	<div class="content-wrap">
 		<div class="container">
 			<?php if($page_layout != 'ns') : ?>
