@@ -588,6 +588,14 @@
                 'required' => array( 'blog-archive-content-layout', '=', '2' )
             ),
             array(
+                'id'       => 'blog-archive-section1-zigzag',
+                'type'     => 'switch',
+                'title'    => __( 'Zigzag Mode', 'redux-framework-demo' ),
+                //'options' => array('on', 'off'),
+                'default'  => false,
+                'required' => array( 'blog-archive-content-layout', '=', '2' )
+            ),
+            array(
                 'id'       => 'blog-archive-section1',
                 'type'     => 'multi_text',
                 'title'    => __( '1st Section Elements', 'redux-framework-demo' ),
