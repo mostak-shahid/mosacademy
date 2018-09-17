@@ -541,21 +541,6 @@
                 'validate' => 'no_html',
             ), 
             array(
-                'id'      => 'blog-archive-heading',
-                'type'    => 'editor',
-                'title'   => __( 'Blog Archive heading content', 'redux-framework-demo' ),
-                'args'    => array(
-                    'wpautop'       => false,
-                    'media_buttons' => false,
-                    'textarea_rows' => 5,
-                    //'tabindex' => 1,
-                    //'editor_css' => '',
-                    'teeny'         => false,
-                    //'tinymce' => array(),
-                    //'quicktags'     => false,
-                )
-            ),
-            array(
                 'id'       => 'blog-archive-grid',
                 'type'     => 'image_select',
                 'title'    => __( 'Post Grid', 'redux-framework-demo' ),

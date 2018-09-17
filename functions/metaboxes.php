@@ -107,25 +107,37 @@ function mosacademy_metaboxes() {
     $page_settings->add_field( array(
         'name'    => 'Avobe Content',
         'id'      => $prefix . 'avobe_page',
-        'type'    => 'textarea_small',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 3
+        )
     ) );
 
     $page_settings->add_field( array(
         'name'    => 'Before Content',
         'id'      => $prefix . 'before_page',
-        'type'    => 'textarea_small',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 3
+        )
     ) );
 
     $page_settings->add_field( array(
         'name'    => 'After Content',
         'id'      => $prefix . 'after_page',
-        'type'    => 'textarea_small',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 3
+        )
     ) );
 
     $page_settings->add_field( array(
         'name'    => 'Below Content',
         'id'      => $prefix . 'below_page',
-        'type'    => 'textarea_small',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 3
+        )
     ) );
 
     $page_settings->add_field( array(
