@@ -214,7 +214,7 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 			if (filter_var(do_shortcode($social['basic_icon']), FILTER_VALIDATE_URL)) {
 				$str = '<span class="social-img"><img src="'.do_shortcode($social['basic_icon']).'" alt="'.$alt_tag['social'] . $social['title'].'"></span>';
 				if ($social['hover_icon'])
-					$str .= '<span class="social-img-hover"><img src="'.do_shortcode($social['hover_icon']).'" alt="'.$alt_tag['social'] . $social['title'].'"></span>';
+					$str .= '<span class="social-img-hover"><img src="'.do_shortcode($social['hover_icon']).'" alt="'.$alt_tag['social'] . $social['title'].'"></span>'; //hover_icon
 			}
 			else { 
 				$str = '<span class="social-icon"><i class="'.$social['basic_icon'].'"></i></span>';
@@ -234,8 +234,8 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 			if ($address['review_link'] AND $address['review_link_img']) {
 				$html .= '<li class="social-review"><a href="'. esc_url( $address['review_link']) .'" target="_blank"><span class="social-img"><img src="'.do_shortcode($address['review_link_img']).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
 				if ($address['review_link_img_h'])
-					$html .= '<span class="social-img-hover"><img src="'. esc_url( $address['review_link_img_h']).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
-				$html .= '<span class="social-title">Google Review</span></a></li>';
+					$html .= '<span class="social-img-hover"><img src="'. esc_url( do_shortcode($address['review_link_img_h'])).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
+				if ($atts['title']) $html .= '<span class="social-title">Google Review</span></a></li>';
 			}
 		}
 	}
