@@ -19,7 +19,7 @@ if($sections ) {
 					<?php if (has_post_thumbnail()): ?>
 						<?php the_post_thumbnail('max-size', array('class' => 'img-responsive img-featured' )) ?>
 					<?php endif; ?>
-					<h2><?php the_title(); ?></h2>
+					<h1><?php the_title(); ?></h1>
 					<div class="desc"><?php the_content(); ?></div>
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
