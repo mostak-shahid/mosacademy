@@ -19,12 +19,12 @@ do_action( 'action_avobe_page', $page_details );
 <section id="page" class="page-content">
 	<div class="content-wrap">
 		<?php 
-		echo do_shortcode( $before_page );
 		/*
 		* action_before_page hook
 		* @hooked start_container 10 (output .container)
 		*/
 		do_action( 'action_before_page', $page_details ); 
+		echo do_shortcode( $before_page );
 		?>
 			<?php if($page_layout != 'ns') : ?>
 			<div class="row">
