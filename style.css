@@ -749,7 +749,11 @@ img.alignright {
 }
 /*Sections*/
 /*Pages*/
-
+/*Blog*/
+#single-blog-page .img-featured {
+    margin-bottom: 20px;
+}
+/*Blog*/
 
 
 /*Testimonial Page*/
