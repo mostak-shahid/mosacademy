@@ -565,6 +565,10 @@ img.alignright {
 .site-branding .site-title {}
 .site-branding .site-title a {}
 .site-branding .site-description {}
+.small-logo .site-branding .logo {
+    display: block;
+    text-align: center;
+}
 /*General Logo Area*/
 .social-menu li:hover .social-img,
 .social-menu li .social-img-hover {
@@ -936,12 +940,12 @@ img.alignright {
     #main-header {
         display: none;
     }
-    .site-branding,
-    #section-banner .banner-content {
+    .site-branding {
         padding: 62px 10px 10px;
     }
     #section-banner .banner-content {
         position: relative;
+        padding: 10px;
     }
 
 }

@@ -48,14 +48,7 @@ do_action( 'action_above_header', $page_details );
 
 
 
-        <div class="site-branding hidden-md hidden-lg">
-            <?php if($logo_option == 'logo') : ?>
-                <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive img-centered img-logo" src="<?php if($logo_url) echo $logo_url; else  echo get_template_directory_uri(). '/images/logo.png'; ?>" alt="<?php echo get_bloginfo('name') . ' Logo'?>" class="img-responsive img-logo"></a> 
-            <?php else : ?>                
-                <h1 class="site-title text-center"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo('name')?></a></h1>
-                <p class="site-description text-center"><?php echo get_bloginfo( 'description' ); ?></p>
-            <?php endif; ?>
-        </div>           
+    <?php echo do_shortcode( '[site_identity container_class="small-logo hidden-md hidden-lg"]' ) ?>          
 
     <header id="main-header">
         <div class="content-wrap hidden-xs hidden-sm">
