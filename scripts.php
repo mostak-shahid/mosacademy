@@ -329,6 +329,12 @@ function mosacademy_theme_js () {
 			$( this ).html('<span class="hidden-xs hidden-sm">' + text + '</span>' + '<span class="hidden-md hidden-lg">' + '<?php echo  $mosacademy_options['misc-cts-small-number-text'] ?>' + '</span>')
 		});
 	<?php endif; ?>
+	<?php if ($mosacademy_options['misc-cts-small-email'] AND $mosacademy_options['misc-cts-small-email-text']) : ?>
+		$('body').find('.mailToShow').each(function( number ) {
+			var text = $(this).html();
+			$( this ).html('<span class="hidden-xs hidden-sm">' + text + '</span>' + '<span class="hidden-md hidden-lg">' + '<?php echo  $mosacademy_options['misc-cts-small-email-text'] ?>' + '</span>')
+		});
+	<?php endif; ?>
 		var owl_banner_owl = $('#section-banner-owl');
 		owl_banner_owl.owlCarousel({
 		    loop: true,

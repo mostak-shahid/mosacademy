@@ -175,7 +175,7 @@ function mos_phone_number( $atts, $content = null ) {
         'number' => $mosacademy_options['contact-phone']['0'],
     ), $atts );
     $html .= '<span class="phone-number">';
-    $html .= '<a class="clickToShow" href="tel:';
+    $html .= '<a class="phoneToShow" href="tel:';
     if ($default['number'])
         $html .= preg_replace('/[^0-9]/', '', $default['number']);
     else 
@@ -426,13 +426,13 @@ function email_func( $atts = array(), $content = '' ) {
 	if ($atts['index']) :
 		$i = $atts['index'] - 1;
 		$html .= '<span class="email">';
-			$html .= '<a href="mailto:'.$contact_email[$i].'"><span class="hidden-xs hidden-sm">'.$contact_email[$i].'</span><span class="hidden-md hidden-lg">Email Us</span></a>';
+			$html .= '<a class="mailToShow" href="mailto:'.$contact_email[$i].'">'.$contact_email[$i].'</a>';
 		$html .= '</span>';	
 	else :
 		foreach ($contact_email as $email) :
 			if ($atts['offset'] AND $n > $atts['offset']) :
 				$html .= '<span class="email">';
-					$html .= '<a href="mailto:'.$email.'"><span class="hidden-xs hidden-sm">'.$email.'</span><span class="hidden-md hidden-lg">Email Us</span></a>';
+					$html .= '<a class="mailToShow" href="mailto:'.$email.'">'.$email.'</a>';
 				$html .= '</span>';
 				$html .= $atts['seperator'];
 			endif;
@@ -459,7 +459,7 @@ function phone_func( $atts = array(), $content = '' ) {
 	if ($atts['index']) :
 		$i = $atts['index'] - 1;
 	    $html .= '<span class="phone-number">';
-	    $html .= '<a class="clickToShow" href="tel:';
+	    $html .= '<a class="phoneToShow" href="tel:';
 	    $html .= preg_replace('/[^0-9]/', '', $mosacademy_options['contact-phone'][$i]);
 	    $html .= '" >';
 	    $html .= $mosacademy_options['contact-phone'][$i];  
@@ -469,7 +469,7 @@ function phone_func( $atts = array(), $content = '' ) {
 		foreach ($mosacademy_options['contact-phone'] as $phone) :
 			if ($n > $atts['offset']) :
 			    $html .= '<span class="phone-number">';
-			    $html .= '<a class="clickToShow" href="tel:';
+			    $html .= '<a class="phoneToShow" href="tel:';
 			    $html .= preg_replace('/[^0-9]/', '', $phone);
 			    $html .= '" >';
 			    $html .= $phone;  
@@ -499,7 +499,7 @@ function fax_func( $atts = array(), $content = '' ) {
 	if ($atts['index']) :
 		$i = $atts['index'] - 1; 		    
 		$html .= '<span class="fax-number">';
-	    $html .= '<a class="clickToShow" href="tel:';
+	    $html .= '<a class="phoneToShow" href="tel:';
 	    $html .= preg_replace('/[^0-9]/', '', $fax);
 	    $html .= '" >';
 	    $html .= $fax;  
@@ -509,7 +509,7 @@ function fax_func( $atts = array(), $content = '' ) {
 		foreach ($mosacademy_options['contact-fax'] as $fax) :
 			if ($n > $atts['offset']) :
 			    $html .= '<span class="fax-number">';
-			    $html .= '<a class="clickToShow" href="tel:';
+			    $html .= '<a class="phoneToShow" href="tel:';
 			    $html .= preg_replace('/[^0-9]/', '', $fax);
 			    $html .= '" >';
 			    $html .= $fax;  
