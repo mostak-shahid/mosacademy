@@ -104,7 +104,7 @@ function mosacademy_plugins_management() {
 		array(
 			'name'				=> 'Mos Image Alter tag management', 
 			'slug'				=> 'mos-image-alt', 
-			'source'			=> get_template_directory_uri() . '/plugins/mos-image-alt.zip', 
+			'source'			=> 'https://github.com/mostak-shahid/mos-image-alt/archive/master.zip', 
 			'required'			=> true,
 			'force_activation'	=> false, 
 		),
@@ -117,14 +117,14 @@ function mosacademy_plugins_management() {
 		array(
 			'name'				=> 'Mos FAQ', 
 			'slug'				=> 'mos-faq', 
-			'source'			=> get_template_directory_uri() . '/plugins/mos-faq.zip', 
+			'source'			=> 'https://github.com/mostak-shahid/mos-faq/archive/master.zip', 
 			'required'			=> false,
 			'force_activation'	=> false, 
 		),
 		array(
 			'name'				=> 'Mos CSV Import/Export', 
 			'slug'				=> 'mos-csv-import-export', 
-			'source'			=> get_template_directory_uri() . '/plugins/mos-csv-import-export.zip', 
+			'source'			=> 'https://github.com/mostak-shahid/mos-csv-import-export/archive/master.zip', 
 			'required'			=> false,
 			'force_activation'	=> false, 
 		),
