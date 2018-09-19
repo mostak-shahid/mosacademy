@@ -324,15 +324,35 @@ function mosacademy_theme_js () {
 		});
 	<?php endif; ?>
 	<?php if ($mosacademy_options['misc-cts-small-number'] AND $mosacademy_options['misc-cts-small-number-text']) : ?>
-		$('body').find('.clickToShow').each(function( number ) {
+		$('body').find('.phoneToShow').each(function( number ) {
 			var text = $(this).html();
-			$( this ).html('<span class="hidden-xs hidden-sm">' + text + '</span>' + '<span class="hidden-md hidden-lg">' + '<?php echo  $mosacademy_options['misc-cts-small-number-text'] ?>' + '</span>')
+			<?php 
+			$bign = 'hidden-xs hidden-sm hidden-md hidden-lg';
+			$smalln = '';
+			foreach ($mosacademy_options['misc-cts-small-number-devices'] as $device => $value) {
+				if ($value) {
+					$smalln .= $device . ' ';
+					$bign = str_replace($device,"",$bign);
+				}
+			} 
+			?>
+			$( this ).html('<span class="<?php echo $smalln ?>">' + text + '</span>' + '<span class="<?php echo $bign ?>">' + '<?php echo  $mosacademy_options['misc-cts-small-number-text'] ?>' + '</span>')
 		});
 	<?php endif; ?>
 	<?php if ($mosacademy_options['misc-cts-small-email'] AND $mosacademy_options['misc-cts-small-email-text']) : ?>
 		$('body').find('.mailToShow').each(function( number ) {
 			var text = $(this).html();
-			$( this ).html('<span class="hidden-xs hidden-sm">' + text + '</span>' + '<span class="hidden-md hidden-lg">' + '<?php echo  $mosacademy_options['misc-cts-small-email-text'] ?>' + '</span>')
+			<?php 
+			$big = 'hidden-xs hidden-sm hidden-md hidden-lg';
+			$small = '';
+			foreach ($mosacademy_options['misc-cts-small-email-devices'] as $device => $value) {
+				if ($value) {
+					$small .= $device . ' ';
+					$big = str_replace($device,"",$big);
+				}
+			} 
+			?>
+			$( this ).html('<span class="<?php echo $small ?>">' + text + '</span>' + '<span class="<?php echo $big ?>">' + '<?php echo  $mosacademy_options['misc-cts-small-email-text'] ?>' + '</span>')
 		});
 	<?php endif; ?>
 		var owl_banner_owl = $('#section-banner-owl');

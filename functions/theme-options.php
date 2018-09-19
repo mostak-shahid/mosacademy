@@ -1083,6 +1083,17 @@
                 'required' => array( 'misc-cts-small-email', '=', true )
             ),
             array(
+                'id'      => 'misc-cts-small-email-devices',
+                'type'    => 'checkbox',
+                'title'   => __( 'Devices', 'redux-framework-demo' ),
+                'options' => array(
+                    'hidden-xs' => 'Extra Small Device (for phones - screens less than 768px wide)',
+                    'hidden-sm' => 'Small Device (for tablets - screens equal to or greater than 768px wide)',
+                    'hidden-md' => 'Medium Device (for small laptops - screens equal to or greater than 992px wide)'
+                ),
+                'required' => array( 'misc-cts-small-email', '=', true )
+            ),
+            array(
                 'id'       => 'misc-cts-small-number',
                 'type'     => 'switch',
                 'title'    => __( 'Hide Phone number on smaller devices', 'redux-framework-demo' ),
@@ -1097,6 +1108,17 @@
                 'subtitle' => 'This will show instead of number',
                 'default'  => 'Tap to Call',
                 'validate' => 'no_html',
+                'required' => array( 'misc-cts-small-number', '=', true )
+            ),
+            array(
+                'id'      => 'misc-cts-small-number-devices',
+                'type'    => 'checkbox',
+                'title'   => __( 'Devices', 'redux-framework-demo' ),
+                'options' => array(
+                    'hidden-xs' => 'Extra Small Device (for phones - screens less than 768px wide)',
+                    'hidden-sm' => 'Small Device (for tablets - screens equal to or greater than 768px wide)',
+                    'hidden-md' => 'Medium Device (for small laptops - screens equal to or greater than 992px wide)'
+                ),
                 'required' => array( 'misc-cts-small-number', '=', true )
             ),
         )
