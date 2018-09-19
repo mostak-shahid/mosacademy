@@ -40,6 +40,7 @@ function shortcodes_page(){
 			<li>[hours] <span class="sdetagils">displays business hours from theme option</span></li>
 			<li>[product_search] <span class="sdetagils">displays product search form</span></li>
 			<li>[mos_post post_type='post/custom post type' taxonomy='' terms='' count='-1' grid='' format='title, content, meta:meta_field_name']<span class="sdetagils">displays post with shortcode</span></li>
+			<li>[wp_login_form]<span class="sdetagils">displays login form if user is not logged in</span></li>
 
 		</ol>
 	</div>
@@ -624,3 +625,35 @@ function mos_post_func( $atts = array(), $content = '' ) {
 	return $html;
 }
 add_shortcode( 'mos_post', 'mos_post_func' );
+function wp_login_form_fnc( $atts = array(), $content = '' ) {
+	$html = '';
+	// $atts = shortcode_atts( array(
+	// 	'id' => 'value',
+	// ), $atts, 'wp_login_form' );
+$html .= '<div class="login">';
+	$html .= '<form name="loginform" class="loginform" action="'.home_url().'/wp-login.php" method="post">';
+		$html .= '<p>';
+			$html .= '<label for="user_login">Username or Email Address<br />';
+			$html .= '<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>';
+		$html .= '</p>';
+		$html .= '<p>';
+			$html .= '<label for="user_pass">Password<br />';
+			$html .= '<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" /></label>';
+		$html .= '</p>';
+		$html .= '<p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever"  /> Remember Me</label></p>';
+		$html .= '<p class="submit">';
+			$html .= '<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In" />';
+			$html .= '<input type="hidden" name="redirect_to" value="'.home_url().'/wp-admin/" />';
+			$html .= '<input type="hidden" name="testcookie" value="1" />';
+		$html .= '</p>';
+	$html .= '</form>';
+
+	$html .= '<p class="nav">';
+	$html .= '<a rel="nofollow" href="'.home_url().'/wp-login.php?action=register">Register</a> | 	<a href="'.home_url().'/wp-login.php?action=lostpassword">Lost your password?</a>';
+	$html .= '</p>';
+$html .= '</div>';
+if (is_user_logged_in()) 
+	return false;
+return $html;
+}
+add_shortcode( 'wp_login_form', 'wp_login_form_fnc' );
