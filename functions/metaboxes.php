@@ -107,6 +107,15 @@ function mosacademy_metaboxes() {
     ));
 
     $page_settings->add_field( array(
+        'name'             => 'Select Sidebar',
+        'desc'             => 'Select a Sidebar',
+        'id'               => $prefix . 'page_sidebar',
+        'show_option_none' => true,
+        'type'             => 'select',
+        'options'          => $sidebars,
+    ) );
+
+    $page_settings->add_field( array(
         'name'    => 'Avobe Content',
         'id'      => $prefix . 'avobe_page',
         'type'    => 'wysiwyg',
@@ -140,15 +149,6 @@ function mosacademy_metaboxes() {
         'options' => array(
             'textarea_rows' => 3
         )
-    ) );
-
-    $page_settings->add_field( array(
-        'name'             => 'Select Sidebar',
-        'desc'             => 'Select a Sidebar',
-        'id'               => $prefix . 'page_sidebar',
-        'show_option_none' => true,
-        'type'             => 'select',
-        'options'          => $sidebars,
     ) );
 
     $page_settings->add_field( array(
