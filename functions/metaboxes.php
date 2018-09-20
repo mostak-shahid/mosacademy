@@ -5,9 +5,11 @@ function mosacademy_metaboxes() {
     $sections_disable = $mosacademy_options['page-layout-settings']['Disabled'];
     $layout = ( $mosacademy_options['general-page-layout'] ) ? $mosacademy_options['general-page-layout'] : 'ns';    
     $sidebar = ( $mosacademy_options['sections-sidebar-custom'] ) ? $mosacademy_options['sections-sidebar-custom'] : '';
-    foreach ($sidebar as $value) {
-        $key = strtolower(str_replace(' ', '_', $value));
-        $sidebars[$key] = $value;
+    if ($sidebar) {
+        foreach ($sidebar as $value) {
+            $key = strtolower(str_replace(' ', '_', $value));
+            $sidebars[$key] = $value;
+        }
     }
 
     $forms = get_formadable_form_list();
