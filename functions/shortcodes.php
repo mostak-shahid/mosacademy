@@ -19,7 +19,7 @@ function shortcodes_page(){
 		<ol>
 			<li>[site_identity class='' container_class=''] <span class="sdetagils">displays site identity according to theme option</span></li>
 			<li>[site_name link='0'] <span class="sdetagils">displays site name with/without site url</span></li>
-			<li>[element_start name='div' class='' id='' href='' src='' atts=''] <span class="sdetagils">starts an element. **you can use home_url() as dynamick link**</span></li>
+			<li>[element_start name='div' class='' id='' href='' src='' imgwidth='if only name img' imgheight='if there is imgwidth' atts=''] <span class="sdetagils">starts an element. **you can use home_url() as dynamick link**</span></li>
 			<li>[element_end name='div' class='' id=''] <span class="sdetagils">ends an element</span></li>
 			<li>[mosmenu container='nav' container_class='mosmenu' menu_class='mos-menu' location='' menu_name=''] <span class="sdetagils">displays menu according to configuration</span></li>
 			<li>[theme_creadit icon=''] <span class="sdetagils">displays theme creadit</span></li>
