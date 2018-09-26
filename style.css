@@ -268,7 +268,8 @@ ul.mobile-menu ul {
 .img-centered,
 img.aligncenter {
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 img.alignleft,
 .img-left {
@@ -291,6 +292,18 @@ img.alignright {
 .no-left-right-padding {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
+}
+.mb0 {
+    margin-bottom: 0;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb15 {
+    margin-bottom: 15px;
+}
+.mb20 {
+    margin-bottom: 20px;
 }
 .mb30 {
     margin-bottom: 30px;
