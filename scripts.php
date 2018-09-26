@@ -464,12 +464,12 @@ function mosacademy_theme_js () {
 		};
 
 	    $(".btn-welcome.expand").click(function() {
-	        $(this).siblings(".desc").animate({"height": welcome_full_height + "px"});
+	        $("#section-welcome .desc.with-button").animate({"height": welcome_full_height + "px"});
 	        $(this).hide();
 	        $(this).siblings(".bend").show();
 	    });
 	    $(".btn-welcome.bend").click(function() {
-	        $(this).siblings(".desc").animate({"height": "<?php echo $mosacademy_options['sections-welcome-height']['height'] ?>"});
+	        $("#section-welcome .desc.with-button").animate({"height": "<?php echo $mosacademy_options['sections-welcome-height']['height'] ?>"});
 	        $(this).hide();
 	        $(this).siblings(".expand").show();
 	    });
