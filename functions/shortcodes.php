@@ -94,13 +94,25 @@ function element_start_func( $atts = array(), $content = '' ) {
 		'id' => '',
 		'href' => '',
 		'src' => '',
+		'imgwidth' => '',
+		'imgheight' => '',
 		'atts' => '',
 	), $atts, 'element_start' ); 
 	$html = '<'.$atts['name'];
 	if($atts['id']) $html .= ' id="'.$atts['id'].'"';
 	if($atts['class']) $html .= ' class="'.$atts['class'].'"';
-	if($atts['href']) $html .= ' href="'. str_replace('home_url()', home_url(), $atts['href']).'"';
-	if($atts['src']) $html .= ' src="'. str_replace('home_url()', home_url(), $atts['src']).'"';
+	if ($atts['name'] == 'a' AND $atts['href']) {
+		$html .= ' href="'. str_replace('home_url()', home_url(), $atts['href']).'"';
+	}
+
+	if($atts['name'] == 'img' AND $atts['src']){
+		if($atts['imgwidth'] AND  $atts['imgheight'])
+			$html .= ' src="'.aq_resize(str_replace('home_url()', home_url(), $atts['src']), $atts['imgwidth'], $atts['imgheight'], true).'"';
+		elseif($atts['imgwidth'])
+			$html .= ' src="'.aq_resize(str_replace('home_url()', home_url(), $atts['src']), $atts['imgwidth'], '', true).'"';
+		else 
+			$html .= ' src="'. str_replace('home_url()', home_url(), $atts['src']).'"';
+	}	
 	if($atts['atts']) $html .= ' '.$atts['atts'];
 	$html .= ' >';
 
@@ -236,7 +248,8 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 				$html .= '<li class="social-review"><a href="'. esc_url( $address['review_link']) .'" target="_blank"><span class="social-img"><img src="'.do_shortcode($address['review_link_img']).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
 				if ($address['review_link_img_h'])
 					$html .= '<span class="social-img-hover"><img src="'. esc_url( do_shortcode($address['review_link_img_h'])).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
-				if ($atts['title']) $html .= '<span class="social-title">Google Review</span></a></li>';
+				if ($atts['title']) $html .= '<span class="social-title">Google Review</span>';
+				$html .= '</a></li>';
 			}
 		}
 	}
