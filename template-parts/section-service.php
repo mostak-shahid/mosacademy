@@ -47,12 +47,12 @@ do_action( 'action_avobe_service', $page_details );
 				<div class="<?php if ($view == 'grid') echo 'col-sm-'.$smallcol.' col-md-'.$colsize; else echo 'wrapper'?><?php if ($gap) echo ' mb30'; else echo ' no-padding'?>">
 					<div class="service-unit">
 						<div class="img-part">
-						<?php if ($slide['image']) : ?>
-							<img class="img-responsive img-service-one" src="<?php echo esc_url ($slide['image']) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>">
-						<?php endif; ?>
-						<?php if ($slide['photo']) : ?>
-							<img class="img-responsive img-service-two" src="<?php echo esc_url( $slide['photo'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>">
-						<?php endif; ?>
+							<?php if ($slide['image']) : ?>
+								<img class="img-responsive img-service-one" src="<?php echo wp_get_attachment_url( $slide['attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>">
+							<?php endif; ?>
+							<?php if ($slide['photo']) : ?>
+								<img class="img-responsive img-service-two" src="<?php echo wp_get_attachment_url( $slide['photo_attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>">
+							<?php endif; ?>
 						</div>
 						<div class="content">							
 							<h3 class="service-section-title"><?php echo do_shortcode($slide['title']) ?></h3>
