@@ -7,6 +7,7 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 
 ?>
 					<div id="error" class="text-center">
+    					<div class="content-wrap">
 					<?php if(is_home()) : ?>
 						<img class="img-responsive img-centered img-content-none" src="<?php echo get_template_directory_uri() ?>/images/comingsoon.png" alt="<?php echo $alt_tag['inner'] ?>Coming Soon">
 					<?php else : ?>
@@ -24,4 +25,5 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 					<?php if(!is_front_page()):?>
 						<a class="btn btn-success" href="<?php esc_url(bloginfo('home'))?>">GO BACK TO THE HOMEPAGE</a>
 					<?php endif;?>
+						</div>
 					</div>
