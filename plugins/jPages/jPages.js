@@ -18,7 +18,7 @@
         previous: "← previous",
         next: "next →",
         last: false,
-        links: "numeric", // mosacademy || title
+        links: "numeric", // mosportfolio || title
         startPage: 1,
         perPage: 10,
         midRange: 5,
@@ -148,7 +148,7 @@
           case "numeric":
             navhtml += i;
             break;
-          case "mosacademy":
+          case "mosportfolio":
             break;
           case "title":
             var title = this._items.eq(i - 1).attr("data-title");

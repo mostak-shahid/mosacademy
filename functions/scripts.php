@@ -2,8 +2,8 @@
 
 function mosacademy_enqueue_scripts() {
 	//Add css files	
-	wp_register_style( 'Roboto', get_template_directory_uri() . '/fonts/Roboto/css/Roboto.css' );
-	wp_register_style( 'Montserrat', get_template_directory_uri() . '/fonts/Montserrat/css/Montserrat.css' );
+	wp_register_style( 'roboto.min', get_template_directory_uri() . '/fonts/Roboto/css/roboto.min.css' );
+	wp_register_style( 'montserrat.min', get_template_directory_uri() . '/fonts/Montserrat/css/montserrat.min.css' );
 	wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 	wp_register_style( 'bootstrap.min', get_template_directory_uri() .  '/css/bootstrap.min.css' );
 
@@ -15,8 +15,8 @@ function mosacademy_enqueue_scripts() {
 
 	wp_register_style( 'theme-style', get_stylesheet_uri() );	
 
-	wp_enqueue_style( 'Roboto' );
-	wp_enqueue_style( 'Montserrat' );
+	wp_enqueue_style( 'roboto.min' );
+	wp_enqueue_style( 'montserrat.min' );
 	wp_enqueue_style( 'font-awesome.min' );
 	wp_enqueue_style( 'bootstrap.min' );
 	wp_enqueue_style( 'jquery.fancybox.min' );
