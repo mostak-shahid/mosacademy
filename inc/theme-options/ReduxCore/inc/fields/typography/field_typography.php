@@ -20,8 +20,8 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
     class ReduxFramework_typography {
 
         private $std_fonts = array(
-            "Roboto"                                               => "Roboto",
             "Montserrat"                                           => "Montserrat",
+            "Roboto"                                               => "Roboto",
             "Arial, Helvetica, sans-serif"                         => "Arial, Helvetica, sans-serif",
             "'Arial Black', Gadget, sans-serif"                    => "'Arial Black', Gadget, sans-serif",
             "'Bookman Old Style', serif"                           => "'Bookman Old Style', serif",
