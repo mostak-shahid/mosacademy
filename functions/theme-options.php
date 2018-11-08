@@ -379,6 +379,24 @@
         'icon'             => 'el el-text-width',
         'fields'     => array(
             array(
+                'id'       => 'typography-fonts',
+                'type'     => 'checkbox',
+                'title'    => __( 'Fonts', 'redux-framework-demo' ),
+                'desc'     => __( 'Please check the name of font you like to load for your website.', 'redux-framework-demo' ),
+                //Must provide key => value pairs for multi checkbox options
+                'options'  => array(
+                    'font-awesome' => 'Font Awesome',
+                    'montserrat' => 'Montserrat',
+                    'roboto' => 'Roboto'
+                ),
+                //See how std has changed? you also don't need to specify opts that are 0.
+                'default'  => array(
+                    'font-awesome' => '1',
+                    'montserrat' => '0',
+                    'roboto' => '0'
+                )
+            ),
+            array(
                 'id'       => 'typography-body-font',
                 'type'     => 'typography',
                 'title'    => __( 'Body Font', 'redux-framework-demo' ),
@@ -1030,6 +1048,36 @@
         'desc'             => '',
         'customizer_width' => '400px',
         'icon'             => 'el el-css',
+    ) );
+    //Js Plugins
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Js Plugins', 'redux-framework-demo' ),
+        'id'               => 'misc-plugins',
+        'subsection'       => true,
+        'desc'             => '',
+        'customizer_width' => '450px',
+        'icon'             => 'el el-move',
+        'fields'     => array(
+            array(
+                'id'       => 'misc-plugins-check',
+                'type'     => 'checkbox',
+                'title'    => __( 'Multi Checkbox Option', 'redux-framework-demo' ),
+                'desc'     => __( 'Please check the name of plugin you like to load for your website..', 'redux-framework-demo' ),
+                //Must provide key => value pairs for multi checkbox options
+                'options'  => array(
+                    'fancybox' => 'Fancybox',
+                    'isotope' => 'Isotope',
+                    'jPages' => 'JPages',
+                    'counterup' => 'Counterup',
+                    'lazy' => 'Lazy Load',
+                    'image-scroll' => 'Image Scroll',
+                    'numinate' => 'Numinate',
+                    'owlcarousel' => 'Owl Carousel',
+                    'slimscroll' => 'Slim Scroll',
+                    'typed.js' => 'Typed.js',
+                ),
+            ),
+        )
     ) );
     //Click to Show
     Redux::setSection( $opt_name, array(
