@@ -12,7 +12,7 @@ function mosacademy_enqueue_scripts() {
 		wp_enqueue_style( 'montserrat.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["opensans"]) {
-		wp_register_style( 'opensans.min', get_template_directory_uri() . '/fonts/Roboto/css/opensans.min.css' );
+		wp_register_style( 'opensans.min', get_template_directory_uri() . '/fonts/OpenSans/css/opensans.min.css' );
 		wp_enqueue_style( 'opensans.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["roboto"]) {
@@ -20,7 +20,7 @@ function mosacademy_enqueue_scripts() {
 		wp_enqueue_style( 'roboto.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["ubuntu"]) {
-		wp_register_style( 'ubuntu.min', get_template_directory_uri() . '/fonts/Montserrat/css/ubuntu.min.css' );
+		wp_register_style( 'ubuntu.min', get_template_directory_uri() . '/fonts/Ubuntu/css/ubuntu.min.css' );
 		wp_enqueue_style( 'ubuntu.min' );
 	}
 
