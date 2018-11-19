@@ -388,7 +388,7 @@
                     'font-awesome' => 'Font Awesome',
                     'opensans' => 'OpenSans',
                     'montserrat' => 'Montserrat',
-                    'roboto' => 'Roboto'
+                    'roboto' => 'Roboto',
                     'ubuntu' => 'Ubuntu'
                 ),
                 //See how std has changed? you also don't need to specify opts that are 0.
@@ -396,7 +396,7 @@
                     'font-awesome' => '1',
                     'opensans' => '0',
                     'montserrat' => '0',
-                    'roboto' => '0'
+                    'roboto' => '0',
                     'ubuntu' => '0'
                 )
             ),
