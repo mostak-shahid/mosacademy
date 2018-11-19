@@ -50,10 +50,10 @@ function mosacademy_enqueue_scripts() {
 	wp_enqueue_script( 'jquery.fancybox.min' );
 
 
-	wp_register_style( 'theme-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'theme-style' );
+	// wp_register_style( 'theme-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'theme-style' );
 
-	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css' );
+	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css', array('bootstrap.min', 'animate', 'owl.carousel.min', 'owl.theme.default.min', 'jquery.fancybox.min'));
 	wp_enqueue_style( 'main.min' );
 	
 
