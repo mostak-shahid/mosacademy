@@ -278,19 +278,19 @@ function mos_split_sentences($data) {
 
 
 function be_attachment_field_credit( $form_fields, $post ) {
-    $form_fields['be-photographer-name'] = array(
-        'label' => 'Photographer Name',
+    $form_fields['media-url'] = array(
+        'label' => 'Media URL',
         'input' => 'text',
-        'value' => get_post_meta( $post->ID, 'be_photographer_name', true ),
-        'helps' => 'If provided, photo credit will be displayed',
+        'value' => get_post_meta( $post->ID, 'media_url', true ),
+        'helps' => 'If necessary',
     );
  
-    $form_fields['be-photographer-url'] = array(
+    /*$form_fields['be-photographer-url'] = array(
         'label' => 'Photographer URL',
         'input' => 'text',
         'value' => get_post_meta( $post->ID, 'be_photographer_url', true ),
         'helps' => 'Add Photographer URL',
-    );
+    );*/
  
     return $form_fields;
 }

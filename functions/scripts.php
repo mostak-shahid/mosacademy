@@ -3,17 +3,25 @@
 function mosacademy_enqueue_scripts() {
 	//Add css files	
 	global $mosacademy_options;
-	if ($mosacademy_options["typography-fonts"]["roboto"]) {
-		wp_register_style( 'roboto.min', get_template_directory_uri() . '/fonts/Roboto/css/roboto.min.css' );
-		wp_enqueue_style( 'roboto.min' );
+	if ($mosacademy_options["typography-fonts"]["font-awesome"]) {
+		wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
+		wp_enqueue_style( 'font-awesome.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["montserrat"]) {
 		wp_register_style( 'montserrat.min', get_template_directory_uri() . '/fonts/Montserrat/css/montserrat.min.css' );
 		wp_enqueue_style( 'montserrat.min' );
 	}
-	if ($mosacademy_options["typography-fonts"]["font-awesome"]) {
-		wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
-		wp_enqueue_style( 'font-awesome.min' );
+	if ($mosacademy_options["typography-fonts"]["opensans"]) {
+		wp_register_style( 'opensans.min', get_template_directory_uri() . '/fonts/Roboto/css/opensans.min.css' );
+		wp_enqueue_style( 'opensans.min' );
+	}
+	if ($mosacademy_options["typography-fonts"]["roboto"]) {
+		wp_register_style( 'roboto.min', get_template_directory_uri() . '/fonts/Roboto/css/roboto.min.css' );
+		wp_enqueue_style( 'roboto.min' );
+	}
+	if ($mosacademy_options["typography-fonts"]["ubuntu"]) {
+		wp_register_style( 'ubuntu.min', get_template_directory_uri() . '/fonts/Montserrat/css/ubuntu.min.css' );
+		wp_enqueue_style( 'ubuntu.min' );
 	}
 
 	wp_enqueue_script( 'jquery' );	
@@ -44,6 +52,9 @@ function mosacademy_enqueue_scripts() {
 
 	wp_register_style( 'theme-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'theme-style' );
+
+	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css' );
+	wp_enqueue_style( 'main.min' );
 	
 
 	wp_register_script('jPages.min', get_template_directory_uri() . '/plugins/jPages/jPages.min.js', 'jquery');

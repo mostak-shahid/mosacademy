@@ -386,14 +386,18 @@
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
                     'font-awesome' => 'Font Awesome',
+                    'opensans' => 'OpenSans',
                     'montserrat' => 'Montserrat',
                     'roboto' => 'Roboto'
+                    'ubuntu' => 'Ubuntu'
                 ),
                 //See how std has changed? you also don't need to specify opts that are 0.
                 'default'  => array(
                     'font-awesome' => '1',
+                    'opensans' => '0',
                     'montserrat' => '0',
                     'roboto' => '0'
+                    'ubuntu' => '0'
                 )
             ),
             array(
