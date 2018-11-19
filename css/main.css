@@ -638,10 +638,6 @@ img.alignright {
 #page-title span {
 	display: block;
 }
-#section-banner {
-    width: 100%;
-    overflow-x: hidden; 
-}
 #section-banner .img-banner {
     width: 100%;
     height: auto;
