@@ -720,7 +720,7 @@ function back_to_top_fnc () {
 }
 
 add_action( 'mos_welcome_content', 'mos_welcome_content_fnc', 10, 1 );
-add_action( 'mos_welcome_content', 'mos_welcome_media_fnc', 10, 1 );
+add_action( 'mos_welcome_content', 'mos_welcome_media_fnc', 15, 1 );
 function mos_welcome_content_fnc () {
     global $mosacademy_options;
     $title = $mosacademy_options['sections-welcome-title'];

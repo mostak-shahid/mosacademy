@@ -16,8 +16,14 @@ do_action( 'action_avobe_welcome', $page_details );
 		*/
 		do_action( 'action_before_welcome', $page_details ); 
 		?>
-		<?php do_action( 'mos_welcome_content', $page_details ); ?>
-
+		<?php 
+		/*
+		* mos_welcome_content hook
+		* @hooked mos_welcome_content_fnc 10
+		* @hooked mos_welcome_media_fnc 15
+		*/
+		do_action( 'mos_welcome_content', $page_details ); 
+		?>
 		<?php 
 		/*
 		* action_after_welcome hook
