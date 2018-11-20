@@ -3003,14 +3003,7 @@
                     'title'       => __( 'This is a title', 'redux-framework-demo' ),
                     'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
                 ),
-            ),*/
-            array(
-                'id'       => 'sections-welcome-media',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'Welcome Image', 'redux-framework-demo' ),
-                'compiler' => 'true',
-            ),   
+            ),*/   
             array(
                 'id'       => 'sections-welcome-readmore',
                 'type'     => 'button_set',
@@ -3114,6 +3107,26 @@
                 'validate' => 'no_html',
                 'required' => array( 'sections-welcome-readmore', '=', 'redirect' ),
             ), 
+            array(
+                'id'       => 'sections-welcome-media',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Welcome Image', 'redux-framework-demo' ),
+                'compiler' => 'true',
+            ),
+            array(
+                'id'       => 'sections-welcome-media-align',
+                'type'     => 'select',
+                'title'    => __( 'Welcome Image Alignment', 'redux-framework-demo' ),
+                //Must provide key => value pairs for select options
+                'options'  => array(
+                    'top' => 'Top',
+                    'right' => 'Right',
+                    'bottom' => 'Bottom',
+                    'left' => 'Left',
+                ),
+                'default'  => '2'
+            ),
             array(
                 'id'       => 'sections-welcome-background-type',
                 'type'     => 'button_set',
