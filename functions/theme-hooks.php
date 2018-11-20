@@ -718,6 +718,66 @@ function back_to_top_fnc () {
     <a href="javascript:void(0)" class="scrollup" style="display: none;"><img src="<?php echo get_template_directory_uri() ?>/images/icon_top.png" alt="Back To Top"></a>
     <?php 
 }
+
+add_action( 'mos_welcome_content', 'mos_welcome_content_fnc', 10, 1 );
+add_action( 'mos_welcome_content', 'mos_welcome_media_fnc', 10, 1 );
+function mos_welcome_content_fnc () {
+    global $mosacademy_options;
+    $title = $mosacademy_options['sections-welcome-title'];
+    $content = $mosacademy_options['sections-welcome-content'];
+    $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);
+    $readmore = $mosacademy_options['sections-welcome-readmore'];
+    $url = $mosacademy_options['sections-welcome-url'];
+
+    if ($readmore == 'scroll') $class = "with-scroll"; 
+    elseif ($readmore == 'button') $class = "with-button"; 
+    elseif ($readmore == 'popup') $class = "with-popup"; 
+    elseif ($readmore == 'redirect') $class = "with-redirect"; 
+    else $class = "with-none";
+    if ($readmore == 'popup') : ?>
+<!-- Modal -->
+<div class="modal fade" id="welcomeModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><?php echo do_shortcode( $title ); ?></h4>
+            </div>
+            <div class="modal-body">
+                <?php echo do_shortcode( $content );//the_content(); ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif;
+    if ($image) echo '<div class="row"><div class="col-md-6">';
+    if ($title) echo '<div class="title-wrapper"><h2 class="title">' . do_shortcode( $title ) . '</h2></div>';
+    if ($content) echo '<div class="desc '.$class .'"> '.do_shortcode( $content ).'</div>';
+    if ($readmore == 'button') echo '<a href="javascript:void(0)" class="btn btn-welcome expand">Read More</a><a href="javascript:void(0)" class="btn btn-welcome bend" style="display: none">Close</a>';
+    elseif ($readmore == 'popup') echo '<a href="javascript:void(0)" class="btn btn-welcome popup" data-toggle="modal" data-target="#welcomeModal">Read More</a>';
+    elseif ($readmore == 'redirect') echo '<a href="<?php echo do_shortcode( $url ) ?>" class="btn btn-welcome redirect">Read More</a>';
+    if ($image) echo '</div>';
+}
+function mos_welcome_media_fnc () {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
+        $alt_tag = mos_alt_generator(get_the_ID());
+    } 
+    global $mosacademy_options;
+    $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);
+    if ($image) echo '<div class="col-md-6"><img class="img-responsive img-centered img-welcome" src="'.$image.'" alt="'.$alt_tag['inner'] . $title.'">';
+
+    if ($image) echo '</div></div>';
+
+}
+
+
+
+
+
 function start_container () { ?><div class="container"><?php }
 function start_container_fluid () { ?><div class="container-fluid"><?php }
 function start_start_full_width () { ?><div class="start_full_width"><?php }
