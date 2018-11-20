@@ -729,12 +729,12 @@ function mos_welcome_content_fnc () {
     $image_align = wp_get_attachment_url( $mosacademy_options['sections-welcome-media-align']);
     $readmore = $mosacademy_options['sections-welcome-readmore'];
     $url = $mosacademy_options['sections-welcome-url'];
-    if ($image) {
-        if($image_align == 'top') {$cls = 'col-md-12 col-md-push-12'}
-        elseif($image_align == 'right') {$cls = 'col-md-6'}
-        elseif($image_align == 'bottom') {$cls = 'col-md-12'}
-        elseif($image_align == 'left') {$cls = 'col-md-6 col-md-push-6'}
-    }
+    $cls = '';
+    if($image_align == 'top') $cls = 'col-md-12 col-md-push-12';
+    elseif($image_align == 'right') $cls = 'col-md-6';
+    elseif($image_align == 'bottom') $cls = 'col-md-12';
+    elseif($image_align == 'left') $cls = 'col-md-6 col-md-push-6';
+
 
     if ($readmore == 'scroll') $class = "with-scroll"; 
     elseif ($readmore == 'button') $class = "with-button"; 
@@ -776,12 +776,12 @@ function mos_welcome_media_fnc () {
     global $mosacademy_options;    
     $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);    
     $image_align = wp_get_attachment_url( $mosacademy_options['sections-welcome-media-align']);
-    if ($image) {
-        if($image_align == 'top') {$cls = 'col-md-12 col-md-pull-12'}
-        elseif($image_align == 'right') {$cls = 'col-md-6'}
-        elseif($image_align == 'bottom') {$cls = 'col-md-12'}
-        elseif($image_align == 'left') {$cls = 'col-md-6 col-md-pull-6'}
-    }
+    $cls = '';
+    if($image_align == 'top') $cls = 'col-md-12 col-md-pull-12';
+    elseif($image_align == 'right') $cls = 'col-md-6';
+    elseif($image_align == 'bottom') $cls = 'col-md-12';
+    elseif($image_align == 'left') $cls = 'col-md-6 col-md-pull-6';
+
 
     if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-centered img-welcome" src="'.$image.'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
 
