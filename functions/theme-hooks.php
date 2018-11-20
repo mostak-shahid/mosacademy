@@ -726,7 +726,7 @@ function mos_welcome_content_fnc () {
     $title = $mosacademy_options['sections-welcome-title'];
     $content = $mosacademy_options['sections-welcome-content'];
     $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);
-    $image_align = wp_get_attachment_url( $mosacademy_options['sections-welcome-media-align']);
+    $image_align = $mosacademy_options['sections-welcome-media-align'];
     $readmore = $mosacademy_options['sections-welcome-readmore'];
     $url = $mosacademy_options['sections-welcome-url'];
     $cls = '';
@@ -775,7 +775,7 @@ function mos_welcome_media_fnc () {
     } 
     global $mosacademy_options;    
     $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);    
-    $image_align = wp_get_attachment_url( $mosacademy_options['sections-welcome-media-align']);
+    $image_align = $mosacademy_options['sections-welcome-media-align'];
     $cls = '';
     if($image_align == 'top') $cls = 'col-md-12 col-md-pull-12';
     elseif($image_align == 'right') $cls = 'col-md-6';
