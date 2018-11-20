@@ -235,7 +235,7 @@ function mosacademy_theme_css () {
 }
 
 
-<?php if ($mosacademy_options['sections-welcome-readmore'] == 'button' ) : ?>
+<?php if ($mosacademy_options['sections-welcome-readmore'] == 'button' OR $mosacademy_options['sections-welcome-readmore'] == 'popup') : ?>
 	.btn-welcome {
 		<?php if ($mosacademy_options['sections-welcome-but']['text_field_1']) : ?>
 		background-color: <?php echo $mosacademy_options['sections-welcome-but']['text_field_1'] ?>;
