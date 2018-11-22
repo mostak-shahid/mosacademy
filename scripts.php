@@ -71,11 +71,11 @@ function mosacademy_theme_css () {
 <?php endif; ?>
 body {
 	<?php 
-	if ($mosacademy_options['typography-body-font']['color']) echo 'Color: '       . $redux_demo['typography-body-font']['color'];
-	if ($mosacademy_options['typography-body-font']['font-style']) echo 'Color: '       . $redux_demo['typography-body-font']['font-style'];
-	if ($mosacademy_options['typography-body-font']['font-family']) echo 'Color: '       . $redux_demo['typography-body-font']['font-family'];
-	if ($mosacademy_options['typography-body-font']['font-size']) echo 'Color: '       . $redux_demo['typography-body-font']['font-size'];
-	if ($mosacademy_options['typography-body-font']['font-height']) echo 'Color: '       . $redux_demo['typography-body-font']['font-height'];
+	if ($mosacademy_options['typography-body-font']['color']) echo 'color: '       . $mosacademy_options['typography-body-font']['color'];
+	if ($mosacademy_options['typography-body-font']['font-style']) echo 'font-style: '       . $mosacademy_options['typography-body-font']['font-style'];
+	if ($mosacademy_options['typography-body-font']['font-family']) echo 'font-family: '       . $mosacademy_options['typography-body-font']['font-family'];
+	if ($mosacademy_options['typography-body-font']['font-size']) echo 'font-size: '       . $mosacademy_options['typography-body-font']['font-size'];
+	if ($mosacademy_options['typography-body-font']['font-height']) echo 'line-height: '       . $mosacademy_options['typography-body-font']['font-height'];
 	?>
 }
 #top-header {
