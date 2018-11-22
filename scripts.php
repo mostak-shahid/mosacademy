@@ -69,15 +69,13 @@ function mosacademy_theme_css () {
 	<?php endif; ?>
 
 <?php endif; ?>
-body {
-	<?php 
-	if ($mosacademy_options['typography-body-font']['color']) echo 'color: '       . $mosacademy_options['typography-body-font']['color'];
-	if ($mosacademy_options['typography-body-font']['font-style']) echo 'font-style: '       . $mosacademy_options['typography-body-font']['font-style'];
-	if ($mosacademy_options['typography-body-font']['font-family']) echo 'font-family: '       . $mosacademy_options['typography-body-font']['font-family'];
-	if ($mosacademy_options['typography-body-font']['font-size']) echo 'font-size: '       . $mosacademy_options['typography-body-font']['font-size'];
-	if ($mosacademy_options['typography-body-font']['font-height']) echo 'line-height: '       . $mosacademy_options['typography-body-font']['font-height'];
-	?>
-}
+body {<?php 
+	if ($mosacademy_options['typography-body-font']['color']) echo 'color: ' . $mosacademy_options['typography-body-font']['color'] . ';';
+	if ($mosacademy_options['typography-body-font']['font-style']) echo 'font-style: ' . $mosacademy_options['typography-body-font']['font-style'] . ';';
+	if ($mosacademy_options['typography-body-font']['font-family']) echo 'font-family: ' . $mosacademy_options['typography-body-font']['font-family'] . ';';
+	if ($mosacademy_options['typography-body-font']['font-size']) echo 'font-size: ' . $mosacademy_options['typography-body-font']['font-size'] . ';';
+	if ($mosacademy_options['typography-body-font']['font-height']) echo 'line-height: ' . $mosacademy_options['typography-body-font']['font-height'] . ';';
+	?>}
 #top-header {
 <?php if ($mosacademy_options['header-top-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['header-top-background-gradient'])?>
