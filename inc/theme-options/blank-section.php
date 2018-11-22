@@ -38,7 +38,7 @@
             array(
                 'id'       => 'sections-blank-border',
                 'type'     => 'border',
-                'title'    => __( 'Blank Section Border', 'redux-framework-demo' ),
+                'title'    => __( 'Section Border', 'redux-framework-demo' ),
                 'output'   => array( '#section-blank .content-wrap' ),
                 'all'      => false,
             ),
@@ -52,7 +52,7 @@
             array(
                 'id'       => 'sections-blank-animation-delay',
                 'type'     => 'text',
-                'title'    => __( 'Animation Delay for this section', 'redux-framework-demo' ),
+                'title'    => __( 'Animation Delay', 'redux-framework-demo' ),
                 'subtitle' => __( 'This must be numeric.', 'redux-framework-demo' ),
                 'desc'     => __( 'Unit will be second.', 'redux-framework-demo' ),
                 'validate' => 'numeric',
@@ -61,7 +61,7 @@
             array(
                 'id'       => 'sections-blank-title',
                 'type'     => 'text',
-                'title'    => __( 'Blank Section Title', 'redux-framework-demo' ),
+                'title'    => __( 'Section Title', 'redux-framework-demo' ),
                 'desc'     => 'You can use span tag ( &lt;span&gt;&lt;/span&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;br /&gt;) here.',
                 'validate'     => 'html_custom',
                 'allowed_html' => array(
@@ -94,7 +94,7 @@
             array(
                 'id'       => 'sections-blank-background-type',
                 'type'     => 'button_set',
-                'title'    => __( 'Blank Background Type', 'redux-framework-demo' ),
+                'title'    => __( 'Background Type', 'redux-framework-demo' ),
                 'options'  => array(
                     '1' => 'Gradient',
                     '2' => 'Solid Color/Image',
@@ -111,20 +111,20 @@
             array(
                 'id'       => 'sections-blank-background-gradient',
                 'type'     => 'color_gradient',
-                'title'    => __( 'Blank Section Background', 'redux-framework-demo' ),
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
                 'validate' => 'color',              
                 'required' => array( 'sections-blank-background-type', '=', '1' ),
             ),
             array(
                 'id'       => 'sections-blank-background-solid',
                 'type'     => 'background',                
-                'title'    => __( 'Blank Section Background', 'redux-framework-demo' ),
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
                 'required' => array( 'sections-blank-background-type', '=', '2' ),
             ),
             array(
                 'id'       => 'sections-blank-background-rgba',
                 'type'     => 'color_rgba',
-                'title'    => __( 'Blank Section Background', 'redux-framework-demo' ),
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
                 'validate' => 'colorrgba',
                 'required' => array( 'sections-blank-background-type', '=', '3' ),
             ),
