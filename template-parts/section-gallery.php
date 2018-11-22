@@ -55,7 +55,7 @@ do_action( 'action_avobe_gallery', $page_details );
 				if ($image_width OR $image_height ) $img_url = aq_resize($attachment_url, $image_width, $image_height, true);
 				else $img_url = $attachment_url;
 			?>	
-				<div class="col-xs-<?php echo $smallcol; ?> col-md-<?php echo $colsize; ?><?php if (!$gap) echo ' no-padding';?>">
+				<div class="col-xs-<?php echo $smallcol; ?> col-md-<?php echo $colsize; ?><?php if (!$gap) echo ' no-padding'; else echo ' mb30'?>">
 					<div class="img-container">
 						<a href="<?php if ($large_image_size == 'max') echo aq_resize($attachment_url, 1920); elseif ($large_image_size == 'container') echo aq_resize($attachment_url, 1140); else echo $attachment_url ?>" data-fancybox="gallery" data-caption="">
 							<?php $attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ); ?>
