@@ -406,12 +406,13 @@
                 'title'    => __( 'Body Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => false,
+                //'line-height'   => false,
                 'default'  => array(
                     'color'       => '#000000',
                     'font-size'   => '18px',
                     'font-weight' => 'Normal',
                 ),
-                'output' => array('body'),
+                //'output' => array('body'),
             ),
             array(
                 'id'       => 'typography-title-font',

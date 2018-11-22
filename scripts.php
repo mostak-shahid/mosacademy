@@ -69,6 +69,15 @@ function mosacademy_theme_css () {
 	<?php endif; ?>
 
 <?php endif; ?>
+body {
+	<?php 
+	if ($mosacademy_options['typography-body-font']['color']) echo 'Color: '       . $redux_demo['typography-body-font']['color'];
+	if ($mosacademy_options['typography-body-font']['font-style']) echo 'Color: '       . $redux_demo['typography-body-font']['font-style'];
+	if ($mosacademy_options['typography-body-font']['font-family']) echo 'Color: '       . $redux_demo['typography-body-font']['font-family'];
+	if ($mosacademy_options['typography-body-font']['font-size']) echo 'Color: '       . $redux_demo['typography-body-font']['font-size'];
+	if ($mosacademy_options['typography-body-font']['font-height']) echo 'Color: '       . $redux_demo['typography-body-font']['font-height'];
+	?>
+}
 #top-header {
 <?php if ($mosacademy_options['header-top-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['header-top-background-gradient'])?>
