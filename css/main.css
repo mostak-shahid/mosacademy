@@ -629,7 +629,7 @@ img.alignright {
 }
 
 /*Sections*/
-#main-header .is-sticky .sticky_menu {
+.is-sticky .sticky_menu {
     padding: 0;
     z-index: 99991 !important;
 }
