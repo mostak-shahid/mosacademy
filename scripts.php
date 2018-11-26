@@ -204,15 +204,6 @@ body {<?php
 	<?php rgba_manager($mosacademy_options['sections-gallery-background-rgba'])?>
 <?php endif; ?>
 }
-#section-testimonial {
-<?php if ($mosacademy_options['sections-testimonial-background-type'] == 1) : ?>
-	<?php gradient_manager($mosacademy_options['sections-testimonial-background-gradient'])?>
-<?php elseif ($mosacademy_options['sections-testimonial-background-type'] == 2) : ?>
-	<?php background_manager($mosacademy_options['sections-testimonial-background-solid'])?>
-<?php elseif ($mosacademy_options['sections-testimonial-background-type'] == 3 AND $mosacademy_options['sections-testimonial-background-rgba']['rgba']) : ?>
-	<?php rgba_manager($mosacademy_options['sections-testimonial-background-rgba'])?>
-<?php endif; ?>
-}
 .sidebar {
 <?php if ($mosacademy_options['sections-sidebar-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-sidebar-background-gradient'])?>
@@ -430,35 +421,6 @@ function mosacademy_theme_js () {
 			}
 		<?php endif; ?>
 		});
-		<?php 
-		$testimonial_layout = ($mosacademy_options['sections-testimonial-layout']) ? $mosacademy_options['sections-testimonial-layout'] : 3; 
-		?>
-		var owl_testimonial_owl = $('#section-testimonial-owl');
-		owl_testimonial_owl.owlCarousel({
-		    loop: true,
-		    nav: true,
-		    dots: true,
-		    margin: 0,	    	    
-		    lazyLoad: true,
-		    autoplay: true,
-		    autoplayTimeout: 6000,
-		    autoplayHoverPause: true,
-		<?php if($testimonial_layout ==1) : ?>
-			items:1,
-		<?php else : ?>
-			responsive:{
-				0: {
-		    		items:1,
-				},
-				992: {
-		    		items:2,
-				},
-				1200: {
-		    		items:<?php echo $testimonial_layout ?>,
-				}
-			}
-		<?php endif; ?>
-		});		
 		var welcome_full_height;
 		$(window).load(function(){
 			welcome_height_management ();
