@@ -182,39 +182,6 @@ function mosacademy_metaboxes() {
 
     
 
-    $testimonial_details = new_cmb2_box(array(
-        'id' => $prefix . 'testimonial_details',
-        'title' => __('Testimonial Details', 'cmb2'),
-        'object_types' => array('testimonial'),
-    ));
-    $testimonial_details->add_field(array(
-        'name' => 'Designation',
-        'desc' => __( 'Designation of the author.', 'cmb2' ),
-        'id' => $prefix . 'testimonial_designation',
-        'type' => 'text'
-    ));
-    $testimonial_details->add_field(array(
-        'name' => 'Website',
-        'desc' => __( 'URL of the author.', 'cmb2' ),
-        'id' => $prefix . 'text_url',
-        'type' => 'text'
-    ));
-
-    $testimonial_details->add_field(array(
-        'name' => 'Cover Image',
-        'desc' => __( 'Cover image of oEmbed.', 'cmb2' ),
-        'id' => $prefix . 'testimonial_image',
-        'type' => 'file',
-        'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
-        'query_args' => array( 'type' => 'image' ), // Only images attachment
-    ));
-
-    $testimonial_details->add_field(array(
-        'name' => 'oEmbed',
-        'desc' => __( 'Enter a youtube, twitter, or instagram URL.', 'cmb2' ),
-        'id'   => $prefix . 'testimonial_oembed',
-        'type' => 'oembed',
-    ));
 
 
   
