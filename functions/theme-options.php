@@ -333,7 +333,7 @@
                 'type'     => 'textarea',
                 'title'    => __( 'Primary Color for background', 'redux-framework-demo' ),
                 'desc'     => __( 'Seperate sections by comma.', 'redux-framework-demo' ),
-                'default'  => '.small-header .small-nav .small-menu',
+                'default'  => '.small-nav.top',
             ),
             array(
                 'id'       => 'basic-styling-primary-color-text',
@@ -352,7 +352,7 @@
                 'type'     => 'textarea',
                 'title'    => __( 'secondary Color for background', 'redux-framework-demo' ),
                 'desc'     => __( 'Seperate sections by comma.', 'redux-framework-demo' ),
-                'default'  => '.small-header .small-nav .small-call',
+                'default'  => '.small-nav.bottom',
             ),
             array(
                 'id'       => 'basic-styling-secondary-color-text',

@@ -196,6 +196,7 @@ footer,
 }
 .small-nav a {
     display: block;
+    color: #ffffff;
 }
 ul.mobile-menu {
     position: fixed;
