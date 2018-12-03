@@ -363,14 +363,7 @@ img.alignright {
     overflow: hidden;
 }
 .hover-box {
-    position: absolute;
-    background: rgba(159, 133, 48, 0.5);
-    height: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    opacity: 0;
-}
+    position: absolute; background: rgba(159, 133, 48, 0.5); height: 100%; left: 0; right: 0; top: 0; opacity: 0; -webkit-transition: all .3s ease-out; -moz-transition: all .3s ease-out; -o-transition: all .3s ease-out; transition: all .3s ease-out; }
 .img-container:hover .hover-box {
     opacity: 1;
 }
