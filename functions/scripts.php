@@ -16,7 +16,7 @@ function mosacademy_enqueue_scripts() {
 		wp_enqueue_style( 'opensans.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["poppins"]) {
-		wp_register_style( 'poppins.min', get_template_directory_uri() . '/fonts/poppins/css/poppins.min.css' );
+		wp_register_style( 'poppins.min', get_template_directory_uri() . '/fonts/Poppins/css/poppins.min.css' );
 		wp_enqueue_style( 'poppins.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["montserrat"]) {
