@@ -2206,7 +2206,7 @@
             array(
                 'id'          => 'sections-service-slides',
                 'type'        => 'mos_service_slides',
-                'title'       => __( 'Slider Detagils', 'redux-framework-demo' ),
+                'title'       => __( 'Slider Details', 'redux-framework-demo' ),
                 'subtitle'    => __( 'Use large images (Max Width 1920px) for best results.', 'redux-framework-demo' ),              
                 'show' => array(
                     'title' => true,
