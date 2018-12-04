@@ -2219,7 +2219,7 @@
                     'title'       => __( 'This is a title', 'redux-framework-demo' ),
                     'description' => __( 'Description Here', 'redux-framework-demo' ),
                     'link_title'         => __( 'Link Title', 'redux-framework-demo' ),
-                    'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                    'link_url'         => __( 'Give us a link!', 'redux-framework-demo' ),
                 ),
             ),
             array(
