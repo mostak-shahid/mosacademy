@@ -195,25 +195,6 @@ function text_layout_manager () {
         add_action( 'action_before_team', 'start_container', 10, 1 );
         add_action( 'action_after_team', 'end_div', 10, 1 );
     }
-    //Testimonial
-    if ($mosacademy_options['sections-testimonial-text-layout'] == 'container-fliud-spacing') {
-        add_action( 'action_before_testimonial', 'start_container_fluid', 10, 1 );
-        add_action( 'action_before_testimonial', 'start_row', 11, 1 );
-        add_action( 'action_before_testimonial', 'start_container_col_10', 12, 1 );
-
-        add_action( 'action_after_testimonial', 'end_div', 10, 1 );
-        add_action( 'action_after_testimonial', 'end_div', 11, 1 );
-        add_action( 'action_after_testimonial', 'end_div', 12, 1 );   
-    } elseif ($mosacademy_options['sections-testimonial-text-layout'] == 'container-fliud') {
-        add_action( 'action_before_testimonial', 'start_container_fluid', 10, 1 );
-        add_action( 'action_after_testimonial', 'end_div', 10, 1 );
-    } elseif ($mosacademy_options['sections-testimonial-text-layout'] == 'container-full') {
-        add_action( 'action_before_testimonial', 'start_full_width', 10, 1 );
-        add_action( 'action_after_testimonial', 'end_div', 10, 1 );
-    } else {
-        add_action( 'action_before_testimonial', 'start_container', 10, 1 );
-        add_action( 'action_after_testimonial', 'end_div', 10, 1 );
-    }
     //Gallery
     if ($mosacademy_options['sections-gallery-text-layout'] == 'container-fliud-spacing') {
         add_action( 'action_before_gallery', 'start_container_fluid', 10, 1 );

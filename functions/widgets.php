@@ -2,7 +2,7 @@
 //Add widgets area
 function mosacademy_widgets_init(){
 	global $mosacademy_options;
-	if ($mosacademy_options['sections-sidebar-custom']) : 
+	if (@$mosacademy_options['sections-sidebar-custom']) : 
 		foreach ($mosacademy_options['sections-sidebar-custom'] as $name) {
 			$id = strtolower(str_replace(' ', '_', $name));
 			register_sidebar(array(

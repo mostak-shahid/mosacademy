@@ -4,7 +4,9 @@ function mosacademy_metaboxes() {
     $sections_enable = $mosacademy_options['page-layout-settings']['Enabled'];
     $sections_disable = $mosacademy_options['page-layout-settings']['Disabled'];
     $layout = ( $mosacademy_options['general-page-layout'] ) ? $mosacademy_options['general-page-layout'] : 'ns';    
-    $sidebar = ( $mosacademy_options['sections-sidebar-custom'] ) ? $mosacademy_options['sections-sidebar-custom'] : '';
+    $sidebar = array();
+    $sidebars = array();
+    $sidebar = @$mosacademy_options['sections-sidebar-custom'];
     if ($sidebar) {
         foreach ($sidebar as $value) {
             $key = strtolower(str_replace(' ', '_', $value));

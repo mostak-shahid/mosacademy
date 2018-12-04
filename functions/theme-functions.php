@@ -209,13 +209,18 @@ add_action( 'admin_print_footer_scripts', 'mos_add_quicktags' );
 
 
 function get_formadable_form_list () {
-    global $wpdb;
-    $results = $wpdb->get_results( "SELECT * FROM `".$wpdb->prefix."frm_forms` WHERE `status`!='trash' AND `is_template`='0'" );
-    $forms = array('0' => 'Select a Form');
-    foreach ($results as $result) {
-        $forms[$result->id] = $result-> name;       
-    }
-    return $forms;
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    if ( is_plugin_active( 'formidable/formidable.php' ) ) {
+        global $wpdb;
+        $results = $wpdb->get_results( "SELECT * FROM `".$wpdb->prefix."frm_forms` WHERE `status`!='trash' AND `is_template`='0'" );
+        $forms = array('0' => 'Select a Form');
+        foreach ($results as $result) {
+            $forms[$result->id] = $result-> name;       
+        }
+        return $forms;
+    } 
+    return false;
+
 }
 function get_all_pages_list_with_link () {
     $output = array();
@@ -236,8 +241,8 @@ function get_all_pages_list_with_id () {
 function mos_admin_notice_csv () {
     global $post_type, $pagenow;
     //post=16&action=edit
-    $post_id = $_GET['post'];
-    $action = $_GET['action'];
+    $post_id = @$_GET['post'];
+    $action = @$_GET['action'];
     //string(4) "page" string(8) "edit.php"
     //$pagenow == 'edit.php' AND $post_type == 'page'
     if ($post_id AND $action == 'edit') : ?>
