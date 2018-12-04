@@ -20,7 +20,9 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
     class ReduxFramework_typography {
 
         private $std_fonts = array(
+            "Old Standard TT"                                      => "Old Standard TT",
             "OpenSans"                                             => "OpenSans",
+            "Poppins"                                              => "Poppins",
             "Montserrat"                                           => "Montserrat",
             "Roboto"                                               => "Roboto",
             "Ubuntu"                                               => "Ubuntu",

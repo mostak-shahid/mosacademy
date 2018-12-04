@@ -333,7 +333,7 @@
                 'type'     => 'textarea',
                 'title'    => __( 'Primary Color for background', 'redux-framework-demo' ),
                 'desc'     => __( 'Seperate sections by comma.', 'redux-framework-demo' ),
-                'default'  => '.small-header .small-nav .small-menu',
+                'default'  => '.small-nav.top',
             ),
             array(
                 'id'       => 'basic-styling-primary-color-text',
@@ -352,7 +352,7 @@
                 'type'     => 'textarea',
                 'title'    => __( 'secondary Color for background', 'redux-framework-demo' ),
                 'desc'     => __( 'Seperate sections by comma.', 'redux-framework-demo' ),
-                'default'  => '.small-header .small-nav .small-call',
+                'default'  => '.small-nav.bottom',
             ),
             array(
                 'id'       => 'basic-styling-secondary-color-text',
@@ -386,7 +386,9 @@
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
                     'font-awesome' => 'Font Awesome',
+                    'oldstandard' => 'Old Standard TT',
                     'opensans' => 'OpenSans',
+                    'poppins' => 'Poppins',
                     'montserrat' => 'Montserrat',
                     'roboto' => 'Roboto',
                     'ubuntu' => 'Ubuntu'
@@ -394,7 +396,9 @@
                 //See how std has changed? you also don't need to specify opts that are 0.
                 'default'  => array(
                     'font-awesome' => '1',
+                    'oldstandard' => '0',
                     'opensans' => '0',
+                    'poppins' => '0',
                     'montserrat' => '0',
                     'roboto' => '0',
                     'ubuntu' => '0'
@@ -1146,28 +1150,6 @@
                 'default'  => 0,
                 'on'       => 'Enabled',
                 'off'      => 'Disabled',
-            ),
-            array(
-                'id'       => 'misc-page-loader-bg',
-                'type'     => 'color_rgba',
-                'title'    => __( 'Background Color', 'redux-framework-demo' ),
-                'subtitle' => __( 'Gives you the RGBA color.', 'redux-framework-demo' ),
-                'default'  => array(
-                    'color' => '#ffffff',
-                    'alpha' => '.8'
-                ),
-                'output'   => array( '.se-pre-con' ),
-                'mode'     => 'background',
-                'validate' => 'colorrgba',
-            ),
-            array(
-                'id'       => 'misc-page-loader-color',
-                'type'     => 'color',
-                'title'    => __( 'Icon Color', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick an icon color for the theme (default: #000000).', 'redux-framework-demo' ),
-                'default'  => '#000000',
-                'output'   => array( '.se-pre-con' ),
-                'validate' => 'color',
             ),
             array(
                 'id'       => 'misc-page-loader-image',
