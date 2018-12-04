@@ -2206,21 +2206,21 @@
             array(
                 'id'          => 'sections-service-slides',
                 'type'        => 'mos_service_slides',
-                'title'       => __( 'Slider Images', 'redux-framework-demo' ),
+                'title'       => __( 'Slider Detagils', 'redux-framework-demo' ),
                 'subtitle'    => __( 'Use large images (Max Width 1920px) for best results.', 'redux-framework-demo' ),              
-                // 'show' => array(
-                //     'title' => true,
-                //     'description' => true,
-                //     'link_title' => true,
-                //     'link_url' => true,
-                //     'target' => true,
-                // ),
-                // 'placeholder' => array(
-                //     'title'       => __( 'This is a title', 'redux-framework-demo' ),
-                //     'description' => __( 'Description Here', 'redux-framework-demo' ),
-                //     'link_title'         => __( 'Link Title', 'redux-framework-demo' ),
-                //     'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
-                // ),
+                'show' => array(
+                    'title' => true,
+                    'description' => true,
+                    'link_title' => true,
+                    'link_url' => true,
+                    'target' => true,
+                ),
+                'placeholder' => array(
+                    'title'       => __( 'This is a title', 'redux-framework-demo' ),
+                    'description' => __( 'Description Here', 'redux-framework-demo' ),
+                    'link_title'         => __( 'Link Title', 'redux-framework-demo' ),
+                    'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                ),
             ),
             array(
                 'id'       => 'sections-service-layout',
