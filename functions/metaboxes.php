@@ -136,6 +136,24 @@ function mosacademy_metaboxes() {
     ) );
 
     $page_settings->add_field( array(
+        'name'    => 'Before Loop',
+        'id'      => $prefix . 'before_loop',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 3
+        )
+    ) );
+
+    $page_settings->add_field( array(
+        'name'    => 'After Loop',
+        'id'      => $prefix . 'after_loop',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 3
+        )
+    ) );
+
+    $page_settings->add_field( array(
         'name'    => 'After Content',
         'id'      => $prefix . 'after_page',
         'type'    => 'wysiwyg',
