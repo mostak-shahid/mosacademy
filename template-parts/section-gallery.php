@@ -14,6 +14,8 @@ elseif($layout == '2') { $colsize = 6; }
 else { $colsize = 12; }
 if ($colsize < 6) $smallcol = 6;
 else  $smallcol = 12;
+$view = $mosacademy_options['sections-gallery-view'];
+
 ?>
 <?php
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -44,7 +46,7 @@ do_action( 'action_avobe_gallery', $page_details );
 		<?php if ($content) : ?>				
 			<div class="content-wrapper"><?php echo do_shortcode( $content ); ?></h2></div>
 		<?php endif ?>
-			<div class="row">
+			<div <?php if ($view == 'slider') echo 'id="section-gallery-owl" class="gallery owl-carousel owl-theme"'; elseif ($view == 'grid') echo 'class="row gallery"'; else echo 'class="gallery"'; ?>>
 			<?php 
 			$image_width = $mosacademy_options['sections-gallery-small-size']['text_field_1'];
 			$image_height = $mosacademy_options['sections-gallery-small-size']['text_field_2'];
@@ -55,7 +57,7 @@ do_action( 'action_avobe_gallery', $page_details );
 				if ($image_width OR $image_height ) $img_url = aq_resize($attachment_url, $image_width, $image_height, true);
 				else $img_url = $attachment_url;
 			?>	
-				<div class="col-xs-<?php echo $smallcol; ?> col-md-<?php echo $colsize; ?><?php if (!$gap) echo ' no-padding'; else echo ' mb30'?>">
+				<div class="<?php if ($view == 'slider') : echo 'wrapper'; else : ?> col-xs-<?php echo $smallcol; ?> col-md-<?php echo $colsize; ?><?php if (!$gap) echo ' no-padding'; else echo ' mb30'?><?php endif;?>">
 					<div class="img-container">
 						<a href="<?php if ($large_image_size == 'max') echo aq_resize($attachment_url, 1920); elseif ($large_image_size == 'container') echo aq_resize($attachment_url, 1140); else echo $attachment_url ?>" data-fancybox="gallery" data-caption="">
 							<?php $attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ); ?>
