@@ -2,15 +2,15 @@
 global $mosacademy_options;
 $animation = $mosacademy_options['sections-content-animation'];
 $animation_delay = $mosacademy_options['sections-content-animation-delay'];
-$sections = $mosacademy_options['blog-layout-settings']['Enabled'];
 
 
 $page_for_posts = get_option( 'page_for_posts' );
+//$sections = $mosacademy_options['blog-layout-settings']['Enabled'];
+$sections = get_post_meta( $page_for_posts, '_mosacademy_page_section_layout', true )['Enabled'];
 $avobe_page = get_post_meta( $page_for_posts, '_mosacademy_avobe_page', true );
 $before_page = get_post_meta( $page_for_posts, '_mosacademy_before_page', true );
 $after_page = get_post_meta( $page_for_posts, '_mosacademy_after_page', true );
 $below_page = get_post_meta( $page_for_posts, '_mosacademy_below_page', true );
-
 if($sections ) {
 	$shift = array_shift($sections);
 }
