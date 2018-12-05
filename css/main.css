@@ -96,9 +96,6 @@ footer,
 .por {
     position: relative;
 }
-.sidebar .input-group .fa-search {
-    font-size: 20px;
-} 
 .sidebar .widget {
     margin-bottom: 40px;
 }
@@ -538,9 +535,6 @@ img.alignright {
 
 .list-inline li {
 	vertical-align:top;
-}
-.btn-search i {
-    font-size: 20px;
 }
 
 .login {width: 320px; margin: auto; margin-bottom: 20px; overflow: hidden; font-weight: 400;  padding: 26px 24px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.13); }
