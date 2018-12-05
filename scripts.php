@@ -75,6 +75,7 @@ body {<?php
 	if ($mosacademy_options['typography-body-font']['font-family']) echo 'font-family: ' . $mosacademy_options['typography-body-font']['font-family'] . ';';
 	if ($mosacademy_options['typography-body-font']['font-size']) echo 'font-size: ' . $mosacademy_options['typography-body-font']['font-size'] . ';';
 	if ($mosacademy_options['typography-body-font']['font-height']) echo 'line-height: ' . $mosacademy_options['typography-body-font']['font-height'] . ';';
+	if ($mosacademy_options['typography-body-font']['font-weight']) echo 'font-weight: ' . $mosacademy_options['typography-body-font']['font-weight'] . ';';
 	?>}
 #top-header {
 <?php if ($mosacademy_options['header-top-background-type'] == 1) : ?>
