@@ -253,7 +253,9 @@ function text_layout_manager () {
         add_action( 'action_after_footer', 'end_div', 10, 1 );
     }
     //Blog Page
-    if ($mosacademy_options['blog-archive-text-layout'] == 'container-fliud-spacing') {
+    $page_for_posts = get_option( 'page_for_posts' );
+    $layout = get_post_meta( $page_for_posts, '_mosacademy_text_layout', true );
+    if ($layout == 'container-fliud-spacing') {
         add_action( 'action_before_blog_page', 'start_container_fluid', 10, 1 );
         add_action( 'action_before_blog_page', 'start_row', 11, 1 );
         add_action( 'action_before_blog_page', 'start_container_col_10', 12, 1 );
@@ -261,10 +263,10 @@ function text_layout_manager () {
         add_action( 'action_after_blog_page', 'end_div', 10, 1 );
         add_action( 'action_after_blog_page', 'end_div', 11, 1 );
         add_action( 'action_after_blog_page', 'end_div', 12, 1 );   
-    } elseif ($mosacademy_options['blog-archive-text-layout'] == 'container-fliud') {
+    } elseif ($layout == 'container-fliud') {
         add_action( 'action_before_blog_page', 'start_container_fluid', 10, 1 );
         add_action( 'action_after_blog_page', 'end_div', 10, 1 );
-    } elseif ($mosacademy_options['blog-archive-text-layout'] == 'container-full') {
+    } elseif ($layout == 'container-full') {
         add_action( 'action_before_blog_page', 'start_full_width', 10, 1 );
         add_action( 'action_after_blog_page', 'end_div', 10, 1 );
     } else {

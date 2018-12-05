@@ -21,7 +21,7 @@ if (is_home()) echo do_shortcode( $avobe_page );
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
 do_action( 'action_avobe_blog_page', $page_details ); 
 ?>
-<?php $page_layout = get_post_meta( get_the_ID(), '_mosacademy_page_layout', true )? get_post_meta( get_the_ID(), '_mosacademy_page_layout', true ) : $mosacademy_options['blog-archive-layout']; ?>
+<?php $page_layout = get_post_meta( get_the_ID(), '_mosacademy_page_layout', true )? get_post_meta( get_the_ID(), '_mosacademy_page_layout', true ) : 'ns'; ?>
 <section id="blog-page" class="page-content" <?php if ($animation) echo 'data-wow-delay="'.$animation_delay.'s" class="wow '.$animation.'"' ?>>
 	<div class="content-wrap">
 		<?php 

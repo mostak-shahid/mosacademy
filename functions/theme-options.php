@@ -553,13 +553,6 @@
         'icon'             => 'dashicons dashicons-admin-post',
         'fields'     => array(
             array(
-                'id'       => 'blog-archive-text-layout',
-                'type'     => 'radio',
-                'title'    => __( 'Inner Content Width', 'redux-framework-demo' ),
-                'options'  => $container_list,
-                'default'  => 'container'
-            ),
-            array(
                 'id'       => 'blog-archive-title',
                 'type'     => 'text',
                 'title'    => __( 'Blog Archive Page Title', 'redux-framework-demo' ),
@@ -631,26 +624,6 @@
                 'id'       => 'blog-archive-section2',
                 'type'     => 'multi_text',
                 'title'    => __( '2nd Section Elements', 'redux-framework-demo' ),
-            ),
-            array(
-                'id'       => 'blog-archive-layout',
-                'type'     => 'image_select',
-                'title'    => __( 'Archive Page Layout', 'redux-framework-demo' ),
-                'options'  => array(
-                    'ns' => array(
-                        'alt' => 'Full Width',
-                        'img' => ReduxFramework::$_url . 'assets/img/1col.png'
-                    ),
-                    'ls' => array(
-                        'alt' => 'Left Sidebar',
-                        'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
-                    ),
-                    'rs' => array(
-                        'alt' => 'Right Sidebar',
-                        'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
-                    )
-                ),
-                'default'  => 'ls'
             ),
 
             array(
