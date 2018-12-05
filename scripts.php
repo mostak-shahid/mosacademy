@@ -419,6 +419,35 @@ function mosacademy_theme_js () {
 		    		items:<?php echo $blog_layout ?>,
 				}
 			}
+		<?php endif; ?>		
+		});
+		<?php 
+		$gallery_layout = ($mosacademy_options['sections-gallery-layout']) ? $mosacademy_options['sections-gallery-layout'] : 3; 
+		?>
+		var owl_gallery_owl = $('#section-gallery-owl');
+		owl_gallery_owl.owlCarousel({
+		    loop: true,
+		    nav: true,
+		    dots: true,
+		    margin: 0,	    	    
+		    lazyLoad: true,
+		    autoplay: true,
+		    autoplayTimeout: 6000,
+		    autoplayHoverPause: true,
+		<?php if($gallery_layout ==1) : ?>
+			items:1,
+		<?php else : ?>
+			responsive:{
+				0: {
+		    		items:1,
+				},
+				992: {
+		    		items:2,
+				},
+				1200: {
+		    		items:<?php echo $gallery_layout ?>,
+				}
+			}
 		<?php endif; ?>
 		});
 		var welcome_full_height;
