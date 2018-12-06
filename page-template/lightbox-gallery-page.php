@@ -46,7 +46,7 @@ do_action( 'action_avobe_gallery_page', $page_details );
 					<div class="gallery-images">
 					<?php
 					if($gallery_images) : ?>
-						<div id="gallery" class="row">
+						<div id="gallery" class="<?php if ($gallery_gap) echo 'row' ?>">
 							<?php foreach ( $gallery_images as $attachment_id => $attachment_url ) : ?>
 								<?php $raw_url = wp_get_attachment_url( $attachment_id ) ?>									
 								<div class="col-xs-6 col-md-<?php echo $layout; if ($gallery_gap) echo ' mb30'; else echo ' no-padding';?>">
