@@ -1,26 +1,26 @@
 <?php 
 global $mosacademy_options; 
 $logo_url = $mosacademy_options['logo']['url'];
-$contact_phone = $mosacademy_options['contact-phone'];
-$contact_email = $mosacademy_options['contact-email'];
-$contact_social = $mosacademy_options['contact-social'];
+$contact_phone = @$mosacademy_options['contact-phone'][0];
+$contact_email = @$mosacademy_options['contact-email'][0];
+$contact_social = @$mosacademy_options['contact-social'];
 if ($contact_social) :
     foreach ($contact_social as $social) :
         $social_links[$social['title']] = $social['link_url'];
     endforeach;
 endif;
-if ($social_links) $array = array_filter(array_values($social_links));
+if (@$social_links) $array = array_filter(array_values($social_links));
 
-$schema_option = $mosacademy_options['schema-option'];
-$schema_street = $mosacademy_options['schema-street'];
-$schema_locality = $mosacademy_options['schema-locality'];
-$schema_region = $mosacademy_options['schema-region'];
-$schema_postal = $mosacademy_options['schema-postal'];
-$schema_slides = $mosacademy_options['schema-slides'];
-$snippets_option = $mosacademy_options['snippets-option'];
-$snippets_name = $mosacademy_options['snippets-name'];
-$snippets_value = $mosacademy_options['snippets-value'];
-$snippets_count = $mosacademy_options['snippets-count'];
+$schema_option = @$mosacademy_options['schema-option'];
+$schema_street = @$mosacademy_options['schema-street'];
+$schema_locality = @$mosacademy_options['schema-locality'];
+$schema_region = @$mosacademy_options['schema-region'];
+$schema_postal = @$mosacademy_options['schema-postal'];
+$schema_slides = @$mosacademy_options['schema-slides'];
+$snippets_option = @$mosacademy_options['snippets-option'];
+$snippets_name = @$mosacademy_options['snippets-name'];
+$snippets_value = @$mosacademy_options['snippets-value'];
+$snippets_count = @$mosacademy_options['snippets-count'];
 ?>
 <?php if($schema_option) : ?>
     <!--Common-->

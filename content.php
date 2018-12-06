@@ -31,14 +31,18 @@ do_action( 'action_before_blog_page_loop', $page_details );
 			                endif
 		                	?>
 		                	<div class="sec-1 <?php  echo $sec_1 ?>">
-		                	<?php foreach ($mosacademy_options['blog-archive-section1'] as $shortcodes) : ?>
-		                		<?php echo do_shortcode( $shortcodes ) ?>
-		                	<?php endforeach; ?>
+			                <?php if (@$mosacademy_options['blog-archive-section1']) : ?>
+			                	<?php foreach ($mosacademy_options['blog-archive-section1'] as $shortcodes) : ?>
+			                		<?php echo do_shortcode( $shortcodes ) ?>
+			                	<?php endforeach; ?>
+			                <?php endif; ?>
 		                	</div>
-		                	<div class="sec-2 <?php  echo $sec_2 ?>">		                		
-		                	<?php foreach ($mosacademy_options['blog-archive-section2'] as $shortcodes) : ?>
-		                		<?php echo do_shortcode( $shortcodes ) ?>
-		                	<?php endforeach; ?>
+		                	<div class="sec-2 <?php  echo $sec_2 ?>">
+			                <?php if (@$mosacademy_options['blog-archive-section2']) : ?>		                		
+			                	<?php foreach ($mosacademy_options['blog-archive-section2'] as $shortcodes) : ?>
+			                		<?php echo do_shortcode( $shortcodes ) ?>
+			                	<?php endforeach; ?>
+			                <?php endif; ?>
 		                	</div>  
 		                </div> 
 

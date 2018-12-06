@@ -12,7 +12,7 @@ do_action( 'action_avobe_footer', $page_details );
 <footer id="footer">
 	<div class="content-wrap">
 	<?php do_action( 'action_before_footer', $page_details ); ?>
-	<?php $footer_layout = $mosacademy_options['footer-layout'];
+	<?php $footer_layout = @$mosacademy_options['footer-layout'];
 		echo do_shortcode( $footer_layout );		
 	?>
 	<?php do_action( 'action_after_footer', $page_details ); ?>

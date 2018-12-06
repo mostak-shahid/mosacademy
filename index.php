@@ -1,7 +1,7 @@
 <?php  
 global $mosacademy_options;
-$animation = $mosacademy_options['sections-content-animation'];
-$animation_delay = $mosacademy_options['sections-content-animation-delay'];
+$animation = @$mosacademy_options['sections-content-animation'];
+$animation_delay = @$mosacademy_options['sections-content-animation-delay'];
 
 
 $page_for_posts = get_option( 'page_for_posts' );

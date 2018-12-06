@@ -91,7 +91,7 @@ function layout_end ($layout_end) {
 
 
 if ($header_design == 'header-layout-custom') {
-    $header_layout = $mosacademy_options['header-layout'];
+    $header_layout = @$mosacademy_options['header-layout'];
 }
 else {
     if ($header_design == '1' OR $header_design == '2' OR $header_design == '3') {
