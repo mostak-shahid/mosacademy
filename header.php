@@ -44,12 +44,10 @@ do_action( 'action_above_header', $page_details );
     </div>
 <?php endif; ?>
 
-
-
-
-
-    <?php echo do_shortcode( '[site_identity container_class="small-logo hidden-md hidden-lg"]' ) ?>   
-    <?php do_action( 'action_after_small_logo', $page_details ); ?>       
+    <div class="hidden-md hidden-lg">
+    <?php echo do_shortcode( '[site_identity container_class="small-logo"]' ) ?>
+    <?php do_action( 'action_after_small_logo', $page_details ); ?>
+    </div>      
 
     <header id="main-header">
         <div class="content-wrap hidden-xs hidden-sm">
