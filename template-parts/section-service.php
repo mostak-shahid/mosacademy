@@ -44,7 +44,7 @@ do_action( 'action_avobe_service', $page_details );
 			<?php do_action( 'action_before_service_loop', $page_details ); ?>
 
 				<?php foreach ($slides as $slide) :	?>
-				<div class="<?php if ($view == 'grid') echo 'col-sm-'.$smallcol.' col-md-'.$colsize; else echo 'wrapper'?><?php if ($gap) echo ' mb30'; else echo ' no-padding'?>">
+				<div class="<?php if ($view == 'grid') echo 'col-sm-'.$smallcol.' col-md-'.$colsize; else echo 'wrapper'?><?php if ($gap) echo ' mt15 mb15'; else echo ' no-padding'?>">
 					<div class="service-unit">
 						<div class="img-part">
 							<?php if ($slide['image']) : ?>
