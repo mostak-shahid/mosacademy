@@ -84,8 +84,8 @@ function mosacademy_enqueue_scripts() {
 	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css', array('bootstrap.min', 'animate.min', 'owl.carousel.min', 'owl.theme.default.min', 'jquery.fancybox.min'));
 	wp_enqueue_style( 'main.min' );
 		
-	wp_register_script('main', get_template_directory_uri() . '/js/main.js', 'jquery');
-	wp_enqueue_script( 'main' );
+	wp_register_script('main.min', get_template_directory_uri() . '/js/main.min.js', 'jquery');
+	wp_enqueue_script( 'main.min' );
 
 
 }
