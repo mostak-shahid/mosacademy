@@ -60,13 +60,20 @@ do_action( 'action_avobe_gallery', $page_details );
 				<div class="<?php if ($view == 'slider') : echo 'wrapper'; else : ?> col-xs-<?php echo $smallcol; ?> col-md-<?php echo $colsize; ?><?php if (!$gap) echo ' no-padding'; else echo ' mb30'?><?php endif;?>">
 					<div class="img-container">
 						<a href="<?php if ($large_image_size == 'max') echo aq_resize($attachment_url, 1920); elseif ($large_image_size == 'container') echo aq_resize($attachment_url, 1140); else echo $attachment_url ?>" data-fancybox="gallery" data-caption="">
-							<?php $attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ); ?>
-							<img class="img-responsive img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>">
+							<?php 
+							$attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+							list($width, $height) = getimagesize($img_url);
+							?>
+							<img class="img-responsive img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>" width="<?php echo $width ?>" height="<?php echo $height ?>">
 							<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-gallery', 'alt' => $alt_tag['inner'] . $attachment_alt) ) ?>
 						
 							<div class="hover-box hidden-sm hidden-xs">
 								<div class="hover-zoom">
-									<img src="<?php echo do_shortcode( $mosacademy_options['sections-gallery-zoom']['url'] );?>" alt="<?php $alt_tag['inner']?> Zoom">
+									<?php 
+									$zoom = wp_get_attachment_url( $mosacademy_options['sections-gallery-zoom']['id'] );
+									list($width, $height) = getimagesize($zoom);
+									?>
+									<img src="<?php echo $zoom;?>" alt="<?php $alt_tag['inner']?> Zoom" width="<?php echo $width ?>" height="<?php echo $height ?>">
 								</div>
 							</div> 
 						</a>

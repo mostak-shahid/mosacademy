@@ -57,9 +57,10 @@ function site_identity_func( $atts = array(), $content = null ) {
 		'container_class' => ''
 	), $atts, 'site_logo' ); 
 	if($logo_option == 'logo') :
+		list($width, $height) = getimagesize($logo_url);
 		return '<div class="'.$atts['container_class'].'">
 					<div class="site-branding '.$atts['class'].'">
-	                    <a class="logo" href="'.home_url().'"><img src="'.$logo_url.'" alt="'.get_bloginfo('name').' - Logo"></a> 
+	                    <a class="logo" href="'.home_url().'"><img src="'.$logo_url.'" alt="'.get_bloginfo('name').' - Logo" width="'.$width.'" height="'.$height.'"></a> 
 	                </div>
 	            </div>'; 
 	else :
@@ -163,8 +164,11 @@ function theme_creadit_func( $atts = array(), $content = '' ) {
 	), $atts, 'theme_creadit' );
 	$html .= '<div class="copyright">';
 	$html .= '&copy; '. date("Y") .' <a href="'.esc_url( home_url( '/' ) ).'"> '.get_bloginfo('name') .'</a>. All Rights Reserved. ';
-	if ($atts['icon'])
-		$html .= '<img class="belocal-icon" src="'. str_replace('home_url()', home_url(), $atts['icon']). '" alt="BeLocal Today Logo">';
+	if ($atts['icon']){		
+		$icon = str_replace('home_url()', home_url(), $atts['icon']);
+		list($width, $height) = getimagesize($icon);
+		$html .= '<img class="belocal-icon" src="'. $icon . '" alt="BeLocal Today Logo" width="'.$width.'" height="'.$height.'">';
+	}
 	$html .= 'Digital Transformation by <a href="https://www.belocal.today/" class="belocal" target="_blank" >BeLocal Today</a>';
 	$html .= '</div>';
 	return $html;
@@ -225,9 +229,14 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 		if ($social['link_url'] AND $social['basic_icon']) :
 			$str = '';
 			if (filter_var(do_shortcode($social['basic_icon']), FILTER_VALIDATE_URL)) {
-				$str = '<span class="social-img"><img src="'.do_shortcode($social['basic_icon']).'" alt="'.$alt_tag['social'] . $social['title'].'"></span>';
-				if ($social['hover_icon'])
-					$str .= '<span class="social-img-hover"><img src="'.do_shortcode($social['hover_icon']).'" alt="'.$alt_tag['social'] . $social['title'].'"></span>'; //hover_icon
+				$basic_icon = do_shortcode($social['basic_icon']);
+				list($width, $height) = getimagesize($basic_icon);
+				$str = '<span class="social-img"><img src="'.$basic_icon.'" alt="'.$alt_tag['social'] . $social['title'].'" width="'.$width.'" height="'.$height.'"></span>';
+				if ($social['hover_icon']) {
+					$hover_icon = do_shortcode($social['hover_icon']);
+					list($hwidth, $hheight) = getimagesize($hover_icon);
+					$str .= '<span class="social-img-hover"><img src="'.$hover_icon.'" alt="'.$alt_tag['social'] . $social['title'].'" width="'.$hwidth.'" height="'.$hheight.'"></span>'; //hover_icon
+				}
 			}
 			else { 
 				$str = '<span class="social-icon"><i class="'.$social['basic_icon'].'"></i></span>';
@@ -245,9 +254,15 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 	if ($atts['google_review']) {
 		foreach ($contact_address as $address) {
 			if ($address['review_link'] AND $address['review_link_img']) {
-				$html .= '<li class="social-review"><a href="'. esc_url( $address['review_link']) .'" target="_blank"><span class="social-img"><img src="'.do_shortcode($address['review_link_img']).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
-				if ($address['review_link_img_h'])
-					$html .= '<span class="social-img-hover"><img src="'. esc_url( do_shortcode($address['review_link_img_h'])).'" alt="'.$alt_tag['social'] . 'Google Review"></span>';
+				$review_link_img = do_shortcode($address['review_link_img']);
+				list($gwidth, $gheight) = getimagesize($review_link_img);
+
+				$html .= '<li class="social-review"><a href="'. esc_url( $address['review_link']) .'" target="_blank"><span class="social-img"><img src="'.do_shortcode($address['review_link_img']).'" alt="'.$alt_tag['social'] . 'Google Review" width="'.$gwidth.'" height="'.$gheight.'"></span>';
+				if ($address['review_link_img_h']) {					
+					$review_link_img_h = do_shortcode($address['review_link_img_h']);
+					list($ghwidth, $ghheight) = getimagesize($review_link_img_h);
+					$html .= '<span class="social-img-hover"><img src="'. esc_url( do_shortcode($address['review_link_img_h'])).'" alt="'.$alt_tag['social'] . 'Google Review" width="'.$ghwidth.'" height="'.$ghheight.'"></span>';
+				}
 				if ($atts['title']) $html .= '<span class="social-title">Google Review</span>';
 				$html .= '</a></li>';
 			}
@@ -279,8 +294,8 @@ function feature_image_func( $atts = array(), $content = '' ) {
 		else : 
 			$img = get_the_post_thumbnail_url();
 		endif;
-
-		$html .= '<img class="img-responsive img-featured" src="'.$img.'" alt="'.get_the_title().'" />';
+		list($fwidth, $fheight) = getimagesize($img);
+		$html .= '<img class="img-responsive img-featured" src="'.$img.'" alt="'.get_the_title().'" width="'.$fwidth.'" height="'.$fheight.'" />';
 		if ($atts['wrapper_element']) $html .= '</'. $atts['wrapper_element'] . '>';		
 	endif;
 	return $html;

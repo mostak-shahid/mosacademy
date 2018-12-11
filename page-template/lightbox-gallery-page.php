@@ -63,7 +63,11 @@ do_action( 'action_avobe_gallery_page', $page_details );
 										
 											<div class="hover-box">
 												<div class="hover-zoom">
-													<img src="<?php echo do_shortcode( $mosacademy_options['sections-gallery-zoom']['url'] );?>" alt="<?php $alt_tag['inner']?> Zoom">
+													<?php 
+													$zoom = wp_get_attachment_url( $mosacademy_options['sections-gallery-zoom']['id'] );
+													list($width, $height) = getimagesize($zoom);
+													?>
+													<img src="<?php echo $zoom;?>" alt="<?php $alt_tag['inner']?> Zoom" width="<?php echo $width ?>" height="<?php echo $height ?>">
 												</div>
 											</div> 
 										</a>
