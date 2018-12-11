@@ -43,8 +43,8 @@ function mosacademy_enqueue_scripts() {
 	wp_register_script('wow.min', get_template_directory_uri() . '/plugins/wow/wow.min.js', 'jquery');
 	wp_enqueue_script( 'wow.min' );
 	
-	wp_register_script('jquery.sticky', get_template_directory_uri() . '/plugins/jquery.sticky.js', 'jquery');
-	wp_enqueue_script( 'jquery.sticky' );
+	wp_register_script('jquery.sticky.min', get_template_directory_uri() . '/plugins/jquery.sticky.min.js', 'jquery');
+	wp_enqueue_script( 'jquery.sticky.min' );
 
 	if (@$mosacademy_options['misc-plugins-check']['owlcarousel']) {
 		wp_register_style( 'owl.carousel.min', get_template_directory_uri() . '/plugins/owlcarousel/owl.carousel.min.css' );
@@ -70,8 +70,8 @@ function mosacademy_enqueue_scripts() {
 		wp_enqueue_script( 'isotope.pkgd.min' );
 	}
 	if (@$mosacademy_options['misc-plugins-check']['slimscroll']) {	
-		wp_register_script('slimscroll', get_template_directory_uri() . '/plugins/slimscroll/jquery.slimscroll.js', 'jquery');
-		wp_enqueue_script( 'slimscroll' );
+		wp_register_script('slimscroll.min', get_template_directory_uri() . '/plugins/slimscroll/jquery.slimscroll.min.js', 'jquery');
+		wp_enqueue_script( 'slimscroll.min' );
 	}
 	if (@$mosacademy_options['misc-plugins-check']['lazy']) {	
 		wp_register_script('jquery.lazy.min', get_template_directory_uri() . '/plugins/jquery.lazy-master/jquery.lazy.min.js', 'jquery');
@@ -81,7 +81,7 @@ function mosacademy_enqueue_scripts() {
 	// wp_register_style( 'theme-style', get_stylesheet_uri() );
 	// wp_enqueue_style( 'theme-style' );
 
-	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css', array('bootstrap.min', 'animate', 'owl.carousel.min', 'owl.theme.default.min', 'jquery.fancybox.min'));
+	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css', array('bootstrap.min', 'animate.min', 'owl.carousel.min', 'owl.theme.default.min', 'jquery.fancybox.min'));
 	wp_enqueue_style( 'main.min' );
 		
 	wp_register_script('main', get_template_directory_uri() . '/js/main.js', 'jquery');
