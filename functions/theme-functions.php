@@ -356,8 +356,7 @@ function mobile_menu ($value) {
         <?php elseif ( $key == 'email' ) : ?>
             <div class="<?php echo $bc ?>">
                 <a class="small-email" href="mailto:<?php echo $contact_email[0];?>"><i class="fa fa-envelope"></i><span class="text"> Email Us</span></a> 
-            </div>
-        <?php endif; ?>        
+            </div>        
         <?php elseif ( $key == 'smlogo' ) : ?>
             <div class="sm-logo">
                 <?php
