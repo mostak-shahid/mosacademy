@@ -38,8 +38,8 @@ function mosacademy_enqueue_scripts() {
 	wp_register_script('bootstrap.min', get_template_directory_uri() .  '/js/bootstrap.min.js', 'jquery');
 	wp_enqueue_script( 'bootstrap.min' );
 
-	wp_register_style( 'animate', get_template_directory_uri() .  '/plugins/wow/animate.css' );
-	wp_enqueue_style( 'animate' );
+	wp_register_style( 'animate.min', get_template_directory_uri() .  '/plugins/wow/animate.min.css' );
+	wp_enqueue_style( 'animate.min' );
 	wp_register_script('wow.min', get_template_directory_uri() . '/plugins/wow/wow.min.js', 'jquery');
 	wp_enqueue_script( 'wow.min' );
 	
