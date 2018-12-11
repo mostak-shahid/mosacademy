@@ -357,6 +357,15 @@ function mobile_menu ($value) {
             <div class="<?php echo $bc ?>">
                 <a class="small-email" href="mailto:<?php echo $contact_email[0];?>"><i class="fa fa-envelope"></i><span class="text"> Email Us</span></a> 
             </div>
+        <?php endif; ?>        
+        <?php elseif ( $key == 'smlogo' ) : ?>
+            <div class="sm-logo">
+                <?php
+                    $attachment_id = get_option( 'site_icon' );
+                    $img_url = aq_resize(wp_get_attachment_url( $attachment_id ), 33, 33, true);
+                ?>
+                <a class="small-logo" href="<?php echo home_url();?>"><img src="<?php echo $img_url ?>" alt="<?php echo get_bloginfo( 'name' ) ?> - Logo" width="33" height="33"></a> 
+            </div>
         <?php endif; ?>
     <?php endforeach; ?>
     </div>

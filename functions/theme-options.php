@@ -1181,7 +1181,9 @@
                     'On Footer' => array(
                         'phone'     => 'Phone',
                         'email' => 'Email'),
-                    'Disabled' => array(),
+                    'Disabled' => array(
+                        'smlogo'     => 'Logo',
+                    ),
 
                 ),
                 /*'limits'   => array(
