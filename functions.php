@@ -23,6 +23,7 @@ require_once('functions/ajax.php');
 require_once('functions/woo-functions.php');
 require_once('functions/aq_resizer.php');
 require_once('functions/breadcrumb.php');
+require_once('functions/Mobile_Detect.php');
 //require_once('functions/custom-metabox.php');
 //require_once('functions/post-like.php');
 //require_once('functions/post-view.php');
