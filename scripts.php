@@ -77,6 +77,14 @@ body {<?php
 	if ($mosacademy_options['typography-body-font']['font-height']) echo 'line-height: ' . $mosacademy_options['typography-body-font']['font-height'] . ';';
 	if ($mosacademy_options['typography-body-font']['font-weight']) echo 'font-weight: ' . $mosacademy_options['typography-body-font']['font-weight'] . ';';
 	?>}
+.se-pre-con {
+<?php if ($mosacademy_options['misc-page-loader-background-type'] == 1) : ?>
+	<?php gradient_manager($mosacademy_options['misc-page-loader-background-gradient'])?>
+<?php elseif ($mosacademy_options['misc-page-loader-background-type'] == 2) : ?>
+	<?php background_manager($mosacademy_options['misc-page-loader-background-solid'])?>
+<?php elseif ($mosacademy_options['misc-page-loader-background-type'] == 3 AND $mosacademy_options['misc-page-loader-background-rgba']['rgba']) : ?>
+	<?php rgba_manager($mosacademy_options['misc-page-loader-background-rgba'])?>
+<?php endif; ?>}
 #top-header {
 <?php if ($mosacademy_options['header-top-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['header-top-background-gradient'])?>
@@ -84,8 +92,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['header-top-background-solid'])?>
 <?php elseif ($mosacademy_options['header-top-background-type'] == 3 AND $mosacademy_options['header-top-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['header-top-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #main-header {
 <?php if ($mosacademy_options['header-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['header-background-gradient'])?>
@@ -93,8 +100,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['header-background-solid'])?>
 <?php elseif ($mosacademy_options['header-background-type'] == 3 AND $mosacademy_options['header-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['header-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #nav-area,
 #nav-area .sub-menu li,
 .small-header .small-nav .small-menu {
@@ -104,8 +110,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['header-menu-background-solid'])?>
 <?php elseif ($mosacademy_options['header-menu-background-type'] == 3 AND $mosacademy_options['header-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['header-menu-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 .small-header .small-nav .mobile-menu {
 <?php if ($mosacademy_options['small-menu-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['small-menu-background-gradient'])?>
@@ -113,8 +118,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['small-menu-background-solid'])?>
 <?php elseif ($mosacademy_options['small-menu-background-type'] == 3 AND $mosacademy_options['small-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['small-menu-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #page-title {
 <?php if ($mosacademy_options['sections-title-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-title-background-gradient'])?>
@@ -122,8 +126,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-title-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-title-background-type'] == 3 AND $mosacademy_options['sections-title-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-title-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-breadcrumbs {
 <?php if ($mosacademy_options['sections-breadcrumbs-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-breadcrumbs-background-gradient'])?>
@@ -131,8 +134,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-breadcrumbs-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-breadcrumbs-background-type'] == 3 AND $mosacademy_options['sections-breadcrumbs-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-breadcrumbs-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-banner {
 <?php if ($mosacademy_options['sections-banner-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-banner-background-gradient'])?>
@@ -140,8 +142,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-banner-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-banner-background-type'] == 3 AND $mosacademy_options['sections-banner-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-banner-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 .page-content {
 <?php if ($mosacademy_options['sections-content-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-content-background-gradient'])?>
@@ -149,8 +150,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-content-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-content-background-type'] == 3 AND $mosacademy_options['sections-content-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-content-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-service {
 <?php if ($mosacademy_options['sections-service-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-service-background-gradient'])?>
@@ -158,8 +158,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-service-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-service-background-type'] == 3 AND $mosacademy_options['sections-service-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-service-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-blog {
 <?php if ($mosacademy_options['sections-blog-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-blog-background-gradient'])?>
@@ -167,8 +166,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-blog-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-blog-background-type'] == 3 AND $mosacademy_options['sections-blog-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-blog-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-button {
 <?php if ($mosacademy_options['sections-button-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-button-background-gradient'])?>
@@ -176,8 +174,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-button-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-button-background-type'] == 3 AND $mosacademy_options['sections-button-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-button-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-contact {
 <?php if ($mosacademy_options['sections-contact-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-contact-background-gradient'])?>
@@ -185,8 +182,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-contact-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-contact-background-type'] == 3 AND $mosacademy_options['sections-contact-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-contact-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-welcome {
 <?php if ($mosacademy_options['sections-welcome-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-welcome-background-gradient'])?>
@@ -194,8 +190,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-welcome-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-welcome-background-type'] == 3 AND $mosacademy_options['sections-welcome-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-welcome-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-gallery {
 <?php if ($mosacademy_options['sections-gallery-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-gallery-background-gradient'])?>
@@ -203,8 +198,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-gallery-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-gallery-background-type'] == 3 AND $mosacademy_options['sections-gallery-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-gallery-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 .sidebar {
 <?php if ($mosacademy_options['sections-sidebar-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-sidebar-background-gradient'])?>
@@ -212,8 +206,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-sidebar-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-sidebar-background-type'] == 3 AND $mosacademy_options['sections-sidebar-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-sidebar-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #section-widgets {
 <?php if ($mosacademy_options['sections-widgets-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-widgets-background-gradient'])?>
@@ -221,8 +214,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-widgets-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-widgets-background-type'] == 3 AND $mosacademy_options['sections-widgets-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-widgets-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 #footer {
 <?php if ($mosacademy_options['sections-footer-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-footer-background-gradient'])?>
@@ -230,8 +222,7 @@ body {<?php
 	<?php background_manager($mosacademy_options['sections-footer-background-solid'])?>
 <?php elseif ($mosacademy_options['sections-footer-background-type'] == 3 AND $mosacademy_options['sections-footer-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-footer-background-rgba'])?>
-<?php endif; ?>
-}
+<?php endif; ?>}
 
 
 <?php if ($mosacademy_options['sections-welcome-readmore'] == 'button' OR $mosacademy_options['sections-welcome-readmore'] == 'popup') : ?>

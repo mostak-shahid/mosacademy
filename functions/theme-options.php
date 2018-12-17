@@ -1138,6 +1138,48 @@
                 'options'  => $animations,
                 'validate' => 'no_html',
             ),
+            array(
+                'id'       => 'misc-page-loader-background-type',
+                'type'     => 'button_set',
+                'title'    => __( 'Footer Background Type', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => 'Gradient',
+                    '2' => 'Solid Color/Image',
+                    '3' => 'RGBA Color'
+                ),
+                'default'  => '2',
+            ),
+
+            array(
+                'id'     => 'misc-page-loader-background-start',
+                'type'   => 'section',
+                'indent' => true, // Indent all options below until the next 'section' option is set.
+            ),
+            array(
+                'id'       => 'misc-page-loader-background-gradient',
+                'type'     => 'color_gradient',
+                'title'    => __( 'Footer Background', 'redux-framework-demo' ),
+                'validate' => 'color',              
+                'required' => array( 'misc-page-loader-background-type', '=', '1' ),
+            ),
+            array(
+                'id'       => 'misc-page-loader-background-solid',
+                'type'     => 'background',                
+                'title'    => __( 'Footer Section Background', 'redux-framework-demo' ),
+                'required' => array( 'misc-page-loader-background-type', '=', '2' ),
+            ),
+            array(
+                'id'       => 'misc-page-loader-background-rgba',
+                'type'     => 'color_rgba',
+                'title'    => __( 'Footer Section Background', 'redux-framework-demo' ),
+                'validate' => 'colorrgba',
+                'required' => array( 'misc-page-loader-background-type', '=', '3' ),
+            ),
+            array(
+                'id'     => 'misc-page-loader-background-end',
+                'type'   => 'section',
+                'indent' => false, // Indent all options below until the next 'section' option is set.
+            ),
         )
     ) );
     //Back to Top
