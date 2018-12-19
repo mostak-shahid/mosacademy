@@ -65,6 +65,7 @@ do_action( 'action_avobe_gallery_page', $page_details );
 												<div class="hover-zoom">
 													<?php 
 													$zoom = wp_get_attachment_url( $mosacademy_options['sections-gallery-zoom']['id'] );
+													if (!$zoom) $zoom = get_template_directory_uri() . '/images/plus.png';
 													list($width, $height) = getimagesize($zoom);
 													?>
 													<img src="<?php echo $zoom;?>" alt="<?php $alt_tag['inner']?> Zoom" width="<?php echo $width ?>" height="<?php echo $height ?>">
