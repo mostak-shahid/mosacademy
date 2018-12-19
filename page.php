@@ -2,8 +2,6 @@
 global $mosacademy_options;
 $avobe_page = get_post_meta( get_the_ID(), '_mosacademy_avobe_page', true );
 $before_page = get_post_meta( get_the_ID(), '_mosacademy_before_page', true );
-$before_loop = get_post_meta( get_the_ID(), '_mosacademy_before_loop', true );
-$after_loop = get_post_meta( get_the_ID(), '_mosacademy_after_loop', true );
 $after_page = get_post_meta( get_the_ID(), '_mosacademy_after_page', true );
 $below_page = get_post_meta( get_the_ID(), '_mosacademy_below_page', true );
 
@@ -32,17 +30,9 @@ do_action( 'action_avobe_page', $page_details );
 			<div class="row">
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
-				<?php
-				do_action( 'action_before_loop', $page_details ); 
-				echo do_shortcode( $before_loop );
-				?>
 				<?php if ( have_posts() ) :?>					
 					<?php get_template_part( 'content', 'page' ) ?>
 				<?php endif; ?>
-				<?php
-				do_action( 'action_after_loop', $page_details ); 
-				echo do_shortcode( $after_loop );
-				?>
 			<?php if($page_layout != 'ns') : ?>
 				</div>
 				<div class="page-widgets col-md-4 <?php if($page_layout == 'ls') echo 'col-md-pull-8' ?>">
