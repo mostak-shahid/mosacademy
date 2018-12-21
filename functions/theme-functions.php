@@ -393,11 +393,17 @@ function mos_get_terms ($taxonomy = 'category') {
  * Defer parsing of javascript.
  */
 if (!(is_admin() )) {
-    function defer_parsing_of_js ( $url ) {
+    function mos_academy_defer_parsing_of_js ( $url ) {
         if ( FALSE === strpos( $url, '.js' ) ) return $url;
         if ( strpos( $url, 'jquery.js' ) ) return $url;
         // return "$url' defer ";
         return "$url' defer onload='";
     }
-    add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+    add_filter( 'clean_url', 'mos_academy_defer_parsing_of_js', 11, 1 );
 }
+function mos_academy_remove_script_version( $src ){ 
+    $parts = explode( '?', $src );  
+    return $parts[0]; 
+} 
+add_filter( 'script_loader_src', 'mos_academy_remove_script_version', 15, 1 ); 
+add_filter( 'style_loader_src', 'mos_academy_remove_script_version', 15, 1 );
