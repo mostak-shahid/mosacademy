@@ -389,9 +389,10 @@ function mos_get_terms ($taxonomy = 'category') {
 //$terms = mos_get_terms ("testimonial-category");
 
 
-/**
- * Defer parsing of javascript.
- */
+/********************/
+/** Theme Speed Up **/
+/********************/
+/*Defer parsing of javascript.*/
 if (!(is_admin() )) {
     function mos_academy_defer_parsing_of_js ( $url ) {
         if ( FALSE === strpos( $url, '.js' ) ) return $url;
@@ -401,6 +402,7 @@ if (!(is_admin() )) {
     }
     add_filter( 'clean_url', 'mos_academy_defer_parsing_of_js', 11, 1 );
 }
+/*Remove query string*/
 function mos_academy_remove_script_version( $src ){ 
     $parts = explode( '?', $src );  
     return $parts[0]; 
