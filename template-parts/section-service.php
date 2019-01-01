@@ -40,7 +40,8 @@ do_action( 'action_avobe_service', $page_details );
 		<?php if ($content) : ?>			
 			<div class="content-wrapper"><?php echo do_shortcode( $content ); ?></div>
 		<?php endif; ?>
-			<div <?php if ($view == 'slider') echo 'id="section-service-owl" class="services owl-carousel owl-theme"'; elseif ($view == 'grid') echo 'class="row services"'; else echo 'class="services"'; ?> >
+		<div class="services">
+			<div <?php if ($view == 'slider') echo 'id="section-service-owl" class=" owl-carousel owl-theme"'; elseif ($view == 'grid') echo 'class="row"'; else echo 'class=""'; ?> >
 			<?php do_action( 'action_before_service_loop', $page_details ); ?>
 
 				<?php foreach ($slides as $slide) :	?>
@@ -70,6 +71,7 @@ do_action( 'action_avobe_service', $page_details );
 
 			<?php do_action( 'action_after_service_loop' ); ?>
 			</div>
+		</div>
 		<?php 
 		/*
 		* action_after_service hook
