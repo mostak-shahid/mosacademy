@@ -391,6 +391,8 @@
                     'poppins' => 'Poppins',
                     'montserrat' => 'Montserrat',
                     'roboto' => 'Roboto',
+                    'sourcesanspro' => 'Source Sans Pro',
+                    'sourceserifpro' => 'Source Serif Pro',
                     'ubuntu' => 'Ubuntu'
                 ),
                 //See how std has changed? you also don't need to specify opts that are 0.

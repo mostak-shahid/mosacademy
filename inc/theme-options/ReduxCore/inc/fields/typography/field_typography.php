@@ -25,6 +25,8 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
             "Poppins"                                              => "Poppins",
             "Montserrat"                                           => "Montserrat",
             "Roboto"                                               => "Roboto",
+            "Source Sans Pro"                                      => "Source Sans Pro",
+            "Source Serif Pro"                                     => "Source Serif Pro",
             "Ubuntu"                                               => "Ubuntu",
             "Arial, Helvetica, sans-serif"                         => "Arial, Helvetica, sans-serif",
             "'Arial Black', Gadget, sans-serif"                    => "'Arial Black', Gadget, sans-serif",
