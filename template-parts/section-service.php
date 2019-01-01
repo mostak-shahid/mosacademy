@@ -56,11 +56,13 @@ do_action( 'action_avobe_service', $page_details );
 								<img class="img-responsive img-service-two" src="<?php echo wp_get_attachment_url( $slide['photo_attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>" width="<?php echo $slide['photo_width'] ?>" height="<?php echo $slide['photo_height'] ?>">
 							<?php endif; ?>
 						</div>
-						<div class="content">							
-							<h3 class="service-section-title"><?php echo do_shortcode($slide['title']) ?></h3>
-							<div class="service-section-desc"><?php echo do_shortcode( $slide['description'] ) ?></div>
-						<?php if($slide['link_title']) : ?>
-							<span class="rd-more"><?php echo $slide['link_title'] ?></span>
+						<div class="content">	
+							<div class="wrapper">					
+								<h3 class="service-section-title"><?php echo do_shortcode($slide['title']) ?></h3>
+								<div class="service-section-desc"><?php echo do_shortcode( $slide['description'] ) ?></div>
+							<?php if($slide['link_title']) : ?>
+								<span class="rd-more"><?php echo $slide['link_title'] ?></span>
+							</div>	
 						<?php endif; ?>
 						</div>
 						<a class="service-link" href="<?php echo do_shortcode( $slide['link_url'] ) ?>">View More</a>
