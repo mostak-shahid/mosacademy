@@ -58,7 +58,7 @@ do_action( 'action_avobe_service', $page_details );
 						<div class="content">							
 							<h3 class="service-section-title"><?php echo do_shortcode($slide['title']) ?></h3>
 							<div class="service-section-desc"><?php echo do_shortcode( $slide['description'] ) ?></div>
-						<?php if($slide['url_title']) : ?>
+						<?php if($slide['link_title']) : ?>
 							<span class="rd-more"><?php echo $slide['link_title'] ?></span>
 						<?php endif; ?>
 						</div>
