@@ -115,9 +115,8 @@ function mosacademy_plugins_management() {
 			'force_activation'	=> false, 
 		),
 		array(
-			'name'				=> 'Mos FAQ', 
-			'slug'				=> 'mos-faq', 
-			'source'			=> 'https://github.com/mostak-shahid/mos-faq/archive/master.zip', 
+			'name'				=> 'Mos FAQs', 
+			'slug'				=> 'mos-faqs', 
 			'required'			=> false,
 			'force_activation'	=> false, 
 		),
