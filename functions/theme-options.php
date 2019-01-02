@@ -968,20 +968,22 @@
                 'id'       => 'misc-plugins-check',
                 'type'     => 'checkbox',
                 'title'    => __( 'Multi Checkbox Option', 'redux-framework-demo' ),
-                'desc'     => __( 'Please check the name of plugin you like to load for your website..', 'redux-framework-demo' ),
+                'desc'     => __( 'Please check the name of plugin you like to load for your website, by default Fancybox, jPages, Lazy Load, Owl Carousel, and Slim Scroll already intr', 'redux-framework-demo' ),
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
-                    'fancybox' => 'Fancybox',
                     'isotope' => 'Isotope',
-                    'jPages' => 'JPages',
-                    'counterup' => 'Counterup',
-                    'lazy' => 'Lazy Load',
-                    'image-scroll' => 'Image Scroll',
-                    'numinate' => 'Numinate',
-                    'owlcarousel' => 'Owl Carousel',
-                    'slimscroll' => 'Slim Scroll',
-                    'typed.js' => 'Typed.js',
+                    //'counterup' => 'Counterup',
+                    //'image-scroll' => 'Image Scroll',
+                    //'numinate' => 'Numinate',
+                    //'typed.js' => 'Typed.js',
+                    //'fancybox' => 'Fancybox',
+                    //'jPages' => 'JPages',
+                    //'lazy' => 'Lazy Load',
+                    //'owlcarousel' => 'Owl Carousel',
+                    //'slimscroll' => 'Slim Scroll',
                 ),
+                'default'  => array(
+                )
             ),
         )
     ) );
