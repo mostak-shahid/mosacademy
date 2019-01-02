@@ -778,7 +778,7 @@ function mos_welcome_media_fnc () {
 
 function start_container () { ?><div class="container"><?php }
 function start_container_fluid () { ?><div class="container-fluid"><?php }
-function start_start_full_width () { ?><div class="start_full_width"><?php }
+function start_full_width () { ?><div class="start_full_width"><?php }
 function start_row () { ?><div class="row"><?php }
 function start_container_col_10 () { ?><div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1"><?php }
 
