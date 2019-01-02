@@ -62,8 +62,8 @@ do_action( 'action_avobe_service', $page_details );
 								<div class="service-section-desc"><?php echo do_shortcode( $slide['description'] ) ?></div>
 							<?php if($slide['link_title']) : ?>
 								<span class="rd-more"><?php echo $slide['link_title'] ?></span>
+							<?php endif; ?>
 							</div>	
-						<?php endif; ?>
 						</div>
 						<a class="service-link" href="<?php echo do_shortcode( $slide['link_url'] ) ?>">View More</a>
 					</div>
