@@ -10,7 +10,6 @@ $section_list = array(
     'service' => 'Service Section',
     'gallery' => 'Gallery Section',
     'welcome' => 'Welcome Section',
-    'testimonial' => 'Testimonial Section',
     'contact' => 'Contact Section',
     'team' => 'Team Member',  
     'widgets' => 'Widget Section',
