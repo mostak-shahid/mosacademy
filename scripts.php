@@ -258,7 +258,7 @@ body {<?php
 		font-weight: <?php echo $mosacademy_options['sections-welcome-but']['text_field_13'] ?>;
 		<?php endif; ?>
 	}
-	.btn-welcome:hover {
+	.btn-welcome:hover, .btn-welcome:focus, .btn-welcome:active, .btn-welcome:visited {
 		<?php if ($mosacademy_options['sections-welcome-but']['text_field_2']) : ?>
 		background-color: <?php echo $mosacademy_options['sections-welcome-but']['text_field_2'] ?>;
 		<?php endif; ?>
