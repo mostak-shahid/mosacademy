@@ -3472,7 +3472,7 @@
                     'max'   => __( 'Max Size (Width 1920px)', 'redux-framework-demo' ),
                     'container'     => __( 'Container Size (Width 1140px)', 'redux-framework-demo' ),
                 ),
-                'actual'  => '2'
+                'default'  => 'max',
             ),
             array(
                 'id'       => 'sections-gallery-view',
@@ -3481,8 +3481,7 @@
                 //Must provide key => value pairs for select options
                 'options'  => array(
                     'grid' => 'Grid',
-                    'slider' => 'Slider',
-                    
+                    'slider' => 'Slider',                    
                 ),
                 'default'  => 'grid'
             ), 
