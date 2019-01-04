@@ -12,7 +12,8 @@ echo do_shortcode( $before_loop );
 <?php $page_layout = get_post_meta( get_the_ID(), '_mosacademy_page_layout', true )? get_post_meta( get_the_ID(), '_mosacademy_page_layout', true ) : $mosacademy_options['general-page-layout']; ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
-					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>					
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php do_action( 'action_before_page_content_area', $page_details ); ?>					
 				<?php if (has_post_thumbnail()):?>
 						<div class="blog-img-container">
 							<?php if($page_layout != 'ns') : ?>
