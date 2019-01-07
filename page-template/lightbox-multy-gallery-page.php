@@ -33,6 +33,8 @@ do_action( 'action_avobe_gallery_page', $page_details );
 			<?php endif; ?>
 
 				<?php if ( have_posts() ) :?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php do_action( 'action_before_page_content_area', $page_details ); ?>	
 					<?php 
 					$gallery_location = get_post_meta( get_the_ID(), '_mosacademy_multy_gallery_location', true );
 					$gallery_layout = get_post_meta( get_the_ID(), '_mosacademy_multy_gallery_layout', true );
@@ -130,6 +132,8 @@ do_action( 'action_avobe_gallery_page', $page_details );
 						<?php endforeach; ?>
 					<?php endif; ?>
 					<?php if ($gallery_location == "before") get_template_part( 'content', 'page' ); ?>
+					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
+					</div>	
 				
 				<?php endif; ?>
 			<?php if($page_layout != 'ns') : ?>

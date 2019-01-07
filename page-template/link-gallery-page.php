@@ -38,7 +38,9 @@ do_action( 'action_avobe_page', $page_details );
 			<div class="row">
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
-				<?php if ( have_posts() ) :?>	
+				<?php if ( have_posts() ) :?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php do_action( 'action_before_page_content_area', $page_details ); ?>	
 					<?php 
 					$gallery_location = get_post_meta( get_the_ID(), '_mosacademy_link_gallery_location', true );
 					$gallery_images = get_post_meta( get_the_ID(), '_mosacademy_link_gallery_details_group', true );
@@ -81,6 +83,8 @@ do_action( 'action_avobe_page', $page_details );
 					
 					</div>				
 					<?php if ($gallery_location == "before") get_template_part( 'content', 'page' ); ?>
+					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
+					</div>	
 				<?php endif; ?>
 			<?php if($page_layout != 'ns') : ?>
 				</div>

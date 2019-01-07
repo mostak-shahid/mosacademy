@@ -28,6 +28,8 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 			<div class="<?php if($page_layout != 'ns') echo 'row'; else echo 'no-row' ?>">
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 				<?php if ( have_posts() ) :?>					
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php do_action( 'action_before_page_content_area', $page_details ); ?>						
 					<?php if ($gallery_location == "after") get_template_part( 'content', 'page' ); ?>
 					<?php 
 					$tab_group_details = get_post_meta( get_the_ID(), '_mosacademy_tab_group_details_group', true ); 
@@ -64,6 +66,8 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 						<?php endforeach; ?>
 					<?php endif ?>
 					<?php if ($gallery_location == "before") get_template_part( 'content', 'page' ); ?>
+					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
+					</div>
 				<?php endif; ?>
 
 				</div>
