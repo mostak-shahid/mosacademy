@@ -10,9 +10,9 @@ $sections = ( @$all_sections["Enabled"] ) ? @$all_sections["Enabled"] : $mosacad
 ?>
 <?php 
 get_header(); 
-echo do_shortcode( $avobe_page );
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
 do_action( 'action_avobe_page', $page_details ); 
+echo do_shortcode( $avobe_page );
 ?>
 
 <?php $page_layout = get_post_meta( get_the_ID(), '_mosacademy_page_layout', true )? get_post_meta( get_the_ID(), '_mosacademy_page_layout', true ) : $mosacademy_options['general-page-layout']; ?>
@@ -30,8 +30,12 @@ do_action( 'action_avobe_page', $page_details );
 			<div class="row">
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
-				<?php if ( have_posts() ) :?>					
+				<?php if ( have_posts() ) :?>	
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php do_action( 'action_before_page_content_area', $page_details ); ?>					
 					<?php get_template_part( 'content', 'page' ) ?>
+					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
+					</div>
 				<?php endif; ?>
 			<?php if($page_layout != 'ns') : ?>
 				</div>

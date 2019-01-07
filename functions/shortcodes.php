@@ -291,6 +291,9 @@ function feature_image_func( $atts = array(), $content = '' ) {
 		if ($atts['width'] AND $atts['height']) :
 			if ($width > $atts['width'] AND $height > $atts['height']) $img = aq_resize(get_the_post_thumbnail_url(), $atts['width'], $atts['height'], true);
 			else $img = get_the_post_thumbnail_url();
+		elseif ($atts['width']) :
+			if ($width > $atts['width']) $img = aq_resize(get_the_post_thumbnail_url(), $atts['width']);
+			else $img = get_the_post_thumbnail_url();
 		else : 
 			$img = get_the_post_thumbnail_url();
 		endif;
