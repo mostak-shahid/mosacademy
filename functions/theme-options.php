@@ -275,6 +275,16 @@
                 ),
                 'default'  => 'title'
             ), 
+            array(
+                'id'             => 'logo-margin',
+                'type'           => 'spacing',
+                'mode'           => 'margin',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#main-header .logo img' ),
+                'title'          => __( 'Logo Spacing', 'redux-framework-demo' ),
+            ),
         )
     ) );
     //Main Settings
@@ -617,18 +627,6 @@
                 'type'     => 'multi_text',
                 'title'    => __( '2nd Section Elements', 'redux-framework-demo' ),
             ),
-
-            array(
-                'id'       => 'blog-layout-settings',
-                'type'     => 'sorter',
-                'title'    => 'Archive Page Layout',
-                'subtitle' => 'You can add multiple drop areas or columns.',
-                'compiler' => 'true',
-                'options'  => array(
-                    'Enabled'  => array(),
-                    'Disabled' => $page_sections
-                ),
-            ),
             array(
                 'id'       => 'single-blog-title-option',
                 'type'     => 'radio',
@@ -958,22 +956,20 @@
                 'id'       => 'misc-plugins-check',
                 'type'     => 'checkbox',
                 'title'    => __( 'Multi Checkbox Option', 'redux-framework-demo' ),
-                'desc'     => __( 'Please check the name of plugin you like to load for your website, by default Fancybox, jPages, Lazy Load, Owl Carousel, and Slim Scroll already intr', 'redux-framework-demo' ),
+                'desc'     => __( 'Please check the name of plugin you like to load for your website..', 'redux-framework-demo' ),
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
+                    'fancybox' => 'Fancybox',
                     'isotope' => 'Isotope',
-                    //'counterup' => 'Counterup',
-                    //'image-scroll' => 'Image Scroll',
-                    //'numinate' => 'Numinate',
-                    //'typed.js' => 'Typed.js',
-                    //'fancybox' => 'Fancybox',
-                    //'jPages' => 'JPages',
-                    //'lazy' => 'Lazy Load',
-                    //'owlcarousel' => 'Owl Carousel',
-                    //'slimscroll' => 'Slim Scroll',
+                    'jPages' => 'JPages',
+                    'counterup' => 'Counterup',
+                    'lazy' => 'Lazy Load',
+                    'image-scroll' => 'Image Scroll',
+                    'numinate' => 'Numinate',
+                    'owlcarousel' => 'Owl Carousel',
+                    'slimscroll' => 'Slim Scroll',
+                    'typed.js' => 'Typed.js',
                 ),
-                'default'  => array(
-                )
             ),
         )
     ) );
@@ -3472,7 +3468,7 @@
                     'max'   => __( 'Max Size (Width 1920px)', 'redux-framework-demo' ),
                     'container'     => __( 'Container Size (Width 1140px)', 'redux-framework-demo' ),
                 ),
-                'default'  => 'max',
+                'actual'  => '2'
             ),
             array(
                 'id'       => 'sections-gallery-view',
@@ -3481,7 +3477,8 @@
                 //Must provide key => value pairs for select options
                 'options'  => array(
                     'grid' => 'Grid',
-                    'slider' => 'Slider',                    
+                    'slider' => 'Slider',
+                    
                 ),
                 'default'  => 'grid'
             ), 
