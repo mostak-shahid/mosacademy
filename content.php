@@ -50,7 +50,7 @@ do_action( 'action_before_blog_page_loop', $page_details );
 			</div>
 			<?php endif ?>
 
-			<?php if ($grid > 1 AND $n%$grid == 0) echo '</div><div class="row blogs">'; $n++;?>
+			<?php if ($grid > 1 AND $n%$grid == 0) echo '</div></div><div class="blogs"><div class="row">'; $n++;?>
 		<?php endwhile;?>
 			<?php if ($colsize != 12) : ?>
 				</div>
