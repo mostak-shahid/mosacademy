@@ -3,6 +3,7 @@ function mosacademy_metaboxes() {
     global $container_list, $section_list, $mosacademy_options;
     $sections_enable = $mosacademy_options['page-layout-settings']['Enabled'];
     $sections_disable = $mosacademy_options['page-layout-settings']['Disabled'];
+
     $layout = ( $mosacademy_options['general-page-layout'] ) ? $mosacademy_options['general-page-layout'] : 'ns';    
     $sidebar = array();
     $sidebars = array();
@@ -184,7 +185,7 @@ function mosacademy_metaboxes() {
         'name'    => 'Page Row Layout',
         'id'      => $prefix . 'page_section_layout',
         'type'    => 'tb_sorter',
-        //'desc'      => '<a href="'.admin_url( 'admin-ajax.php' ).'?action=reset_prl&post_id='.$post_id.'">Click here</a> to reset "Page Row Layout"',
+        'desc'      => '<a href="'.admin_url( 'admin-ajax.php' ).'?action=reset_prl&post_id='.$_GET['post'].'">Click here</a> to reset "Page Row Layout"',
         'options' => array(
             /*'enabled'  => array(
                 'highlights' => 'Highlights',

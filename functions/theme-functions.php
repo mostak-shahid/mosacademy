@@ -253,7 +253,7 @@ function mos_admin_notice_csv () {
     <?php endif;
 
 }
-add_action( 'admin_notices', 'mos_admin_notice_csv' );
+//add_action( 'admin_notices', 'mos_admin_notice_csv' );
 
 function mos_split_sentences($data) {
     $split_sentences = '%(?#!php/i split_sentences Rev:20160820_1800)
