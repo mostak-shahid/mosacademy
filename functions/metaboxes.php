@@ -6,7 +6,9 @@ function mosacademy_metaboxes() {
 
     $layout = ( $mosacademy_options['general-page-layout'] ) ? $mosacademy_options['general-page-layout'] : 'ns';    
     $sidebar = array();
-    $sidebars = array();
+    $sidebars = array(
+        'page' => 'Sidebar for Page',
+    );
     $sidebar = @$mosacademy_options['sections-sidebar-custom'];
     if ($sidebar) {
         foreach ($sidebar as $value) {
