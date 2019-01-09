@@ -55,7 +55,7 @@ function mos_breadcrumbs(){
 			}
 			echo $before . sprintf($text['tax'], single_cat_title('', false)) . $after;
 		
-		}elseif ( is_search() ) {
+		} elseif ( is_search() ) {
 			echo $before . sprintf($text['search'], get_search_query()) . $after;
 		} elseif ( is_day() ) {
 			echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
@@ -73,12 +73,14 @@ function mos_breadcrumbs(){
 				printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
 				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 			} else {
-				$cat = get_the_category(); $cat = $cat[0];
-				$cats = get_category_parents($cat, TRUE, $delimiter);
-				if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
-				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-				echo $cats;
+				// $cat = get_the_category(); $cat = $cat[0];
+				// $cats = get_category_parents($cat, TRUE, $delimiter);
+				// if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
+				// $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
+				// $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
+				// echo $cats;
+				$page_for_posts = get_option( 'page_for_posts' );
+				echo '<li><a href="'.get_the_permalink( $page_for_posts ).'">' . get_the_title( $page_for_posts ) . '</a></li>';
 				if ($showCurrent == 1) echo $before . get_the_title() . $after;
 			}
 		} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
