@@ -945,7 +945,7 @@
             array(
                 'id'       => 'misc-plugins-check',
                 'type'     => 'checkbox',
-                'title'    => __( 'Multi Checkbox Option', 'redux-framework-demo' ),
+                'title'    => __( 'Plugin List', 'redux-framework-demo' ),
                 'desc'     => __( 'Please check the name of plugin you like to load for your website..', 'redux-framework-demo' ),
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
@@ -960,6 +960,13 @@
                     'slimscroll' => 'Slim Scroll',
                     'typed.js' => 'Typed.js',
                 ),
+                'default' => array(
+                    'fancybox' => 1,
+                    'jPages' => 1,
+                    'lazy' => 1,
+                    'owlcarousel' => 1,
+                    'slimscroll' => 1,
+                )
             ),
         )
     ) );
