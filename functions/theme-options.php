@@ -376,6 +376,7 @@
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
                     'font-awesome' => 'Font Awesome',
+                    'dosis' => 'Dosis',
                     'oldstandard' => 'Old Standard TT',
                     'opensans' => 'OpenSans',
                     'poppins' => 'Poppins',
@@ -388,6 +389,7 @@
                 //See how std has changed? you also don't need to specify opts that are 0.
                 'default'  => array(
                     'font-awesome' => '1',
+                    'dosis' => '0',
                     'oldstandard' => '0',
                     'opensans' => '0',
                     'poppins' => '0',

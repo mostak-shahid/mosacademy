@@ -6,6 +6,10 @@ function mosacademy_enqueue_scripts() {
 		wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 		wp_enqueue_style( 'font-awesome.min' );
 	}
+	if ($mosacademy_options["typography-fonts"]["dosis"]) {
+		wp_register_style( 'dosis.min', get_template_directory_uri() . '/fonts/Dosis/css/dosis.min.css' );
+		wp_enqueue_style( 'dosis.min' );
+	}
 	if ($mosacademy_options["typography-fonts"]["oldstandard"]) {
 		wp_register_style( 'oldstandard.min', get_template_directory_uri() . '/fonts/OldStandard/css/oldstandard.min.css' );
 		wp_enqueue_style( 'oldstandard.min' );
