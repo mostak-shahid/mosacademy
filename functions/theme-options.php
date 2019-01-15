@@ -263,7 +263,7 @@
                 'title'    => __( 'Logo', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 'subtitle' => __( 'Upload your logo here.', 'redux-framework-demo' ),
-                'default'  => array( 'url' => get_stylesheet_directory_uri().'/images/logo.png' ),
+                'default'  => array( 'url' => get_template_directory_uri().'/images/logo.png' ),
             ),
             array(
                 'id'       => 'logo-option',
