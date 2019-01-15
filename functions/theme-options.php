@@ -274,17 +274,7 @@
                     'title' => 'Title and Description'
                 ),
                 'default'  => 'title'
-            ), 
-            array(
-                'id'             => 'logo-margin',
-                'type'           => 'spacing',
-                'mode'           => 'margin',
-                'all'            => false,
-                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
-                'units_extended' => 'true',
-                'output'         => array( '#main-header .logo img' ),
-                'title'          => __( 'Logo Spacing', 'redux-framework-demo' ),
-            ),
+            )
         )
     ) );
     //Main Settings
