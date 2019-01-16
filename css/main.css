@@ -485,27 +485,6 @@ img.alignright {
 	margin-top: 0;
 }
 
-
-.testimonial-content .img-section {
-	position: relative;
-}
-.testimonial-content .img-section .video-icon {
-	position: absolute;
-    content: '';
-    z-index: 1;
-    width: 84px;
-    height: 84px;
-    top: 50%;
-    right: 0;
-    left: 0;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    margin: 0 auto;
-    cursor: pointer;
-}
 .owl-nav {
 	width: 100%;
 }
