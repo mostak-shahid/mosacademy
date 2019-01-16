@@ -17,6 +17,7 @@ function mosacademy_metaboxes() {
         }
     }
 
+
     $forms = get_formadable_form_list();
     $pages_id = get_all_pages_list_with_id ();
     $pages_link = get_all_pages_list_with_link ();
@@ -25,7 +26,7 @@ function mosacademy_metaboxes() {
      $page_settings = new_cmb2_box(array(
         'id' => $prefix . 'page_settings',
         'title' => __('Page Settings', 'cmb2'),
-        'object_types' => array('page', 'post', 'testimonial', 'faq'),
+        'object_types' => array('page', 'post'),
     ));   
 
     $page_settings->add_field( array(
