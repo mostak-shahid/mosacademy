@@ -247,10 +247,10 @@
     // -> Add options here
 
     
-    //Main Settings
+    //Logo Settings
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Main Settings', 'redux-framework-demo' ),
-        'id'               => 'main-settings',
+        'title'            => __( 'Logo Settings', 'redux-framework-demo' ),
+        'id'               => 'logo-settings',
         'desc' => "<div class='redux-info-field'><h3>".__('Welcome to Mos Academy Options', 'redux-framework-demo')."</h3>
         <p>".__('This theme was developed by', 'redux-framework-demo')." <a href=\"https://github.com/mostak-shahid/\" target=\"_blank\">Md. Mostak Shahid</a></p></div>",
         'customizer_width' => '400px',
@@ -277,7 +277,7 @@
             )
         )
     ) );
-    //Main Settings
+    //Logo Settings
     //Basic Styling
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Basic Styling', 'redux-framework-demo' ),
@@ -1541,7 +1541,207 @@
 
         )
     ) );
+   
+    //Sidebar Section
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Sidebar Section', 'redux-framework-demo' ),
+        'id'               => 'sections-sidebar',
+        'subsection'       => true,
+        'desc'             => '',
+        'customizer_width' => '450px',
+        'icon'             => 'el el-move',
+        'fields'     => array( 
+            array(
+                'id'       => 'sections-sidebar-custom',
+                'type'     => 'multi_text',
+                'title'    => __( 'Add Sidebar', 'redux-framework-demo' ),
+            ),            
+            array(
+                'id'       => 'sections-sidebar-background-type',
+                'type'     => 'button_set',
+                'title'    => __( 'Sidebar Background Type', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => 'Gradient',
+                    '2' => 'Solid Color/Image',
+                    '3' => 'RGBA Color'
+                ),
+                'default'  => '2',
+            ),
 
+            array(
+                'id'     => 'sections-sidebar-background-start',
+                'type'   => 'section',
+                'indent' => true, // Indent all options below until the next 'section' option is set.
+            ),
+            array(
+                'id'       => 'sections-sidebar-background-gradient',
+                'type'     => 'color_gradient',
+                'title'    => __( 'Sidebar Background', 'redux-framework-demo' ),
+                'validate' => 'color',              
+                'required' => array( 'sections-sidebar-background-type', '=', '1' ),
+            ),
+            array(
+                'id'       => 'sections-sidebar-background-solid',
+                'type'     => 'background',                
+                'title'    => __( 'Sidebar Section Background', 'redux-framework-demo' ),
+                'required' => array( 'sections-sidebar-background-type', '=', '2' ),
+            ),
+            array(
+                'id'       => 'sections-sidebar-background-rgba',
+                'type'     => 'color_rgba',
+                'title'    => __( 'Sidebar Section Background', 'redux-framework-demo' ),
+                'validate' => 'colorrgba',
+                'required' => array( 'sections-sidebar-background-type', '=', '3' ),
+            ),
+            array(
+                'id'     => 'sections-sidebar-background-end',
+                'type'   => 'section',
+                'indent' => false, // Indent all options below until the next 'section' option is set.
+            ),
+        )
+    ) );  
+    //Widgets Section
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Widgets Section', 'redux-framework-demo' ),
+        'id'               => 'sections-widgets',
+        'subsection'       => true,
+        'desc'             => '',
+        'customizer_width' => '450px',
+        'icon'             => 'el el-move',
+        'fields'     => array(  
+            array(
+                'id'       => 'sections-widgets-text-layout',
+                'type'     => 'radio',
+                'title'    => __( 'Inner Content Width', 'redux-framework-demo' ),
+                'options'  => $container_list,
+                'default'  => 'container'
+            ),
+            array(
+                'id'             => 'sections-widgets-padding',
+                'type'           => 'spacing',
+                'mode'           => 'padding',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#section-widgets .content-wrap' ),
+                'title'          => __( 'Section Padding', 'redux-framework-demo' ),
+            ), 
+            array(
+                'id'             => 'sections-widgets-margin',
+                'type'           => 'spacing',
+                'mode'           => 'margin',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#section-widgets .content-wrap' ),
+                'title'          => __( 'Section Margin', 'redux-framework-demo' ),
+            ),       
+            array(
+                'id'       => 'sections-widgets-border',
+                'type'     => 'border',
+                'title'    => __( 'Widgets Section Border', 'redux-framework-demo' ),
+                'output'   => array( '#section-widgets .content-wrap' ),
+                'all'      => false,
+            ),
+            array(
+                'id'       => 'sections-widgets-title',
+                'type'     => 'text',
+                'title'    => __( 'Widgets Section Title', 'redux-framework-demo' ),
+                'desc'     => 'You can use span tag ( &lt;span&gt;&lt;/span&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;br&gt;&lt;/br&gt;) here.',
+                'validate'     => 'html_custom',
+                'allowed_html' => array(
+                    'br'     => array(),
+                    'em'     => array(),
+                    'strong' => array(),
+                    'span' => array(
+                        'id' => array(),
+                        'class' => array()
+                    )
+                )
+            ),
+            array(
+                'id'      => 'sections-widgets-content',
+                'type'    => 'editor',
+                'title'   => __( 'Section Content', 'redux-framework-demo' ),
+                'args'    => array(
+                    'wpautop'       => false,
+                    'media_buttons' => false,
+                    'textarea_rows' => 5,
+                    //'tabindex' => 1,
+                    //'editor_css' => '',
+                    'teeny'         => false,
+                    //'tinymce' => array(),
+                    //'quicktags'     => false,
+                )
+            ),
+            array(
+                'id'       => 'sections-widgets-layout',
+                'type'     => 'image_select',
+                'title'    => __( 'Widgets Layout', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => array(
+                        'alt' => 'Full Width',
+                        'img' => ReduxFramework::$_url . 'assets/img/1-col-portfolio.png'
+                    ),
+                    '2' => array(
+                        'alt' => 'Full Width',
+                        'img' => ReduxFramework::$_url . 'assets/img/2-col-portfolio.png'
+                    ),
+                    '3' => array(
+                        'alt' => 'Left Sidebar',
+                        'img' => ReduxFramework::$_url . 'assets/img/3-col-portfolio.png'
+                    ),
+                    '4' => array(
+                        'alt' => 'Right Sidebar',
+                        'img' => ReduxFramework::$_url . 'assets/img/4-col-portfolio.png'
+                    )
+                ),
+                'default'  => '2col'
+            ), 
+            array(
+                'id'       => 'sections-widgets-background-type',
+                'type'     => 'button_set',
+                'title'    => __( 'Widgets Background Type', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => 'Gradient',
+                    '2' => 'Solid Color/Image',
+                    '3' => 'RGBA Color'
+                ),
+                'default'  => '2',
+            ),
+
+            array(
+                'id'     => 'sections-widgets-background-start',
+                'type'   => 'section',
+                'indent' => true, // Indent all options below until the next 'section' option is set.
+            ),
+            array(
+                'id'       => 'sections-widgets-background-gradient',
+                'type'     => 'color_gradient',
+                'title'    => __( 'Widgets Background', 'redux-framework-demo' ),
+                'validate' => 'color',              
+                'required' => array( 'sections-widgets-background-type', '=', '1' ),
+            ),
+            array(
+                'id'       => 'sections-widgets-background-solid',
+                'type'     => 'background',                
+                'title'    => __( 'Widgets Section Background', 'redux-framework-demo' ),
+                'required' => array( 'sections-widgets-background-type', '=', '2' ),
+            ),
+            array(
+                'id'       => 'sections-widgets-background-rgba',
+                'type'     => 'color_rgba',
+                'title'    => __( 'Widgets Section Background', 'redux-framework-demo' ),
+                'validate' => 'colorrgba',
+                'required' => array( 'sections-widgets-background-type', '=', '3' ),
+            ),
+            array(
+                'id'     => 'sections-widgets-background-end',
+                'type'   => 'section',
+                'indent' => false, // Indent all options below until the next 'section' option is set.
+            ),
+        )
+    ) ); 
     //Footer Section
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Footer Section', 'redux-framework-demo' ),
@@ -1660,8 +1860,7 @@
                 'indent' => false, // Indent all options below until the next 'section' option is set.
             ),
         )
-    ) );   
-    //Header Section  
+    ) );    
     //Page Title Section
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Page Title Section', 'redux-framework-demo' ),
@@ -3557,207 +3756,7 @@
                 'indent' => false, // Indent all options below until the next 'section' option is set.
             ),
         )
-    ) );     
-    //Sidebar Section
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Sidebar Section', 'redux-framework-demo' ),
-        'id'               => 'sections-sidebar',
-        'subsection'       => true,
-        'desc'             => '',
-        'customizer_width' => '450px',
-        'icon'             => 'el el-move',
-        'fields'     => array( 
-            array(
-                'id'       => 'sections-sidebar-custom',
-                'type'     => 'multi_text',
-                'title'    => __( 'Add Sidebar', 'redux-framework-demo' ),
-            ),            
-            array(
-                'id'       => 'sections-sidebar-background-type',
-                'type'     => 'button_set',
-                'title'    => __( 'Sidebar Background Type', 'redux-framework-demo' ),
-                'options'  => array(
-                    '1' => 'Gradient',
-                    '2' => 'Solid Color/Image',
-                    '3' => 'RGBA Color'
-                ),
-                'default'  => '2',
-            ),
-
-            array(
-                'id'     => 'sections-sidebar-background-start',
-                'type'   => 'section',
-                'indent' => true, // Indent all options below until the next 'section' option is set.
-            ),
-            array(
-                'id'       => 'sections-sidebar-background-gradient',
-                'type'     => 'color_gradient',
-                'title'    => __( 'Sidebar Background', 'redux-framework-demo' ),
-                'validate' => 'color',              
-                'required' => array( 'sections-sidebar-background-type', '=', '1' ),
-            ),
-            array(
-                'id'       => 'sections-sidebar-background-solid',
-                'type'     => 'background',                
-                'title'    => __( 'Sidebar Section Background', 'redux-framework-demo' ),
-                'required' => array( 'sections-sidebar-background-type', '=', '2' ),
-            ),
-            array(
-                'id'       => 'sections-sidebar-background-rgba',
-                'type'     => 'color_rgba',
-                'title'    => __( 'Sidebar Section Background', 'redux-framework-demo' ),
-                'validate' => 'colorrgba',
-                'required' => array( 'sections-sidebar-background-type', '=', '3' ),
-            ),
-            array(
-                'id'     => 'sections-sidebar-background-end',
-                'type'   => 'section',
-                'indent' => false, // Indent all options below until the next 'section' option is set.
-            ),
-        )
-    ) );  
-    //Widgets Section
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Widgets Section', 'redux-framework-demo' ),
-        'id'               => 'sections-widgets',
-        'subsection'       => true,
-        'desc'             => '',
-        'customizer_width' => '450px',
-        'icon'             => 'el el-move',
-        'fields'     => array(  
-            array(
-                'id'       => 'sections-widgets-text-layout',
-                'type'     => 'radio',
-                'title'    => __( 'Inner Content Width', 'redux-framework-demo' ),
-                'options'  => $container_list,
-                'default'  => 'container'
-            ),
-            array(
-                'id'             => 'sections-widgets-padding',
-                'type'           => 'spacing',
-                'mode'           => 'padding',
-                'all'            => false,
-                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
-                'units_extended' => 'true',
-                'output'         => array( '#section-widgets .content-wrap' ),
-                'title'          => __( 'Section Padding', 'redux-framework-demo' ),
-            ), 
-            array(
-                'id'             => 'sections-widgets-margin',
-                'type'           => 'spacing',
-                'mode'           => 'margin',
-                'all'            => false,
-                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
-                'units_extended' => 'true',
-                'output'         => array( '#section-widgets .content-wrap' ),
-                'title'          => __( 'Section Margin', 'redux-framework-demo' ),
-            ),       
-            array(
-                'id'       => 'sections-widgets-border',
-                'type'     => 'border',
-                'title'    => __( 'Widgets Section Border', 'redux-framework-demo' ),
-                'output'   => array( '#section-widgets .content-wrap' ),
-                'all'      => false,
-            ),
-            array(
-                'id'       => 'sections-widgets-title',
-                'type'     => 'text',
-                'title'    => __( 'Widgets Section Title', 'redux-framework-demo' ),
-                'desc'     => 'You can use span tag ( &lt;span&gt;&lt;/span&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;br&gt;&lt;/br&gt;) here.',
-                'validate'     => 'html_custom',
-                'allowed_html' => array(
-                    'br'     => array(),
-                    'em'     => array(),
-                    'strong' => array(),
-                    'span' => array(
-                        'id' => array(),
-                        'class' => array()
-                    )
-                )
-            ),
-            array(
-                'id'      => 'sections-widgets-content',
-                'type'    => 'editor',
-                'title'   => __( 'Section Content', 'redux-framework-demo' ),
-                'args'    => array(
-                    'wpautop'       => false,
-                    'media_buttons' => false,
-                    'textarea_rows' => 5,
-                    //'tabindex' => 1,
-                    //'editor_css' => '',
-                    'teeny'         => false,
-                    //'tinymce' => array(),
-                    //'quicktags'     => false,
-                )
-            ),
-            array(
-                'id'       => 'sections-widgets-layout',
-                'type'     => 'image_select',
-                'title'    => __( 'Widgets Layout', 'redux-framework-demo' ),
-                'options'  => array(
-                    '1' => array(
-                        'alt' => 'Full Width',
-                        'img' => ReduxFramework::$_url . 'assets/img/1-col-portfolio.png'
-                    ),
-                    '2' => array(
-                        'alt' => 'Full Width',
-                        'img' => ReduxFramework::$_url . 'assets/img/2-col-portfolio.png'
-                    ),
-                    '3' => array(
-                        'alt' => 'Left Sidebar',
-                        'img' => ReduxFramework::$_url . 'assets/img/3-col-portfolio.png'
-                    ),
-                    '4' => array(
-                        'alt' => 'Right Sidebar',
-                        'img' => ReduxFramework::$_url . 'assets/img/4-col-portfolio.png'
-                    )
-                ),
-                'default'  => '2col'
-            ), 
-            array(
-                'id'       => 'sections-widgets-background-type',
-                'type'     => 'button_set',
-                'title'    => __( 'Widgets Background Type', 'redux-framework-demo' ),
-                'options'  => array(
-                    '1' => 'Gradient',
-                    '2' => 'Solid Color/Image',
-                    '3' => 'RGBA Color'
-                ),
-                'default'  => '2',
-            ),
-
-            array(
-                'id'     => 'sections-widgets-background-start',
-                'type'   => 'section',
-                'indent' => true, // Indent all options below until the next 'section' option is set.
-            ),
-            array(
-                'id'       => 'sections-widgets-background-gradient',
-                'type'     => 'color_gradient',
-                'title'    => __( 'Widgets Background', 'redux-framework-demo' ),
-                'validate' => 'color',              
-                'required' => array( 'sections-widgets-background-type', '=', '1' ),
-            ),
-            array(
-                'id'       => 'sections-widgets-background-solid',
-                'type'     => 'background',                
-                'title'    => __( 'Widgets Section Background', 'redux-framework-demo' ),
-                'required' => array( 'sections-widgets-background-type', '=', '2' ),
-            ),
-            array(
-                'id'       => 'sections-widgets-background-rgba',
-                'type'     => 'color_rgba',
-                'title'    => __( 'Widgets Section Background', 'redux-framework-demo' ),
-                'validate' => 'colorrgba',
-                'required' => array( 'sections-widgets-background-type', '=', '3' ),
-            ),
-            array(
-                'id'     => 'sections-widgets-background-end',
-                'type'   => 'section',
-                'indent' => false, // Indent all options below until the next 'section' option is set.
-            ),
-        )
-    ) );    	
+    ) );     	
 
 	/*
     if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {
