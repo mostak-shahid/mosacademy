@@ -196,6 +196,25 @@ function text_layout_manager () {
         add_action( 'action_before_gallery', 'start_container', 10, 1 );
         add_action( 'action_after_gallery', 'end_div', 10, 1 );
     }
+    //New Gallery
+    if ($mosacademy_options['sections-newgallery-text-layout'] == 'container-fliud-spacing') {
+        add_action( 'action_before_newgallery', 'start_container_fluid', 10, 1 );
+        add_action( 'action_before_newgallery', 'start_row', 11, 1 );
+        add_action( 'action_before_newgallery', 'start_container_col_10', 12, 1 );
+
+        add_action( 'action_after_newgallery', 'end_div', 10, 1 );
+        add_action( 'action_after_newgallery', 'end_div', 11, 1 );
+        add_action( 'action_after_newgallery', 'end_div', 12, 1 );   
+    } elseif ($mosacademy_options['sections-newgallery-text-layout'] == 'container-fliud') {
+        add_action( 'action_before_newgallery', 'start_container_fluid', 10, 1 );
+        add_action( 'action_after_newgallery', 'end_div', 10, 1 );
+    } elseif ($mosacademy_options['sections-newgallery-text-layout'] == 'container-full') {
+        add_action( 'action_before_newgallery', 'start_full_width', 10, 1 );
+        add_action( 'action_after_newgallery', 'end_div', 10, 1 );
+    } else {
+        add_action( 'action_before_newgallery', 'start_container', 10, 1 );
+        add_action( 'action_after_newgallery', 'end_div', 10, 1 );
+    }
     //Widgets
     if ($mosacademy_options['sections-widgets-text-layout'] == 'container-fliud-spacing') {
         add_action( 'action_before_widgets', 'start_container_fluid', 10, 1 );

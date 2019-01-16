@@ -199,6 +199,14 @@ body {<?php
 <?php elseif ($mosacademy_options['sections-gallery-background-type'] == 3 AND $mosacademy_options['sections-gallery-background-rgba']['rgba']) : ?>
 	<?php rgba_manager($mosacademy_options['sections-gallery-background-rgba'])?>
 <?php endif; ?>}
+#section-newgallery {
+<?php if ($mosacademy_options['sections-newgallery-background-type'] == 1) : ?>
+	<?php gradient_manager($mosacademy_options['sections-newgallery-background-gradient'])?>
+<?php elseif ($mosacademy_options['sections-newgallery-background-type'] == 2) : ?>
+	<?php background_manager($mosacademy_options['sections-newgallery-background-solid'])?>
+<?php elseif ($mosacademy_options['sections-newgallery-background-type'] == 3 AND $mosacademy_options['sections-newgallery-background-rgba']['rgba']) : ?>
+	<?php rgba_manager($mosacademy_options['sections-newgallery-background-rgba'])?>
+<?php endif; ?>}
 .sidebar {
 <?php if ($mosacademy_options['sections-sidebar-background-type'] == 1) : ?>
 	<?php gradient_manager($mosacademy_options['sections-sidebar-background-gradient'])?>

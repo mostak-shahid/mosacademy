@@ -3550,6 +3550,193 @@
                 'indent' => false, // Indent all options below until the next 'section' option is set.
             ),
         )
+    ) );        
+    //New Gallery Section
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'New Gallery', 'redux-framework-demo' ),
+        'id'               => 'sections-newgallery',
+        'desc'             => '',
+        'customizer_width' => '450px',
+        'subsection' => true,
+        'icon'             => 'el el-move',
+        'fields'     => array(
+            array(
+                'id'       => 'sections-newgallery-text-layout',
+                'type'     => 'radio',
+                'title'    => __( 'Inner Content Width', 'redux-framework-demo' ),
+                'options'  => $container_list,
+                'default'  => 'container'
+            ),
+            array(
+                'id'             => 'sections-newgallery-padding',
+                'type'           => 'spacing',
+                'mode'           => 'padding',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#section-newgallery .content-wrap' ),
+                'title'          => __( 'Section Padding', 'redux-framework-demo' ),
+            ),  
+            array(
+                'id'             => 'sections-newgallery-margin',
+                'type'           => 'spacing',
+                'mode'           => 'margin',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#section-newgallery .content-wrap' ),
+                'title'          => __( 'Section Margin', 'redux-framework-demo' ),
+            ),        
+            array(
+                'id'       => 'sections-newgallery-border',
+                'type'     => 'border',
+                'title'    => __( 'New Gallery Section Border', 'redux-framework-demo' ),
+                'output'   => array( '#section-newgallery .content-wrap' ),
+                'all'      => false,
+            ),
+            array(
+                'id'       => 'sections-newgallery-animation',
+                'type'     => 'select',
+                'title'    => __( 'Animation Style for this section', 'redux-framework-demo' ),
+                'options'  => $animations,
+                'validate' => 'no_html',
+            ),
+            array(
+                'id'       => 'sections-newgallery-animation-delay',
+                'type'     => 'text',
+                'title'    => __( 'Animation Delay for this section', 'redux-framework-demo' ),
+                'subtitle' => __( 'This must be numeric.', 'redux-framework-demo' ),
+                'desc'     => __( 'Unit will be second.', 'redux-framework-demo' ),
+                'validate' => 'numeric',
+                'default'  => '0',
+            ),
+            array(
+                'id'       => 'sections-newgallery-title',
+                'type'     => 'text',
+                'title'    => __( 'New Gallery Section Title', 'redux-framework-demo' ),
+                'desc'     => 'You can use span tag ( &lt;span&gt;&lt;/span&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;br /&gt;) here.',
+                'validate'     => 'html_custom',
+                'allowed_html' => array(
+                    'br'     => array(),
+                    'em'     => array(),
+                    'strong' => array(),
+                    
+                    'span' => array(
+                        'id' => array(),
+                        'class' => array()
+                    )
+                )
+            ),
+            array(
+                'id'      => 'sections-newgallery-content',
+                'type'    => 'editor',
+                'title'   => __( 'Section Content', 'redux-framework-demo' ),
+                'args'    => array(
+                    'wpautop'       => false,
+                    'media_buttons' => false,
+                    'textarea_rows' => 5,
+                    //'tabindex' => 1,
+                    //'editor_css' => '',
+                    'teeny'         => false,
+                    //'tinymce' => array(),
+                    //'quicktags'     => false,
+                )
+            ),
+            array(
+                'id'       => 'sections-newgallery-zoom',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Zoom Image', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' => get_template_directory_uri() . '/images/zoom.png' ),
+            ),
+            array(
+                'id'       => 'sections-newgallery-gallery',
+                'type'     => 'gallery',
+                'title'    => __( 'Add/Edit Gallery', 'redux-framework-demo' ),
+            ),
+            array(
+                'id'       => 'sections-newgallery-large-size',
+                'type'     => 'select',
+                'title'    => __( 'Large Image Size', 'redux-framework-demo' ),
+                'desc'     => __( 'Select an option.', 'redux-framework-demo' ),
+                //Must provide key => value pairs for select options
+                'options'  => array(
+                    'actual' => __( 'Actual Size', 'redux-framework-demo' ),
+                    'max'   => __( 'Max Size (Width 1920px)', 'redux-framework-demo' ),
+                    'container'     => __( 'Container Size (Width 1140px)', 'redux-framework-demo' ),
+                ),
+                'default'  => 'max',
+            ),
+            array(
+                'id'       => 'sections-newgallery-gap',
+                'type'     => 'checkbox',
+                'title'    => __( 'Grid Spacing', 'redux-framework-demo' ),                
+                'options'  => array(
+                    '1' => 'Yes I like to use gap between grids.',
+                ),
+            ), 
+            array(
+                'id'      => 'sections-newgallery-layout',
+                'type'    => 'select_image',
+                'title'   => __( 'Gallery Layout', 'redux-framework-demo' ),
+                'options' => array(
+                    array(
+                        'alt' => 'Layout 2',
+                        'img' => ReduxFramework::$_url . '../sample/presets/gallery-template-2.jpg',
+                    ),
+                ),
+                'default' => ReduxFramework::$_url . '../sample/presets/gallery-template-2.jpg',
+            ),
+            array(
+                'id'       => 'sections-newgallery-url',
+                'type'     => 'text',
+                'title'    => __( 'View More Link(if any)', 'redux-framework-demo' ),
+                'validate'     => 'no_html',
+            ),
+            array(
+                'id'       => 'sections-newgallery-background-type',
+                'type'     => 'button_set',
+                'title'    => __( 'New Gallery Background Type', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => 'Gradient',
+                    '2' => 'Solid Color/Image',
+                    '3' => 'RGBA Color'
+                ),
+                'default'  => '2',
+            ),
+
+            array(
+                'id'     => 'sections-newgallery-background-start',
+                'type'   => 'section',
+                'indent' => true, // Indent all options below until the next 'section' option is set.
+            ),
+            array(
+                'id'       => 'sections-newgallery-background-gradient',
+                'type'     => 'color_gradient',
+                'title'    => __( 'New Gallery Section Background', 'redux-framework-demo' ),
+                'validate' => 'color',              
+                'required' => array( 'sections-newgallery-background-type', '=', '1' ),
+            ),
+            array(
+                'id'       => 'sections-newgallery-background-solid',
+                'type'     => 'background',                
+                'title'    => __( 'New Gallery Section Background', 'redux-framework-demo' ),
+                'required' => array( 'sections-newgallery-background-type', '=', '2' ),
+            ),
+            array(
+                'id'       => 'sections-newgallery-background-rgba',
+                'type'     => 'color_rgba',
+                'title'    => __( 'New Gallery Section Background', 'redux-framework-demo' ),
+                'validate' => 'colorrgba',
+                'required' => array( 'sections-newgallery-background-type', '=', '3' ),
+            ),
+            array(
+                'id'     => 'sections-newgallery-background-end',
+                'type'   => 'section',
+                'indent' => false, // Indent all options below until the next 'section' option is set.
+            ),
+        )
     ) );     	
 
 	/*
