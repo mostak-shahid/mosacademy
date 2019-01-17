@@ -2,11 +2,11 @@
 global $mosacademy_options;
 $title = $mosacademy_options['sections-widgets-title'];
 $content = $mosacademy_options['sections-widgets-content'];
-$layout = $mosacademy_options['sections-widgets-layout'];
+$widget_layout = $mosacademy_options['sections-widgets-layout'];
 
-if($layout == '3') { $colsize = 4; }
-elseif($layout == '4') { $colsize = 3; }
-elseif($layout == '2') { $colsize = 6; }
+if($widget_layout == '3') { $colsize = 4; }
+elseif($widget_layout == '4') { $colsize = 3; }
+elseif($widget_layout == '2') { $colsize = 6; }
 else { $colsize = 12; }
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
 do_action( 'action_avobe_widgets', $page_details ); 
@@ -35,19 +35,21 @@ do_action( 'action_avobe_widgets', $page_details );
 					    <?php dynamic_sidebar( 'footer_1' ); ?>
 					<?php endif; ?>
 				</div>
+				<?php if($widget_layout != '1') : ?>
 				<div class="col-md-<?php echo $colsize; ?> widgets-wrapper widgets-two">
 					<?php if ( is_active_sidebar( 'footer_2' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_2' ); ?>
 					<?php endif; ?>					
 				</div>
-				<?php if($widget_layout != '2col') : ?>
+				<?php endif; ?>
+				<?php if($widget_layout == '3' OR $widget_layout == '4') : ?>
 				<div class="col-md-<?php echo $colsize; ?>  widgets-wrapper widgets-three">
 					<?php if ( is_active_sidebar( 'footer_3' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_3' ); ?>
 					<?php endif; ?>					
 				</div>
 				<?php endif; ?>
-				<?php if($widget_layout == '4col') : ?>
+				<?php if($widget_layout == '4') : ?>
 				<div class="col-md-<?php echo $colsize; ?>  widgets-wrapper widgets-four">
 					<?php if ( is_active_sidebar( 'footer_4' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_4' ); ?>
