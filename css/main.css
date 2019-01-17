@@ -365,6 +365,10 @@ img.alignright {
     right: 0;
     top: 0;
     opacity: 0;
+    -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
 }
 .img-container:hover .hover-box {
     opacity: 1;
