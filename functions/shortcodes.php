@@ -527,21 +527,22 @@ function fax_func( $atts = array(), $content = '' ) {
 		'all' => 1,
 		'seperator' => ', '
 	), $atts, 'fax' );
-	$n = 1;
+	$n = 1; 
+	$html .= '<span class="fax-number-wrap">';
 	if ($atts['index']) :
-		$i = $atts['index'] - 1; 		    
-		$html .= '<span class="fax-number">';
-	    $html .= '<a class="phoneToShow" href="tel:';
-	    $html .= preg_replace('/[^0-9]/', '', $fax);
+		$i = $atts['index'] - 1;
+	    $html .= '<span class="fax-number">';
+	    $html .= '<a class="faxToShow" href="tel:';
+	    $html .= preg_replace('/[^0-9]/', '', $mosacademy_options['contact-fax'][$i]);
 	    $html .= '" >';
-	    $html .= $fax;  
+	    $html .= $mosacademy_options['contact-fax'][$i];  
 	    $html .= '</a>';
-	    $html .= '</span>';
+	    $html .= '</span>';		
 	else :
 		foreach ($mosacademy_options['contact-fax'] as $fax) :
 			if ($n > $atts['offset']) :
 			    $html .= '<span class="fax-number">';
-			    $html .= '<a class="phoneToShow" href="tel:';
+			    $html .= '<a class="faxToShow" href="tel:';
 			    $html .= preg_replace('/[^0-9]/', '', $fax);
 			    $html .= '" >';
 			    $html .= $fax;  
@@ -553,9 +554,12 @@ function fax_func( $atts = array(), $content = '' ) {
 		endforeach;
 	endif;
 	$output = rtrim(  $html, $atts['seperator']);
+	$output .= '</span>';
 	return $output;
 }
 add_shortcode( 'fax', 'fax_func' );
+
+
 
 function hours_func( $atts = array(), $content = '' ) {
     global $mosacademy_options;
