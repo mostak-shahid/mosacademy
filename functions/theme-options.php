@@ -3305,7 +3305,7 @@
     ) );       
     //Gallery Section
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Gallery Section', 'redux-framework-demo' ),
+        'title'            => __( 'Basic Gallery', 'redux-framework-demo' ),
         'id'               => 'sections-gallery',
         'subsection'       => true,
         'desc'             => '',
@@ -3553,7 +3553,7 @@
     ) );        
     //New Gallery Section
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'New Gallery', 'redux-framework-demo' ),
+        'title'            => __( 'Advanced Gallery', 'redux-framework-demo' ),
         'id'               => 'sections-newgallery',
         'desc'             => '',
         'customizer_width' => '450px',
