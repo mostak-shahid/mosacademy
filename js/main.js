@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
     $("[data-fancybox]").fancybox({
     	loop : true,
     });
-    $(".lazy").Lazy();
+    
     $(window).load(function(){
 		$(".sticky_menu").sticky({ topSpacing: 0 });
 	});

@@ -299,6 +299,7 @@ function mosacademy_theme_js () {
 ?>
 <script>
 	jQuery(document).ready(function($) {
+	<?php if ($mosacademy_options['misc-plugins-check']['lazy']) echo '$(".lazy").Lazy();'?>
 	<?php if ($mosacademy_options['misc-cts-number']) : ?>
 	<?php $text = ($mosacademy_options['misc-cts-text']) ? ($mosacademy_options['misc-cts-text']) : 'Show Number';?>
 	<?php $limit = ($mosacademy_options['misc-cts-limit']) ? $mosacademy_options['misc-cts-limit'] : 2 ?>
@@ -527,3 +528,16 @@ function mosacademy_theme_js () {
 	<?php
 }
 add_action( 'wp_footer', 'mosacademy_theme_js', 998, 1 );
+
+//This function will put image name into alt field if no alt is present
+function mosacademy_image_send_to_editor($html, $id) {
+	global $mosacademy_options;
+	if ($mosacademy_options['misc-plugins-check']['lazy']) {
+		$step_1 = str_replace('class="','class="lazy ',$html);	
+		$step_2 = str_replace('src="','data-src="',$step_1);	
+		return $step_2;
+	} else {
+		return $html;
+	}
+}
+add_filter('image_send_to_editor', 'mosacademy_image_send_to_editor', 10, 2);

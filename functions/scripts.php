@@ -86,9 +86,10 @@ function mosacademy_enqueue_scripts() {
 	wp_register_script('slimscroll.min', get_template_directory_uri() . '/plugins/slimscroll/jquery.slimscroll.min.js', 'jquery');
 	wp_enqueue_script( 'slimscroll.min' );
 
-	
-	wp_register_script('jquery.lazy.min', get_template_directory_uri() . '/plugins/jquery.lazy-master/jquery.lazy.min.js', 'jquery');
-	wp_enqueue_script( 'jquery.lazy.min' );
+	if ($mosacademy_options['misc-plugins-check']['lazy']) :
+		wp_register_script('jquery.lazy.min', get_template_directory_uri() . '/plugins/jquery.lazy-master/jquery.lazy.min.js', 'jquery');
+		wp_enqueue_script( 'jquery.lazy.min' );
+	endif;
 	
 
 	// wp_register_style( 'theme-style', get_stylesheet_uri() );
