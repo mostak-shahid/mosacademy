@@ -505,7 +505,7 @@ function mos_welcome_content_fnc () {
     if ($content) echo '<div class="desc '.$class .'"> '.do_shortcode( $content ).'</div>';
     if ($readmore == 'button') echo '<a href="javascript:void(0)" class="btn btn-welcome expand">Read More</a><a href="javascript:void(0)" class="btn btn-welcome bend" style="display: none">Close</a>';
     elseif ($readmore == 'popup') echo '<a href="javascript:void(0)" class="btn btn-welcome popup" data-toggle="modal" data-target="#welcomeModal">Read More</a>';
-    elseif ($readmore == 'redirect') echo '<a href="<?php echo do_shortcode( $url ) ?>" class="btn btn-welcome redirect">Read More</a>';
+    elseif ($readmore == 'redirect') echo '<a href="'.esc_sql( do_shortcode( $url ) ) .'" class="btn btn-welcome redirect">Read More</a>';
     if ($image) echo '</div>';
 }
 function mos_welcome_media_fnc () {
