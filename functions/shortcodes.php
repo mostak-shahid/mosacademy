@@ -102,19 +102,27 @@ function element_start_func( $atts = array(), $content = '' ) {
 	$html = '<'.$atts['name'];
 	if($atts['id']) $html .= ' id="'.$atts['id'].'"';
 	if($atts['class']) $html .= ' class="'.$atts['class'].'"';
-	if ($atts['name'] == 'a' AND $atts['href']) {
-		$html .= ' href="'. str_replace('home_url()', home_url(), $atts['href']).'"';
+	if ($atts['name'] == 'a' AND $atts['href']) {		
+		//$href_1 = str_replace('home_url()', home_url(), $atts['href']);
+		$href = mos_home_url_replace($atts['href']);
+		$html .= ' href="'.$href.'"';
 	}
 
 	if($atts['name'] == 'img' AND $atts['src']){
+		//$src_1 = str_replace('home_url()', home_url(), $atts['src']);
+		$src = mos_home_url_replace($atts['src']);
 		if($atts['imgwidth'] AND  $atts['imgheight'])
-			$html .= ' src="'.aq_resize(str_replace('home_url()', home_url(), $atts['src']), $atts['imgwidth'], $atts['imgheight'], true).'"';
+			$html .= ' src="'.aq_resize($src, $atts['imgwidth'], $atts['imgheight'], true).'"';
 		elseif($atts['imgwidth'])
-			$html .= ' src="'.aq_resize(str_replace('home_url()', home_url(), $atts['src']), $atts['imgwidth'], '', true).'"';
+			$html .= ' src="'.aq_resize($src, $atts['imgwidth'], '', true).'"';
 		else 
-			$html .= ' src="'. str_replace('home_url()', home_url(), $atts['src']).'"';
+			$html .= ' src="'.$src.'"';
 	}	
-	if($atts['atts']) $html .= ' '.$atts['atts'];
+	if($atts['atts']) {
+		//$ratts_1 = str_replace('home_url()', home_url(), $atts['atts']);
+		$ratts = mos_home_url_replace($atts['atts']);
+		$html .= ' '.$ratts;
+	}
 	$html .= ' >';
 
 	return $html;
@@ -165,7 +173,8 @@ function theme_creadit_func( $atts = array(), $content = '' ) {
 	$html .= '<div class="copyright">';
 	$html .= '&copy; '. date("Y") .' <a href="'.esc_url( home_url( '/' ) ).'"> '.get_bloginfo('name') .'</a>. All Rights Reserved. ';
 	if ($atts['icon']){		
-		$icon = str_replace('home_url()', home_url(), $atts['icon']);
+		$icon_1 = str_replace('home_url()', home_url(), $atts['icon']);
+		$icon = str_replace('{{home_url}}', home_url(), $icon_1);
 		list($width, $height) = getimagesize($icon);
 		$html .= '<img class="belocal-icon" src="'. $icon . '" alt="BeLocal Today Logo" width="'.$width.'" height="'.$height.'">';
 	}
