@@ -233,7 +233,7 @@ body {<?php
 <?php endif; ?>}
 
 
-<?php if ($mosacademy_options['sections-welcome-readmore'] == 'button' OR $mosacademy_options['sections-welcome-readmore'] == 'popup') : ?>
+<?php if ($mosacademy_options['sections-welcome-readmore'] == 'button' OR $mosacademy_options['sections-welcome-readmore'] == 'popup' OR $mosacademy_options['sections-welcome-readmore'] == 'redirect') : ?>
 	.btn-welcome {
 		<?php if ($mosacademy_options['sections-welcome-but']['text_field_1']) : ?>
 		background-color: <?php echo $mosacademy_options['sections-welcome-but']['text_field_1'] ?>;
