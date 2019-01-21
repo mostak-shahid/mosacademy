@@ -37,10 +37,11 @@ if (is_home()) echo do_shortcode( $avobe_page );
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
 				<?php do_action( 'action_before_blog_loop', $page_details ); ?>
-				<?php if ( have_posts() ) :?>		
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>		
+				<?php if ( have_posts() ) :?>
 					<?php do_action( 'action_before_page_content_area', $page_details ); ?>	
 					<?php get_template_part( 'content', get_post_format() ) ?>	
-					<?php do_action( 'action_after_page_content_area', $page_details ); ?>					
+					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
 					<div class="pagination-wrapper">
 					<?php
 						the_posts_pagination( array(
@@ -54,6 +55,7 @@ if (is_home()) echo do_shortcode( $avobe_page );
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif;?>
+				</div>					
 				<?php
 				do_action( 'action_after_blog_loop', $page_details ); 
 				if (is_home()) echo do_shortcode( $after_loop );

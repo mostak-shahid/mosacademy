@@ -30,13 +30,13 @@ echo do_shortcode( $avobe_page );
 			<div class="row">
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
-				<?php if ( have_posts() ) :?>	
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php do_action( 'action_before_page_content_area', $page_details ); ?>					
-					<?php get_template_part( 'content', 'page' ) ?>
-					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
+					<?php if ( have_posts() ) :?>	
+						<?php do_action( 'action_before_page_content_area', $page_details ); ?>					
+						<?php get_template_part( 'content', 'page' ) ?>
+						<?php do_action( 'action_after_page_content_area', $page_details ); ?>
+					<?php endif; ?>
 					</div>
-				<?php endif; ?>
 			<?php if($page_layout != 'ns') : ?>
 				</div>
 				<div class="page-widgets col-md-4 <?php if($page_layout == 'ls') echo 'col-md-pull-8' ?>">
