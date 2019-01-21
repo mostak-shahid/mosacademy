@@ -40,7 +40,7 @@ if (is_home()) echo do_shortcode( $avobe_page );
 				<?php if ( have_posts() ) :?>		
 					<?php do_action( 'action_before_page_content_area', $page_details ); ?>	
 					<?php get_template_part( 'content', get_post_format() ) ?>	
-					<?php do_action( 'action_before_page_content_area', $page_details ); ?>					
+					<?php do_action( 'action_after_page_content_area', $page_details ); ?>					
 					<div class="pagination-wrapper">
 					<?php
 						the_posts_pagination( array(
