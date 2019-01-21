@@ -31,11 +31,11 @@ echo do_shortcode( $avobe_page );
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php if ( have_posts() ) :?>	
 						<?php do_action( 'action_before_page_content_area', $page_details ); ?>					
-						<?php get_template_part( 'content', 'page' ) ?>
+						<?php if ( have_posts() ) :?>	
+							<?php get_template_part( 'content', 'page' ) ?>
+						<?php endif; ?>
 						<?php do_action( 'action_after_page_content_area', $page_details ); ?>
-					<?php endif; ?>
 					</div>
 			<?php if($page_layout != 'ns') : ?>
 				</div>

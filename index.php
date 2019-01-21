@@ -38,23 +38,23 @@ if (is_home()) echo do_shortcode( $avobe_page );
 			<?php endif; ?>
 				<?php do_action( 'action_before_blog_loop', $page_details ); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>		
-				<?php if ( have_posts() ) :?>
 					<?php do_action( 'action_before_page_content_area', $page_details ); ?>	
-					<?php get_template_part( 'content', get_post_format() ) ?>	
+					<?php if ( have_posts() ) :?>
+						<?php get_template_part( 'content', get_post_format() ) ?>	
+						<div class="pagination-wrapper">
+						<?php
+							the_posts_pagination( array(
+								'show_all' => false,
+								'screen_reader_text' => " ",
+								'prev_text'          => 'Prev',
+								'next_text'          => 'Next',
+							) );
+						?>
+						</div>
+					<?php else : ?>
+						<?php get_template_part( 'content', 'none' ); ?>
+					<?php endif;?>
 					<?php do_action( 'action_after_page_content_area', $page_details ); ?>
-					<div class="pagination-wrapper">
-					<?php
-						the_posts_pagination( array(
-							'show_all' => false,
-							'screen_reader_text' => " ",
-							'prev_text'          => 'Prev',
-							'next_text'          => 'Next',
-						) );
-					?>
-					</div>
-				<?php else : ?>
-					<?php get_template_part( 'content', 'none' ); ?>
-				<?php endif;?>
 				</div>					
 				<?php
 				do_action( 'action_after_blog_loop', $page_details ); 
