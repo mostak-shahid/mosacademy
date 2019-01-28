@@ -302,7 +302,7 @@ if (!is_front_page()) :
             <span>
         	<?php 
         	if (is_home()) 
-                _e($mosacademy_options['blog-archive-title']);
+                echo get_the_title( get_option('page_for_posts', true) );
             elseif (is_single()) {
                 if($mosacademy_options['single-blog-title-option'] == 2 AND $mosacademy_options['single-blog-title'])
                     echo $mosacademy_options['single-blog-title'];
@@ -315,8 +315,9 @@ if (!is_front_page()) :
                 _e('Search reasult for ');
                 echo get_search_query();
             }
-            elseif (is_shop() OR is_product_category()){
-                _e('Shop');
+            //elseif (is_shop() OR is_product_category()){
+            elseif (is_shop()){
+                echo get_the_title( get_option('woocommerce_shop_page_id', true) );
             }
         	elseif(!$hide_title) the_title();
         	?>            	
