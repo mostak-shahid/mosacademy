@@ -39,7 +39,7 @@ function shortcodes_page(){
 			<li>[fax offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays fax from theme option</span></li>
 			<li>[hours] <span class="sdetagils">displays business hours from theme option</span></li>
 			<li>[product_search] <span class="sdetagils">displays product search form</span></li>
-			<li>[mos_post post_type='post/custom post type' taxonomy='' terms='' count='-1' grid='' format='title, content, meta:meta_field_name']<span class="sdetagils">displays post with shortcode</span></li>
+			<li>[mos_post post_type='post/custom post type' taxonomy='' terms='' count='-1' grid='' format='title, content, excerpt-x, image, meta:meta_field_name']<span class="sdetagils">displays post with shortcode</span></li>
 			<li>[wp_login_form]<span class="sdetagils">displays login form if user is not logged in</span></li>
 
 		</ol>
@@ -618,7 +618,7 @@ function mos_post_func( $atts = array(), $content = '' ) {
 		'terms'	=> '',
 		'count' => '-1',
 		'grid' => '',
-		'format' => 'title, content, meta:meta_field_name'
+		'format' => 'title, content, excerpt-x, image, meta:meta_field_name'
 	), $atts, 'mos_post' );
 	$count = ($atts['count']) ? $atts['count'] : '-1' ;
 	$args = array(
@@ -648,10 +648,21 @@ function mos_post_func( $atts = array(), $content = '' ) {
 					$html .= '<h3 class="'.$atts['post_type'].'-title">';
 					$html .= get_the_title();
 					$html .= '</h3><!--/.'.$atts['post_type'].'-title-->';
+				} elseif ($slice == 'image') {
+					$html .= '<div class="'.$atts['post_type'].'-image">';
+					$html .= '<img class="img-responsive img-"'.$atts['post_type'].'" src="'.get_the_post_thumbnail_url().'" />';
+					$html .= '</div><!--/.'.$atts['post_type'].'-image-->';					
 				} elseif ($slice == 'content') {
 					$html .= '<div class="'.$atts['post_type'].'-content">';
 					$html .= get_the_content();
 					$html .= '</div><!--/.'.$atts['post_type'].'-content-->';					
+				} elseif (preg_match("/excerpt/i", $slice)) {
+					$slice = explode('-', $slice);
+					if (sizeof($slice) > 1) $limit = end($slice);
+					else $limit = 15;
+					$html .= '<div class="'.$atts['post_type'].'-excerpt">';
+					$html .= wp_trim_words(get_the_content(), $limit, '');
+					$html .= '</div><!--/.'.$atts['post_type'].'-excerpt-->';					
 				} elseif (preg_match("/meta:/i", $slice)) {					
 					$pieces = explode(':', str_replace(' ', '', $slice));
 					$html .= '<div class="'.$atts['post_type'].'-meta-'.end($pieces).'">';
