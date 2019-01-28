@@ -545,15 +545,7 @@
         'desc'             => '',
         'customizer_width' => '400px',
         'icon'             => 'dashicons dashicons-admin-post',
-        'fields'     => array(
-            array(
-                'id'       => 'blog-archive-title',
-                'type'     => 'text',
-                'title'    => __( 'Blog Archive Page Title', 'redux-framework-demo' ),
-                'default'  => 'Blog',
-                'desc'     => __( 'All HTML will be stripped.', 'redux-framework-demo' ),
-                'validate' => 'no_html',
-            ), 
+        'fields'     => array( 
             array(
                 'id'       => 'blog-archive-grid',
                 'type'     => 'image_select',
