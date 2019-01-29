@@ -6,8 +6,14 @@ $after_page = get_post_meta( get_the_ID(), '_mosacademy_after_page', true );
 $below_page = get_post_meta( get_the_ID(), '_mosacademy_below_page', true );
 $sidebar = get_post_meta( get_the_ID(), '_mosacademy_page_sidebar', true );
 
+
+$page_for_posts = get_option( 'page_for_posts' );
+$blog_sections = get_post_meta( $page_for_posts, '_mosacademy_page_section_layout', true )['Enabled'];
+
 $all_sections = get_post_meta( get_the_ID(), '_mosacademy_page_section_layout', true );
-$sections = ( @$all_sections["Enabled"] ) ? @$all_sections["Enabled"] : $mosacademy_options['page-layout-settings']['Enabled'];
+
+if (sizeof($all_sections["Enabled"]) > 1) $sections = $all_sections["Enabled"];
+else $sections = $blog_sections;
 ?>
 <?php 
 get_header(); 
