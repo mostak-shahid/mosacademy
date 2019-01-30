@@ -59,7 +59,8 @@ $snippets_count = @$mosacademy_options['snippets-count'];
                     "name": "<?php echo $slide['title'] ?>", 
                     "priceRange": "$$", 
                     "telephone": "<?php echo $contact_phone; ?>", 
-                    "email": "<?php echo $contact_email; ?>", 
+                    "email": "<?php echo $contact_email; ?>",
+                    "description": "<?php echo $slide['description'] ?>", 
                     "address":
                     {
                         "@type":"PostalAddress",

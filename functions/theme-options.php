@@ -545,7 +545,15 @@
         'desc'             => '',
         'customizer_width' => '400px',
         'icon'             => 'dashicons dashicons-admin-post',
-        'fields'     => array( 
+        'fields'     => array(
+            array(
+                'id'       => 'blog-archive-title',
+                'type'     => 'text',
+                'title'    => __( 'Blog Archive Page Title', 'redux-framework-demo' ),
+                'default'  => 'Blog',
+                'desc'     => __( 'All HTML will be stripped.', 'redux-framework-demo' ),
+                'validate' => 'no_html',
+            ), 
             array(
                 'id'       => 'blog-archive-grid',
                 'type'     => 'image_select',
@@ -872,11 +880,12 @@
                 'title'       => __( 'Add Schema', 'redux-framework-demo' ),                 
                 'show' => array(
                     'title' => true,
-                    'description' => false,
+                    'description' => true,
                     'url' => true              // <<========= that is what was asked at the top.
                 ),
                 'placeholder' => array(
                     'title'       => __( 'Schema Name', 'redux-framework-demo' ),
+                    'description' => __('Schema Description', 'redux-framework-demo' ),
                     'url'         => __( 'Schema Type', 'redux-framework-demo' ),
                 ),
             ),
@@ -1672,19 +1681,19 @@
                 'title'    => __( 'Widgets Layout', 'redux-framework-demo' ),
                 'options'  => array(
                     '1' => array(
-                        'alt' => 'Full Width',
+                        'alt' => 'One Column',
                         'img' => ReduxFramework::$_url . 'assets/img/1-col-portfolio.png'
                     ),
                     '2' => array(
-                        'alt' => 'Full Width',
+                        'alt' => 'Two Columns',
                         'img' => ReduxFramework::$_url . 'assets/img/2-col-portfolio.png'
                     ),
                     '3' => array(
-                        'alt' => 'Left Sidebar',
+                        'alt' => 'Three Columns',
                         'img' => ReduxFramework::$_url . 'assets/img/3-col-portfolio.png'
                     ),
                     '4' => array(
-                        'alt' => 'Right Sidebar',
+                        'alt' => 'Four Columns',
                         'img' => ReduxFramework::$_url . 'assets/img/4-col-portfolio.png'
                     )
                 ),
