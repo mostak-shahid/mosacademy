@@ -23,7 +23,7 @@ function mosacademy_metaboxes() {
     $pages_link = get_all_pages_list_with_link ();
     $prefix = '_mosacademy_';
 
-     $page_settings = new_cmb2_box(array(
+    $page_settings = new_cmb2_box(array(
         'id' => $prefix . 'page_settings',
         'title' => __('Page Settings', 'cmb2'),
         'object_types' => array('page', 'post'),
