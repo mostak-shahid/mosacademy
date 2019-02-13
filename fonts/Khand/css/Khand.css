@@ -1,0 +1,126 @@
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Thin.eot');
+	src: url('../fonts/Khand-Thin.eot') format('embedded-opentype'), url('../fonts/Khand-Thin.woff') format('woff'), url('../fonts/Khand-Thin.ttf') format('truetype'), url('../fonts/Khand-Thin.svg') format('svg');
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-ThinItalic.eot');
+	src: url('../fonts/Khand-ThinItalic.eot') format('embedded-opentype'), url('../fonts/Khand-ThinItalic.woff') format('woff'), url('../fonts/Khand-ThinItalic.ttf') format('truetype'), url('../fonts/Khand-ThinItalic.svg') format('svg');
+	font-weight: 100;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-ExtraLight.eot');
+	src: url('../fonts/Khand-ExtraLight.eot') format('embedded-opentype'), url('../fonts/Khand-ExtraLight.woff') format('woff'), url('../fonts/Khand-ExtraLight.ttf') format('truetype'), url('../fonts/Khand-ExtraLight.svg') format('svg');
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-ExtraLightItalic.eot');
+	src: url('../fonts/Khand-ExtraLightItalic.eot') format('embedded-opentype'), url('../fonts/Khand-ExtraLightItalic.woff') format('woff'), url('../fonts/Khand-ExtraLightItalic.ttf') format('truetype'), url('../fonts/Khand-ExtraLightItalic.svg') format('svg');
+	font-weight: 200;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Light.eot');
+	src: url('../fonts/Khand-Light.eot') format('embedded-opentype'), url('../fonts/Khand-Light.woff') format('woff'), url('../fonts/Khand-Light.ttf') format('truetype'), url('../fonts/Khand-Light.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-LightItalic.eot');
+	src: url('../fonts/Khand-LightItalic.eot') format('embedded-opentype'), url('../fonts/Khand-LightItalic.woff') format('woff'), url('../fonts/Khand-LightItalic.ttf') format('truetype'), url('../fonts/Khand-LightItalic.svg') format('svg');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Regular.eot');
+	src: url('../fonts/Khand-Regular.eot') format('embedded-opentype'), url('../fonts/Khand-Regular.woff') format('woff'), url('../fonts/Khand-Regular.ttf') format('truetype'), url('../fonts/Khand-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Italic.eot');
+	src: url('../fonts/Khand-Italic.eot') format('embedded-opentype'), url('../fonts/Khand-Italic.woff') format('woff'), url('../fonts/Khand-Italic.ttf') format('truetype'), url('../fonts/Khand-Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Medium.eot');
+	src: url('../fonts/Khand-Medium.eot') format('embedded-opentype'), url('../fonts/Khand-Medium.woff') format('woff'), url('../fonts/Khand-Medium.ttf') format('truetype'), url('../fonts/Khand-Medium.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-MediumItalic.eot');
+	src: url('../fonts/Khand-MediumItalic.eot') format('embedded-opentype'), url('../fonts/Khand-MediumItalic.woff') format('woff'), url('../fonts/Khand-MediumItalic.ttf') format('truetype'), url('../fonts/Khand-MediumItalic.svg') format('svg');
+	font-weight: 500;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-SemiBold.eot');
+	src: url('../fonts/Khand-SemiBold.eot') format('embedded-opentype'), url('../fonts/Khand-SemiBold.woff') format('woff'), url('../fonts/Khand-SemiBold.ttf') format('truetype'), url('../fonts/Khand-SemiBold.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-SemiBoldItalic.eot');
+	src: url('../fonts/Khand-SemiBoldItalic.eot') format('embedded-opentype'), url('../fonts/Khand-SemiBoldItalic.woff') format('woff'), url('../fonts/Khand-SemiBoldItalic.ttf') format('truetype'), url('../fonts/Khand-SemiBoldItalic.svg') format('svg');
+	font-weight: 600;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Bold.eot');
+	src: url('../fonts/Khand-Bold.eot') format('embedded-opentype'), url('../fonts/Khand-Bold.woff') format('woff'), url('../fonts/Khand-Bold.ttf') format('truetype'), url('../fonts/Khand-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-BoldItalic.eot');
+	src: url('../fonts/Khand-BoldItalic.eot') format('embedded-opentype'), url('../fonts/Khand-BoldItalic.woff') format('woff'), url('../fonts/Khand-BoldItalic.ttf') format('truetype'), url('../fonts/Khand-BoldItalic.svg') format('svg');
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-ExtraBold.eot');
+	src: url('../fonts/Khand-ExtraBold.eot') format('embedded-opentype'), url('../fonts/Khand-ExtraBold.woff') format('woff'), url('../fonts/Khand-ExtraBold.ttf') format('truetype'), url('../fonts/Khand-ExtraBold.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-ExtraBoldItalic.eot');
+	src: url('../fonts/Khand-ExtraBoldItalic.eot') format('embedded-opentype'), url('../fonts/Khand-ExtraBoldItalic.woff') format('woff'), url('../fonts/Khand-ExtraBoldItalic.ttf') format('truetype'), url('../fonts/Khand-ExtraBoldItalic.svg') format('svg');
+	font-weight: 800;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-Black.eot');
+	src: url('../fonts/Khand-Black.eot') format('embedded-opentype'), url('../fonts/Khand-Black.woff') format('woff'), url('../fonts/Khand-Black.ttf') format('truetype'), url('../fonts/Khand-Black.svg') format('svg');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Khand';
+	src: url('../fonts/Khand-BlackItalic.eot');
+	src: url('../fonts/Khand-BlackItalic.eot') format('embedded-opentype'), url('../fonts/Khand-BlackItalic.woff') format('woff'), url('../fonts/Khand-BlackItalic.ttf') format('truetype'), url('../fonts/Khand-BlackItalic.svg') format('svg');
+	font-weight: 900;
+	font-style: italic;
+}
