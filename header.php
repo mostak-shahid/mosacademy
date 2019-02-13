@@ -56,10 +56,10 @@ do_action( 'action_above_header', $page_details );
 
 
 
-    <?php echo do_shortcode( '[site_identity container_class="small-logo hidden-md hidden-lg"]' ) ?>          
+    <?php echo do_shortcode( '[site_identity container_class="small-logo d-md-none d-lg-none d-xl-none"]' ) ?>          
 
     <header id="main-header">
-        <div class="content-wrap hidden-xs hidden-sm">
+        <div class="content-wrap d-xs-none d-sm-none">
 <?php
 $header_layout = '';
 $header_design = $mosacademy_options['header-design'];
@@ -69,7 +69,7 @@ function layout_starter ($layout_starter) {
 	    $tag_layout_starter = '[element_start name="div" class="container-fluid"]';
 	}
 	elseif ($layout_starter == 2){
-	    $tag_layout_starter = '[element_start name="div" class="container-fluid"][element_start name="div" class="row"][element_start name="div" class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1"]';
+	    $tag_layout_starter = '[element_start name="div" class="container-fluid"][element_start name="div" class="row"][element_start name="div" class="col-lg-10 offset-lg-1"]';
 	}
 	elseif ($layout_starter == 3){
 	    $tag_layout_starter = '[element_start name="div" class="container"]';
@@ -84,7 +84,7 @@ function layout_end ($layout_end) {
 	    $tag_layout_end = '[element_end name="div" class="container-fluid"]';
 	}
 	elseif ($layout_end == 2){
-	    $tag_layout_end = '[element_end name="div" class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1"][element_end name="div" class="row"][element_end name="div" class="container-fluid"]';
+	    $tag_layout_end = '[element_end name="div" class="col-lg-10 offset-lg-1"][element_end name="div" class="row"][element_end name="div" class="container-fluid"]';
 	}
 	elseif ($layout_end == 3){
 	    $tag_layout_end = '[element_end name="div" class="container"]';
