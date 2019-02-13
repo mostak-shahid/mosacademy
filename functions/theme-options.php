@@ -384,6 +384,7 @@
                     'roboto' => 'Roboto',
                     'sourcesanspro' => 'Source Sans Pro',
                     'sourceserifpro' => 'Source Serif Pro',
+                    'khand' => 'Khand',
                     'ubuntu' => 'Ubuntu'
                 ),
                 //See how std has changed? you also don't need to specify opts that are 0.

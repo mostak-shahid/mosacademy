@@ -38,6 +38,10 @@ function mosacademy_enqueue_scripts() {
 		wp_register_style( 'sourceserifpro.min', get_template_directory_uri() . '/fonts/SourceSerifPro/css/sourceserifpro.min.css' );
 		wp_enqueue_style( 'sourceserifpro.min' );
 	}
+	if ($mosacademy_options["typography-fonts"]["khand"]) {
+		wp_register_style( 'khand.min', get_template_directory_uri() . '/fonts/Khand/css/khand.min.css' );
+		wp_enqueue_style( 'khand.min' );
+	}
 	if ($mosacademy_options["typography-fonts"]["ubuntu"]) {
 		wp_register_style( 'ubuntu.min', get_template_directory_uri() . '/fonts/Ubuntu/css/ubuntu.min.css' );
 		wp_enqueue_style( 'ubuntu.min' );

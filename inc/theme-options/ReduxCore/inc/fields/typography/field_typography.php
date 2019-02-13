@@ -28,6 +28,7 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
             "Roboto"                                               => "Roboto",
             "Source Sans Pro"                                      => "Source Sans Pro",
             "Source Serif Pro"                                     => "Source Serif Pro",
+            "Khand"                                                => "Khand",
             "Ubuntu"                                               => "Ubuntu",
             "Arial, Helvetica, sans-serif"                         => "Arial, Helvetica, sans-serif",
             "'Arial Black', Gadget, sans-serif"                    => "'Arial Black', Gadget, sans-serif",
