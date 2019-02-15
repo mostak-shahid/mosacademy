@@ -454,9 +454,12 @@ function contact_form_fnc () {
 
 add_action( 'action_below_footer', 'back_to_top_fnc', 10, 1 );
 function back_to_top_fnc () {
+    global $mosacademy_options;
+    if ($mosacademy_options['misc-back-top']) :
     ?>
     <a href="javascript:void(0)" class="scrollup" style="display: none;"><img width="40" height="40" src="<?php echo get_template_directory_uri() ?>/images/icon_top.png" alt="Back To Top"></a>
     <?php 
+    endif;
 }
 
 add_action( 'mos_welcome_content', 'mos_welcome_content_fnc', 10, 1 );

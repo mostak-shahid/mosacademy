@@ -1187,7 +1187,7 @@
                 'type'     => 'switch',
                 'title'    => __( 'Back to Top Option', 'redux-framework-demo' ),
                 'subtitle' => __( 'Do you want to use the back to top', 'redux-framework-demo' ),
-                'default'  => 0,
+                'default'  => 1,
                 'on'       => 'Enabled',
                 'off'      => 'Disabled',
             ),

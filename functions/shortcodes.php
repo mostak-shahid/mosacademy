@@ -238,11 +238,11 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 		if ($social['link_url'] AND $social['basic_icon']) :
 			$str = '';
 			if (filter_var(do_shortcode($social['basic_icon']), FILTER_VALIDATE_URL)) {
-				$basic_icon = do_shortcode($social['basic_icon']);
+				$basic_icon = do_shortcode(str_replace('{{home_url}}', home_url(), $social['basic_icon']));
 				list($width, $height) = getimagesize($basic_icon);
 				$str = '<span class="social-img"><img src="'.$basic_icon.'" alt="'.$alt_tag['social'] . $social['title'].'" width="'.$width.'" height="'.$height.'"></span>';
 				if ($social['hover_icon']) {
-					$hover_icon = do_shortcode($social['hover_icon']);
+					$hover_icon = do_shortcode(str_replace('{{home_url}}', home_url(), $social['hover_icon']));
 					list($hwidth, $hheight) = getimagesize($hover_icon);
 					$str .= '<span class="social-img-hover"><img src="'.$hover_icon.'" alt="'.$alt_tag['social'] . $social['title'].'" width="'.$hwidth.'" height="'.$hheight.'"></span>'; //hover_icon
 				}
@@ -252,7 +252,9 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 				if ($social['hover_icon'])
 					$str .= '<span class="social-icon-hover"><i class="'.$social['hover_icon'].'"></i></span>';
 			}
-			$html .= '<li class="social-list '.strtolower(preg_replace('/\s+/', '_', $social['title'])).'"><a href="'.esc_url( $social['link_url'] ).'"';
+			$html .= '<li class="social-list '.strtolower(preg_replace('/\s+/', '_', $social['title']));
+			if ($atts['display'] == 'inline') $html .= ' list-inline-item';
+			$html .= '"><a href="'.esc_url( $social['link_url'] ).'"';
 			if ($social['target'])
 				$html .= ' target="_blank"';
 			$html .= '>' . $str;
@@ -263,14 +265,16 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 	if ($atts['google_review']) {
 		foreach ($contact_address as $address) {
 			if ($address['review_link'] AND $address['review_link_img']) {
-				$review_link_img = do_shortcode($address['review_link_img']);
+				$review_link_img = do_shortcode(str_replace('{{home_url}}', home_url(), $address['review_link_img']));
 				list($gwidth, $gheight) = getimagesize($review_link_img);
 
-				$html .= '<li class="social-review"><a href="'. esc_url( $address['review_link']) .'" target="_blank"><span class="social-img"><img src="'.do_shortcode($address['review_link_img']).'" alt="'.$alt_tag['social'] . 'Google Review" width="'.$gwidth.'" height="'.$gheight.'"></span>';
+				$html .= '<li class="social-review';
+				if ($atts['display'] == 'inline') $html .= ' list-inline-item';
+				 $html .= '"><a href="'. esc_url( $address['review_link']) .'" target="_blank"><span class="social-img"><img src="'.$review_link_img.'" alt="'.$alt_tag['social'] . 'Google Review" width="'.$gwidth.'" height="'.$gheight.'"></span>';
 				if ($address['review_link_img_h']) {					
-					$review_link_img_h = do_shortcode($address['review_link_img_h']);
+					$review_link_img_h = do_shortcode(str_replace('{{home_url}}', home_url(), $address['review_link_img_h']));
 					list($ghwidth, $ghheight) = getimagesize($review_link_img_h);
-					$html .= '<span class="social-img-hover"><img src="'. esc_url( do_shortcode($address['review_link_img_h'])).'" alt="'.$alt_tag['social'] . 'Google Review" width="'.$ghwidth.'" height="'.$ghheight.'"></span>';
+					$html .= '<span class="social-img-hover"><img src="'.$review_link_img_h.'" alt="'.$alt_tag['social'] . 'Google Review" width="'.$ghwidth.'" height="'.$ghheight.'"></span>';
 				}
 				if ($atts['title']) $html .= '<span class="social-title">Google Review</span>';
 				$html .= '</a></li>';
