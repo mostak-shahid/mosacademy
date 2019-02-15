@@ -59,7 +59,7 @@ do_action( 'action_above_header', $page_details );
     <?php echo do_shortcode( '[site_identity container_class="small-logo d-md-none d-lg-none d-xl-none"]' ) ?>          
 
     <header id="main-header">
-        <div class="content-wrap d-xs-none d-sm-none">
+        <div class="content-wrap d-none d-lg-block">
 <?php
 $header_layout = '';
 $header_design = $mosacademy_options['header-design'];
