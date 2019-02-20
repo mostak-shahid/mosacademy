@@ -90,7 +90,7 @@ a img {
     display:none;  
     z-index: 99999;         
 }
-.main-grid {display: grid; grid-template-columns: repeat(12, 1fr); margin: 0 auto; width: 100%; max-width: 1280px; } 
+.main-grid {display: grid; grid-template-columns: repeat(12, 1fr); margin: 0 auto; width: 100%;} 
 .main-grid.gap-30 {grid-gap: 30px;}
 .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve {grid-column-end: span 12; }
 .nested {display: grid; grid-gap: 10px; grid-template-columns: repeat(12, 1fr); }
