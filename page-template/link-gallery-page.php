@@ -52,8 +52,7 @@ do_action( 'action_avobe_page', $page_details );
 					?>
 					<?php if ($gallery_location == "after") get_template_part( 'content', 'page' ); ?>				
 					<div class="link-gallery-images">
-					<?php
-					if($gallery_images) : ?>
+					<?php if($gallery_images) : ?>
 						<div class="row">
 						<?php foreach ( $gallery_images as $gallery_image ) : ?>
 							<div class="col-md-<?php echo $layout; if ($gallery_gap) echo ' mb30'; else echo ' no-padding'; ?>">
