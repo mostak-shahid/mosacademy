@@ -9,7 +9,7 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 					<div id="error" class="text-center">
     					<div class="content-wrap">
 					<?php if(is_home()) : ?>
-						<img class="img-responsive img-centered img-content-none" src="<?php echo get_template_directory_uri() ?>/images/comingsoon.png" alt="<?php echo $alt_tag['inner'] ?>Coming Soon">
+						<img class="img-responsive img-fluid img-centered img-content-none" src="<?php echo get_template_directory_uri() ?>/images/comingsoon.png" alt="<?php echo $alt_tag['inner'] ?>Coming Soon">
 					<?php else : ?>
 						<h2>OOOPPS.! THE CONTENT YOU WERE LOOKING FOR, COULDN'T BE FOUND.</h2>
 						<?php if (is_search()) : ?>

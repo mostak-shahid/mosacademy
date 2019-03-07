@@ -15,9 +15,9 @@ echo do_shortcode( $before_loop );
 		<?php if (has_post_thumbnail()):?>
 			<div class="blog-img-container">
 				<?php if($page_layout != 'ns') : ?>
-				<?php the_post_thumbnail('blog-image', array('class' => 'img-responsive img-blog img-centered'))?>
+				<?php the_post_thumbnail('blog-image', array('class' => 'img-responsive img-fluid img-blog img-centered'))?>
 				<?php else : ?>
-				<?php the_post_thumbnail('blog-image-full', array('class' => 'img-responsive img-blog img-centered'))?>
+				<?php the_post_thumbnail('blog-image-full', array('class' => 'img-responsive img-fluid img-blog img-centered'))?>
 				<?php endif; ?>
 			</div>
 		<?php endif;?>

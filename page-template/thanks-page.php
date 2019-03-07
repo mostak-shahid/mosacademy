@@ -38,7 +38,7 @@ do_action( 'action_avobe_page', $page_details );
 				<div class="<?php if($page_layout != 'ns' ) echo 'col-md-8'; if($page_layout == 'ls') echo ' col-md-push-4' ?>">
 			<?php endif; ?>
 				<?php if ( have_posts() ) :?>
-					<img class="img-responsive img-centered img-thanks" src="<?php echo get_template_directory_uri() ?>/images/thank-you-1.png" alt="<?php echo $alt_tag['inner'] ?>Thank You">
+					<img class="img-responsive img-fluid img-centered img-thanks" src="<?php echo get_template_directory_uri() ?>/images/thank-you-1.png" alt="<?php echo $alt_tag['inner'] ?>Thank You">
 					<?php get_template_part( 'content', 'page' ) ?>
 				<?php endif; ?>
 			<?php if($page_layout != 'ns') : ?>

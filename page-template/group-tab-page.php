@@ -39,7 +39,7 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 					<div class="tab-container">
 						<h2 class="tab-title"><?php echo do_shortcode( $tab_single_details["_mosacademy_tab_group_title_text"] );?></h2>
 						<?php if ($tab_single_details["_mosacademy_tab_group_title_images_id"]) : ?>
-						<img class="img-responsive img-centered img-tab-title" src="<?php echo wp_get_attachment_url($tab_single_details["_mosacademy_tab_group_title_images_id"]) ?>" alt="<?php echo $alt_tag["inner"] . $tab_single_details["_mosacademy_tab_group_title_text"] ?>">
+						<img class="img-responsive img-fluid img-centered img-tab-title" src="<?php echo wp_get_attachment_url($tab_single_details["_mosacademy_tab_group_title_images_id"]) ?>" alt="<?php echo $alt_tag["inner"] . $tab_single_details["_mosacademy_tab_group_title_text"] ?>">
 						<?php endif; ?>
 						<?php if (sizeof($tab_single_details['_mosacademy_tab_group_tab_details']) > 1)) : ?>
 						<ul class="nav nav-tabs">

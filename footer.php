@@ -26,7 +26,7 @@ do_action( 'action_avobe_footer', $page_details );
 	 */
 do_action( 'action_below_footer', $page_details ); 
 ?>
-<div class="d-md-none d-lg-none">
+<div class="d-block d-lg-none">
     <div class="small-nav top">
         <?php mobile_menu ($mosacademy_options['misc-sticky-layout']['On Header']);?>
     </div>  

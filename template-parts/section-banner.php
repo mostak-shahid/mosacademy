@@ -20,7 +20,7 @@ do_action( 'action_before_banner', $page_details );
 		<div <?php if ( $select == 'banner' ) echo 'class="static-banner"'; else echo 'id="section-banner-owl" class="owl-carousel owl-theme"';   ?>>
 		<?php foreach ($slides as $slide) : ?>
 			<div class="wrapper">
-				<?php echo wp_get_attachment_image( $slide["attachment_id"], 'full', false, array( 'class' => 'img-responsive img-banner', 'alt' => $alt_tag['inner'] . strip_tags(do_shortcode( $slide["title"] )) )) ?>
+				<?php echo wp_get_attachment_image( $slide["attachment_id"], 'full', false, array( 'class' => 'img-responsive img-fluid img-banner', 'alt' => $alt_tag['inner'] . strip_tags(do_shortcode( $slide["title"] )) )) ?>
 				<?php do_action( 'action_before_banner_content', $page_details ); ?>
 				<div class="banner-content">
 					<?php 

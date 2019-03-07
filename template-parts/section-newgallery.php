@@ -83,7 +83,7 @@ do_action( 'action_avobe_newgallery', $page_details );
 						endif; ?>	
 							<div class="<?php echo $con_class; ?>">
 								<a href="<?php if ($large_size == 'max') echo aq_resize($attachment_url, 1920); elseif ($large_size == 'container') echo aq_resize($attachment_url, 1140); else echo $attachment_url ?>" data-fancybox="gallery" data-caption="">
-									<img class="img-responsive img-gallery img-<?php echo $attachment_id?>" src="<?php echo $img_url ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt ?>" >
+									<img class="img-responsive img-fluid img-gallery img-<?php echo $attachment_id?>" src="<?php echo $img_url ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt ?>" >
 									<span class="hover"><img src="<?php echo $zoom_url ?>" alt="Zoom"></span>
 								</a>
 							</div>

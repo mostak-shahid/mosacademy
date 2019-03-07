@@ -50,10 +50,10 @@ do_action( 'action_avobe_service', $page_details );
 					<div class="service-unit">
 						<div class="img-part">
 							<?php if ($slide['image']) : ?>
-								<img class="img-responsive img-service-one" src="<?php echo wp_get_attachment_url( $slide['attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>" width="<?php echo $slide['width'] ?>" height="<?php echo $slide['height'] ?>">
+								<img class="img-responsive img-fluid img-service-one" src="<?php echo wp_get_attachment_url( $slide['attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>" width="<?php echo $slide['width'] ?>" height="<?php echo $slide['height'] ?>">
 							<?php endif; ?>
 							<?php if ($slide['photo']) : ?>
-								<img class="img-responsive img-service-two" src="<?php echo wp_get_attachment_url( $slide['photo_attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>" width="<?php echo $slide['photo_width'] ?>" height="<?php echo $slide['photo_height'] ?>">
+								<img class="img-responsive img-fluid img-service-two" src="<?php echo wp_get_attachment_url( $slide['photo_attachment_id'] ) ?>" alt="<?php echo $alt_tag['inner'] . strip_tags(do_shortcode( $slide['title'] )) ?>" width="<?php echo $slide['photo_width'] ?>" height="<?php echo $slide['photo_height'] ?>">
 							<?php endif; ?>
 						</div>
 						<div class="content">	

@@ -67,8 +67,8 @@ do_action( 'action_avobe_page', $page_details );
 											else $img_url = $raw_url;
 											?>
 
-											<img class="img-responsive img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>">
-											<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-gallery', 'alt' => $alt_tag['inner'] . $attachment_alt) ); ?>
+											<img class="img-responsive img-fluid img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>">
+											<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-fluid img-gallery', 'alt' => $alt_tag['inner'] . $attachment_alt) ); ?>
 										
 											<div class="hover-box">
 												<div class="hover-zoom">

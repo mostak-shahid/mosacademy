@@ -314,7 +314,7 @@ function feature_image_func( $atts = array(), $content = '' ) {
 			$img = get_the_post_thumbnail_url();
 		endif;
 		list($fwidth, $fheight) = getimagesize($img);
-		$html .= '<img class="img-responsive img-featured" src="'.$img.'" alt="'.get_the_title().'" width="'.$fwidth.'" height="'.$fheight.'" />';
+		$html .= '<img class="img-responsive img-fluid img-featured" src="'.$img.'" alt="'.get_the_title().'" width="'.$fwidth.'" height="'.$fheight.'" />';
 		if ($atts['wrapper_element']) $html .= '</'. $atts['wrapper_element'] . '>';		
 	endif;
 	return $html;
@@ -439,7 +439,7 @@ function address_func( $atts = array(), $content = '' ) {
 			if ($address[map_link]) $html .= '<a target="_blank" href="'.$address[map_link].'">';
 			if ($atts['map']) :		
 				$html .= '<span class="img-part">';
-					$html .= '<img class="img-responsive img-map" src="'.$address[image].'" alt="">';
+					$html .= '<img class="img-responsive img-fluid img-map" src="'.$address[image].'" alt="">';
 				$html .= '</span>';
 			endif;
 			if ($atts['address']) :	
@@ -657,7 +657,7 @@ function mos_post_func( $atts = array(), $content = '' ) {
 					$html .= '</h3><!--/.'.$atts['post_type'].'-title-->';
 				} elseif ($slice == 'image') {
 					$html .= '<div class="'.$atts['post_type'].'-image">';
-					$html .= '<img class="img-responsive img-"'.$atts['post_type'].'" src="'.get_the_post_thumbnail_url().'" />';
+					$html .= '<img class="img-responsive img-fluid img-"'.$atts['post_type'].'" src="'.get_the_post_thumbnail_url().'" />';
 					$html .= '</div><!--/.'.$atts['post_type'].'-image-->';					
 				} elseif ($slice == 'content') {
 					$html .= '<div class="'.$atts['post_type'].'-content">';

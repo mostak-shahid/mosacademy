@@ -290,7 +290,7 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
         $attachment_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
     ?>
         <div class="blog-img-container">
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('col-4-full', array('class' => 'img-responsive img-blog img-centered', 'alt' => $alt_tag['inner'] . get_the_title()))?></a>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('col-4-full', array('class' => 'img-responsive img-fluid img-blog img-centered', 'alt' => $alt_tag['inner'] . get_the_title()))?></a>
         </div>
     <?php endif;
 }
@@ -390,9 +390,9 @@ function post_thumbnail_fnc() {
         ?>
     	<?php if (is_single()) : ?>
         	<?php if($page_layout != 'ns') : ?>
-        		<?php the_post_thumbnail('blog-image', array('class' => 'img-responsive img-blog img-centered', 'alt' => $alt_tag['inner'] . get_the_title()))?>
+        		<?php the_post_thumbnail('blog-image', array('class' => 'img-responsive img-fluid img-blog img-centered', 'alt' => $alt_tag['inner'] . get_the_title()))?>
         	<?php else : ?>
-        		<?php the_post_thumbnail('blog-image-full', array('class' => 'img-responsive img-blog img-centered', 'alt' => $alt_tag['inner'] . get_the_title()))?>
+        		<?php the_post_thumbnail('blog-image-full', array('class' => 'img-responsive img-fluid img-blog img-centered', 'alt' => $alt_tag['inner'] . get_the_title()))?>
         	<?php endif; ?>
         <?php else : ?>
         	<?php
@@ -526,7 +526,7 @@ function mos_welcome_media_fnc () {
     elseif($image_align == 'left') $cls = 'col-md-6 col-md-pull-6';
 
 
-    if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
+    if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
 
 
 

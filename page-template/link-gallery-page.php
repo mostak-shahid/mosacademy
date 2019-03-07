@@ -67,8 +67,8 @@ do_action( 'action_avobe_page', $page_details );
 									if ($image_width OR $image_height ) $img_url = aq_resize($attachment_url, $image_width, $image_height, true);
 									else $img_url = $attachment_url;
 									?>
-									<img class="img-responsive img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>">
-									<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-gallery', 'alt' => $attachment_alt) ); ?>
+									<img class="img-responsive img-fluid img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>">
+									<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-fluid img-gallery', 'alt' => $attachment_alt) ); ?>
 									<span class="text"><?php echo $gallery_image['_mosacademy_link_gallery_details_text'] ?></span>
 									<div class="link-container">
 										<a href="<?php echo do_shortcode( $gallery_image['_mosacademy_link_gallery_details_url'] ) ?>">View Details</a>

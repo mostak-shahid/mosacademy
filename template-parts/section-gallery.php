@@ -64,8 +64,8 @@ do_action( 'action_avobe_gallery', $page_details );
 							$attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
 							list($width, $height) = getimagesize($img_url);
 							?>
-							<img class="img-responsive img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>" width="<?php echo $width ?>" height="<?php echo $height ?>">
-							<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-gallery', 'alt' => $alt_tag['inner'] . $attachment_alt) ) ?>
+							<img class="img-responsive img-fluid img-gallery" src="<?php echo $img_url; ?>" alt="<?php echo $alt_tag['inner'] . $attachment_alt; ?>" width="<?php echo $width ?>" height="<?php echo $height ?>">
+							<?php //echo wp_get_attachment_image( $attachment_id, 'gallery-section-resized', false, array('class' => 'img-responsive img-fluid img-gallery', 'alt' => $alt_tag['inner'] . $attachment_alt) ) ?>
 						
 							<div class="hover-box hidden-sm hidden-xs">
 								<div class="hover-zoom">

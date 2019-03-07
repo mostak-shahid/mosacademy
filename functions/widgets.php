@@ -301,7 +301,7 @@ class Mos_Contact_Widget extends WP_Widget {
 					<span class="visible-xs"><a href="tel:<?php echo $instance['phone'] ?>">Tap to Call</a></span>
 				</p>
 				<?php endif; ?>
-				<p class="widgets-map"><a class="map-holder" href="<?php echo $instance['map_url'] ?>" target="_mosacademy" rel="noopener noreferrer"><img class="alignnone wp-image-434 size-full img-responsive img-center" src="<?php echo $instance['map_img'] ?>" alt="Location"></a></p>
+				<p class="widgets-map"><a class="map-holder" href="<?php echo $instance['map_url'] ?>" target="_mosacademy" rel="noopener noreferrer"><img class="alignnone wp-image-434 size-full img-responsive img-fluid img-center" src="<?php echo $instance['map_img'] ?>" alt="Location"></a></p>
 			</div>
 		<?php echo $args['after_widget'] ?>
 <?php
