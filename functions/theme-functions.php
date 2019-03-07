@@ -329,11 +329,11 @@ function mobile_menu ($value) {
     $size = sizeof($value) - 1;
     if ($size == 3) {
         $tc = 'row icon-menu';
-        $bc = 'col-xs-4';
+        $bc = 'col-4';
     }
     elseif ($size == 2) {
         $tc = 'row text-menu';
-        $bc = 'col-xs-6';
+        $bc = 'col-6';
     }
     else {
         $tc = 'full-menu';

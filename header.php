@@ -45,7 +45,7 @@ do_action( 'action_above_header', $page_details );
 <?php if ($mosacademy_options['misc-page-loader']) : ?>
     <div class="se-pre-con">
     <?php if ($mosacademy_options['misc-page-loader-image']['url']) : ?>
-        <img class="img-responsive img-fluid animation <?php echo $mosacademy_options['misc-page-loader-image-animation'] ?>" src="<?php echo do_shortcode( $mosacademy_options['misc-page-loader-image']['url'] ); ?>">
+        <img class="img-responsive animation <?php echo $mosacademy_options['misc-page-loader-image-animation'] ?>" src="<?php echo do_shortcode( $mosacademy_options['misc-page-loader-image']['url'] ); ?>">
     <?php else : ?>
         <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     <?php endif; ?>
@@ -56,7 +56,7 @@ do_action( 'action_above_header', $page_details );
 
 
 
-    <?php echo do_shortcode( '[site_identity container_class="small-logo d-md-none d-lg-none d-xl-none"]' ) ?>          
+    <?php echo do_shortcode( '[site_identity container_class="small-logo d-flex d-lg-none d-xl-none" class="mr-auto ml-auto"]' ) ?>          
 
     <header id="main-header">
         <div class="content-wrap d-none d-lg-block">
