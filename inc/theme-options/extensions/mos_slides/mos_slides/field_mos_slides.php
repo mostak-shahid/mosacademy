@@ -120,19 +120,24 @@ if (!class_exists('ReduxFramework_mos_slides')) {
 
                     echo '<ul id="' . esc_attr( $this->field[ 'id' ] ) . '-ul" class="redux-slides-list">';
 
-                    echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-title_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][title]" value="' . esc_attr($slide['title']) . '" placeholder="'.esc_html__('Title', 'moscanopies').'" class="full-text slide-title" /></li>';
+                    $placeholder_title = (isset($this->field['placeholder']['title'])) ? esc_attr($this->field['placeholder']['title']) : __( 'Title', 'moscanopies' );
+                    echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-title_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][title]" value="' . esc_attr($slide['title']) . '" placeholder="'.$placeholder_title.'" class="full-text slide-title" /></li>';
                     if ( $this->field[ 'show' ][ 'description' ] ) {
-                        echo '<li><textarea name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][description]" id="' . esc_attr( $this->field['id'] ) . '-description_' . esc_attr( $x ) . '" placeholder="'.esc_attr__('Description', 'moscanopies').'" class="large-text" rows="6">' . esc_attr($slide['description']) . '</textarea></li>';
+                        $placeholder = (isset($this->field['placeholder']['description'])) ? esc_attr($this->field['placeholder']['description']) : __( 'Description', 'moscanopies' );
+                        echo '<li><textarea name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][description]" id="' . esc_attr( $this->field['id'] ) . '-description_' . esc_attr( $x ) . '" placeholder="'.esc_attr( $placeholder ).'" class="large-text" rows="6">' . esc_attr($slide['description']) . '</textarea></li>';
                     }
                     if ( $this->field[ 'show' ][ 'link_title' ] ) {
-                        echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-link_title_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][link_title]" value="' . esc_attr($slide['link_title']) . '" placeholder="'.esc_attr__('Link Title', 'moscanopies').'" class="full-text" /></li>';
+
+                        $placeholder = (isset($this->field['placeholder']['link_title'])) ? esc_attr($this->field['placeholder']['link_title']) : __( 'Link Title', 'moscanopies' );
+                        echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-link_title_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][link_title]" value="' . esc_attr($slide['link_title']) . '" placeholder="'.esc_attr( $placeholder ).'" class="full-text" /></li>';
                     }
                     if ( $this->field[ 'show' ][ 'link_url' ] ) {
-                        echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-link_url_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][link_url]" value="' . esc_attr($slide['link_url']) . '" class="full-text" placeholder="'.esc_html__('URL', 'moscanopies').'" /></li>';
+                        $placeholder = (isset($this->field['placeholder']['link_url'])) ? esc_attr($this->field['placeholder']['link_url']) : __( 'URL', 'moscanopies' );
+                        echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-link_url_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][link_url]" value="' . esc_attr($slide['link_url']) . '" class="full-text" placeholder="'.esc_attr( $placeholder ).'" /></li>';
                     }
                     if ( $this->field[ 'show' ][ 'target' ] ) {
                         echo '<li><label for="'. esc_attr( $this->field['id'] ) .  '-target_' . esc_attr( $x ) . '" class="icon-link_title-target">';
-                        echo '<input type="checkbox" class="checkbox-slide-target" id="' . esc_attr( $this->field['id'] ) . '-target_' . esc_attr( $x ) . '" value="1" ' . checked(  $slide['target'], '1', false ) . ' name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][target]" />';
+                        echo '<input type="checkbox" class="checkbox-slide-target" id="' . esc_attr( $this->field['id'] ) . '-target_' . esc_attr( $x ) . '" value="1" ' . checked(  $slide['target'], 1, false ) . ' name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][target]" />';
                         echo ' '.esc_html__('Open Link in New Tab/Window', 'moscanopies'). '</label></li>';
                     }
 
@@ -182,13 +187,13 @@ if (!class_exists('ReduxFramework_mos_slides')) {
                     $placeholder = (isset($this->field['placeholder']['link_title'])) ? esc_attr($this->field['placeholder']['link_title']) : __( 'Link Title', 'moscanopies' );
                     echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-link_title_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][link_title]" value="" placeholder="'.esc_attr( $placeholder ).'" class="full-text" /></li>';   
                 }
-                if ( $this->field[ 'show' ][ 'link_url' ] ) {             
+                if ( $this->field[ 'show' ][ 'link_url' ] ) {          
                     $placeholder = (isset($this->field['placeholder']['link_url'])) ? esc_attr($this->field['placeholder']['link_url']) : __( 'URL', 'moscanopies' );
                     echo '<li><input type="text" id="' . esc_attr( $this->field['id'] ) . '-link_url_' . esc_attr( $x ) . '" name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][link_url]" value="" class="full-text" placeholder="'.esc_attr( $placeholder ).'" /></li>';
                 }
                 if ( $this->field[ 'show' ][ 'target' ] ) {
                     echo '<li><label for="'. esc_attr( $this->field['id'] ) .  '-target_' . esc_attr( $x ) . '">';
-                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . esc_attr( $this->field['id'] ) . '-target_' . esc_attr( $x ) . '" value="" ' . checked(  $slide['target'], '1', false ) . ' name="' . esc_attr( $this->args['opt_name'] ) . '[' . esc_attr( $this->field['id'] ) . '][' . esc_attr( $x ) . '][target]" />';
+                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . esc_attr( $this->field['id'] ) . '-target_' . esc_attr( $x ) . '" value="1" ' . checked(  $slide['target'], '1', false ) . ' name="' . esc_attr( $this->field['name'] ) . '[' . esc_attr( $x ) . '][target]" />';
                     echo ' '.esc_html__('Open Link in New Tab/Window', 'moscanopies'). '</label></li>';
                 }
 
