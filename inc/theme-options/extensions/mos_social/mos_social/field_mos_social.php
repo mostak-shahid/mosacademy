@@ -192,7 +192,7 @@ if (!class_exists('ReduxFramework_mos_social')) {
                 }
                 if ( $this->field[ 'show' ][ 'target' ] ) {
                     echo '<li><label for="'. esc_attr( $this->field['id'] ) .  '-target_' . esc_attr( $x ) . '">';
-                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . esc_attr( $this->field['id'] ) . '-target_' . esc_attr( $x ) . '" value="" ' . checked(  '', '1', false ) . ' name="' . esc_attr( $this->args['opt_name'] ) . '[' . esc_attr( $this->field['id'] ) . '][' . esc_attr( $x ) . '][target]" />';
+                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . esc_attr( $this->field['id'] ) . '-target_' . esc_attr( $x ) . '" value="1" ' . checked(  '', '1', false ) . ' name="' . esc_attr( $this->args['opt_name'] ) . '[' . esc_attr( $this->field['id'] ) . '][' . esc_attr( $x ) . '][target]" />';
                     echo ' '.esc_html__('Open Link in New Tab/Window', 'mosacademy'). '</label></li>';
                 }
 
