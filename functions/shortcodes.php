@@ -111,13 +111,16 @@ function element_start_func( $atts = array(), $content = '' ) {
 	if($atts['name'] == 'img' AND $atts['src']){
 		//$src_1 = str_replace('home_url()', home_url(), $atts['src']);
 		$src = mos_home_url_replace($atts['src']);
-		if($atts['imgwidth'] AND  $atts['imgheight'])
+		if($atts['imgwidth'] AND  $atts['imgheight']) :
 			$html .= ' src="'.aq_resize($src, $atts['imgwidth'], $atts['imgheight'], true).'"';
-		elseif($atts['imgwidth'])
+			$html .= ' width="'.$atts['imgwidth'].'" height="'.$atts['imgheight'].'"';
+		elseif($atts['imgwidth']) :
 			$html .= ' src="'.aq_resize($src, $atts['imgwidth'], '', true).'"';
-		else 
+			$html .= ' width="'.$atts['imgwidth'].'"';
+		else :
 			$html .= ' src="'.$src.'"';
-	}	
+		endif;
+	}
 	if($atts['atts']) {
 		//$ratts_1 = str_replace('home_url()', home_url(), $atts['atts']);
 		$ratts = mos_home_url_replace($atts['atts']);
