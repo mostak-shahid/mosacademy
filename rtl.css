@@ -1,0 +1,14 @@
+/*
+Theme Name: Aoki
+*/
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+.qodef-section-title-holder .qodef-st-title, .qodef-st-text {
+	text-align: right;
+}
+.qodef-progress-bar .qodef-pb-percent-holder {
+	left: auto;
+	right: 0;
+}
