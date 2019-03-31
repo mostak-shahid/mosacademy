@@ -12,7 +12,7 @@ $blog_sections = get_post_meta( $page_for_posts, '_mosacademy_page_section_layou
 
 $all_sections = get_post_meta( get_the_ID(), '_mosacademy_page_section_layout', true );
 
-if (sizeof($all_sections["Enabled"]) > 1) $sections = $all_sections["Enabled"];
+if (sizeof(@$all_sections["Enabled"]) > 1) $sections = $all_sections["Enabled"];
 else $sections = $blog_sections;
 ?>
 <?php 
