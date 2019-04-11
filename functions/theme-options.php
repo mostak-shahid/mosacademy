@@ -1,7 +1,7 @@
 <?php
 	/*My Code*/
 	//$forms = get_formadable_form_list();
-    global $container_list, $animations, $section_list, $bootstrap_grids, $col_ratio;
+    global $container_list, $animations, $section_list, $bootstrap_grids, $col_ratio, $style_sheet;
     $page_sections = array_diff($section_list,array('banner' => 'Banner Section', 'welcome' => 'Welcome Section'));
 //var_dump ($forms);
 	/*My Code*/
@@ -292,9 +292,7 @@
                 'type'     => 'select',
                 'title'    => __( 'Theme Skin Stylesheet', 'redux-framework-demo' ),
                 'subtitle' => __( 'Note* changes made in options panel will override this stylesheet. Example: Colors set in typography.', 'redux-framework-demo' ),
-                'options'  => array( 
-                    'default.css' => 'default.css' 
-                ),
+                'options'  => $style_sheet,
                 'default'  => 'default.css',
             ),
             array(

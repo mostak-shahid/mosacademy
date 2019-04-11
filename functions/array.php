@@ -143,3 +143,4 @@ $col_ratio = array(
     
     '11' => '25% + 25% + 25% + 25%',
 );
+$style_sheet = array('default.css' => 'default.css');
