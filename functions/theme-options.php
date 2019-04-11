@@ -293,7 +293,6 @@
                 'title'    => __( 'Theme Skin Stylesheet', 'redux-framework-demo' ),
                 'subtitle' => __( 'Note* changes made in options panel will override this stylesheet. Example: Colors set in typography.', 'redux-framework-demo' ),
                 'options'  => $style_sheet,
-                'default'  => 'default.css',
             ),
             array(
                 'id'       => 'basic-styling-primary-color',
