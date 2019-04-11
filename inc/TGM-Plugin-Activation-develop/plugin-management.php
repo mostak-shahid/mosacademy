@@ -121,6 +121,18 @@ function mosacademy_plugins_management() {
 			'force_activation'	=> false, 
 		),
 		array(
+			'name'				=> 'Mos Testimonial', 
+			'slug'				=> 'mos-testimonial', 
+			'required'			=> false,
+			'force_activation'	=> false, 
+		),
+		array(
+			'name'				=> 'Mos Speed up', 
+			'slug'				=> 'mos-speed-up', 
+			'required'			=> false,
+			'force_activation'	=> false, 
+		),
+		array(
 			'name'				=> 'Mos CSV Import/Export', 
 			'slug'				=> 'mos-csv-import-export', 
 			'source'			=> 'https://github.com/mostak-shahid/mos-csv-import-export/archive/master.zip', 
