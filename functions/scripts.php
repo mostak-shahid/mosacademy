@@ -6,6 +6,10 @@ function mosacademy_enqueue_scripts() {
 		wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 		wp_enqueue_style( 'font-awesome.min' );
 	}
+	if ($mosacademy_options["typography-fonts"]["arimo"]) {
+		wp_register_style( 'arimo.min', get_template_directory_uri() . '/fonts/Arimo/css/arimo.min.css' );
+		wp_enqueue_style( 'arimo.min' );
+	}
 	if ($mosacademy_options["typography-fonts"]["dosis"]) {
 		wp_register_style( 'dosis.min', get_template_directory_uri() . '/fonts/Dosis/css/dosis.min.css' );
 		wp_enqueue_style( 'dosis.min' );
@@ -98,6 +102,10 @@ function mosacademy_enqueue_scripts() {
 
 	// wp_register_style( 'theme-style', get_stylesheet_uri() );
 	// wp_enqueue_style( 'theme-style' );
+	if ($mosacademy_options['basic-styling-stylesheet']) {	
+		wp_register_style( 'stylesheet', get_stylesheet_directory_uri() .  '/css/' . $mosacademy_options['basic-styling-stylesheet'], array('bootstrap.min', 'animate.min', 'owl.carousel.min', 'owl.theme.default.min', 'jquery.fancybox.min'));
+		wp_enqueue_style( 'stylesheet' );
+	}
 
 	wp_register_style( 'main.min', get_template_directory_uri() .  '/css/main.min.css', array('bootstrap.min', 'animate.min', 'owl.carousel.min', 'owl.theme.default.min', 'jquery.fancybox.min'));
 	wp_enqueue_style( 'main.min' );

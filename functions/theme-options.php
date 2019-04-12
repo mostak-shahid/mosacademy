@@ -373,6 +373,7 @@
                 //Must provide key => value pairs for multi checkbox options
                 'options'  => array(
                     'font-awesome' => 'Font Awesome',
+                    'arimo' => 'Arimo',
                     'dosis' => 'Dosis',
                     'oldstandard' => 'Old Standard TT',
                     'opensans' => 'OpenSans',

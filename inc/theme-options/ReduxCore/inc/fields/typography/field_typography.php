@@ -20,15 +20,16 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
     class ReduxFramework_typography {
 
         private $std_fonts = array(
+            "Arimo"                                                => "Arimo",
             "Dosis"                                                => "Dosis",
+            "Khand"                                                => "Khand",
+            "Montserrat"                                           => "Montserrat",
             "Old Standard TT"                                      => "Old Standard TT",
             "OpenSans"                                             => "OpenSans",
             "Poppins"                                              => "Poppins",
-            "Montserrat"                                           => "Montserrat",
             "Roboto"                                               => "Roboto",
             "Source Sans Pro"                                      => "Source Sans Pro",
             "Source Serif Pro"                                     => "Source Serif Pro",
-            "Khand"                                                => "Khand",
             "Ubuntu"                                               => "Ubuntu",
             "Arial, Helvetica, sans-serif"                         => "Arial, Helvetica, sans-serif",
             "'Arial Black', Gadget, sans-serif"                    => "'Arial Black', Gadget, sans-serif",
