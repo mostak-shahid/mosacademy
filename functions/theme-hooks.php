@@ -473,10 +473,10 @@ function mos_welcome_content_fnc () {
     $readmore = $mosacademy_options['sections-welcome-readmore'];
     $url = $mosacademy_options['sections-welcome-url'];
     $cls = '';
-    if($image_align == 'top') $cls = 'col-md-12 col-md-push-12';
+    if($image_align == 'top') $cls = 'col-md-12 order-last';
     elseif($image_align == 'right') $cls = 'col-md-6';
     elseif($image_align == 'bottom') $cls = 'col-md-12';
-    elseif($image_align == 'left') $cls = 'col-md-6 col-md-push-6';
+    elseif($image_align == 'left') $cls = 'col-md-6 order-last';
 
 
     if ($readmore == 'scroll') $class = "with-scroll"; 
@@ -490,8 +490,10 @@ function mos_welcome_content_fnc () {
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><?php echo do_shortcode( $title ); ?></h4>
+                <h5 class="modal-title"><?php echo do_shortcode( $title ); ?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <?php echo do_shortcode( $content );//the_content(); ?>
@@ -520,10 +522,10 @@ function mos_welcome_media_fnc () {
     $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);    
     $image_align = $mosacademy_options['sections-welcome-media-align'];
     $cls = '';
-    if($image_align == 'top') $cls = 'col-md-12 col-md-pull-12';
+    if($image_align == 'top') $cls = 'col-md-12 order-first';
     elseif($image_align == 'right') $cls = 'col-md-6';
     elseif($image_align == 'bottom') $cls = 'col-md-12';
-    elseif($image_align == 'left') $cls = 'col-md-6 col-md-pull-6';
+    elseif($image_align == 'left') $cls = 'col-md-6 order-first';
 
 
     if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
