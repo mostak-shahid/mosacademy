@@ -40,7 +40,7 @@ do_action( 'action_avobe_service', $page_details );
 		<?php if ($content) : ?>			
 			<div class="content-wrapper"><?php echo do_shortcode( $content ); ?></div>
 		<?php endif; ?>
-		<div class="services">
+		<div class="services" <?php if (!$gap) echo 'style="padding-left: 15px; padding-rigth: 15px"'?>>
 			<div <?php if ($view == 'slider') echo 'id="section-service-owl" class=" owl-carousel owl-theme"'; elseif ($view == 'grid') echo 'class="row"'; else echo 'class=""'; ?> >
 			<?php do_action( 'action_before_service_loop', $page_details ); ?>
 
