@@ -438,6 +438,8 @@ function contact_title_fnc () {
     <div class="title-wrapper">             
         <h2 class="title"><?php echo do_shortcode( $title ); ?></h2>
     </div>
+    <?php endif; ?>
+    <?php if ($content) : ?> 
     <div class="desc"><?php echo do_shortcode( $content ) ?></div>
     <?php endif; ?>
     <?php
