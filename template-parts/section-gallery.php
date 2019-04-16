@@ -86,7 +86,7 @@ do_action( 'action_avobe_gallery', $page_details );
 			<div class="row">
 			<?php if($mosacademy_options['sections-gallery-view-more']['text_field_3']) echo '<div class="'.$mosacademy_options['sections-gallery-view-more']['text_field_3'].'">'; ?>
 				<?php if ($mosacademy_options['sections-gallery-view-more']['text_field_1'] AND $mosacademy_options['sections-gallery-view-more']['text_field_2']) : ?>
-					<a class="<?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_4'] )  ?>" href="<?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_2'] )  ?>"><?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_1'] )  ?></a>
+					<a class="gallery-link <?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_4'] )  ?>" href="<?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_2'] )  ?>"><?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_1'] )  ?></a>
 				<?php endif; ?>
 			<?php if($mosacademy_options['sections-gallery-view-more']['text_field_3']) echo '</div>'; ?>
 			</div>
