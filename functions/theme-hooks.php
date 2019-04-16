@@ -432,12 +432,13 @@ add_action( 'action_before_contact_form', 'contact_title_fnc', 10, 1 );
 function contact_title_fnc () {
     global $mosacademy_options;
     $title = $mosacademy_options['sections-contact-title'];
-    $contact_phone = $mosacademy_options['contact-phone'];
+    $content = $mosacademy_options['sections-contact-content'];
     ?>
     <?php if ($title) : ?> 
     <div class="title-wrapper">             
         <h2 class="title"><?php echo do_shortcode( $title ); ?></h2>
     </div>
+    <div class="desc"><?php echo do_shortcode( $content ) ?></div>
     <?php endif; ?>
     <?php
 }

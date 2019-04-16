@@ -16,21 +16,8 @@ do_action( 'action_avobe_banner', $page_details );
 		*/
 		do_action( 'action_before_contact', $page_details );
 		?>			
-			<?php 
-			/*
-			* action_before_contact_form hook
-			* @hooked contact_title_fnc 10
-			*/
-			do_action( 'action_before_contact_form', $page_details );
-			?>	
-			<?php 
-			/*
-			* action_contact_form hook
-			* @hooked contact_form_fnc 10
-			*/
-			do_action( 'action_contact_form', $page_details );
-			?>			
-
+			<?php do_action( 'action_before_contact_form', $page_details );?>	
+			<?php do_action( 'action_contact_form', $page_details );?>	
 			<?php do_action( 'action_after_contact_form', $page_details );?>
 
 		<?php 
