@@ -83,13 +83,6 @@ do_action( 'action_avobe_gallery', $page_details );
 				<?php if ($key >= $count) break ?>
 			<?php endforeach; ?>
 			</div>
-			<div class="row">
-			<?php if($mosacademy_options['sections-gallery-view-more']['text_field_3']) echo '<div class="'.$mosacademy_options['sections-gallery-view-more']['text_field_3'].'">'; ?>
-				<?php if ($mosacademy_options['sections-gallery-view-more']['text_field_1'] AND $mosacademy_options['sections-gallery-view-more']['text_field_2']) : ?>
-					<a class="gallery-link <?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_4'] )  ?>" href="<?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_2'] )  ?>"><?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_1'] )  ?></a>
-				<?php endif; ?>
-			<?php if($mosacademy_options['sections-gallery-view-more']['text_field_3']) echo '</div>'; ?>
-			</div>
 		<?php 
 		/*
 		* action_after_gallery hook

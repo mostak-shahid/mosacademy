@@ -529,14 +529,22 @@ function mos_welcome_media_fnc () {
     elseif($image_align == 'right') $cls = 'col-md-6';
     elseif($image_align == 'bottom') $cls = 'col-md-12';
     elseif($image_align == 'left') $cls = 'col-md-6 order-first';
-
-
     if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
-
-
-
 }
+add_action( 'action_before_gallery', 'gallery_link_func', 1, 1 );
+function gallery_link_func($page_details){
+    global $mosacademy_options;
+    ?>
 
+            <div class="row">
+            <?php if($mosacademy_options['sections-gallery-view-more']['text_field_3']) echo '<div class="'.$mosacademy_options['sections-gallery-view-more']['text_field_3'].'">'; ?>
+                <?php if ($mosacademy_options['sections-gallery-view-more']['text_field_1'] AND $mosacademy_options['sections-gallery-view-more']['text_field_2']) : ?>
+                    <a class="gallery-link <?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_4'] )  ?>" href="<?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_2'] )  ?>"><?php echo do_shortcode( $mosacademy_options['sections-gallery-view-more']['text_field_1'] )  ?></a>
+                <?php endif; ?>
+            <?php if($mosacademy_options['sections-gallery-view-more']['text_field_3']) echo '</div>'; ?>
+            </div>
+    <?php
+}
 
 
 
