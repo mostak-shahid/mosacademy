@@ -531,7 +531,7 @@ function mos_welcome_media_fnc () {
     elseif($image_align == 'left') $cls = 'col-md-6 order-first';
     if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
 }
-add_action( 'action_before_gallery', 'gallery_link_func', 1, 1 );
+add_action( 'action_after_gallery', 'gallery_link_func', 1, 1 );
 function gallery_link_func($page_details){
     global $mosacademy_options;
     ?>
