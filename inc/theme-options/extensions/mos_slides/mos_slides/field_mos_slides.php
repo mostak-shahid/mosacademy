@@ -90,6 +90,7 @@ if (!class_exists('ReduxFramework_mos_slides')) {
                         $slide[ 'image' ] = $img[ 0 ];
                         $slide[ 'width' ] = $img[ 1 ];
                         $slide[ 'height' ] = $img[ 2 ];
+                        $slide[ 'thumb' ] = wp_get_attachment_thumb_url( $slide[ 'attachment_id' ] );;
                     }
 
                     echo '<div class="redux-slides-accordion-group"><fieldset class="redux-field" data-id="' . esc_attr( $this->field[ 'id' ] ) . '"><h3><span class="redux-slides-header">' . esc_html( $slide[ 'title' ] ) . '</span></h3><div>';
