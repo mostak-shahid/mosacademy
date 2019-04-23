@@ -1,4 +1,8 @@
 <?php
+add_action( 'action_above_header', 'small_device_logo_fnc' );
+function small_device_logo_fnc () {
+    echo do_shortcode( '[site_identity container_class="small-logo d-flex d-lg-none d-xl-none" class="mr-auto ml-auto"]' );
+}
 add_action( 'init', 'text_layout_manager' );
 function text_layout_manager () {
     global $mosacademy_options;
@@ -476,10 +480,10 @@ function mos_welcome_content_fnc () {
     $readmore = $mosacademy_options['sections-welcome-readmore'];
     $url = $mosacademy_options['sections-welcome-url'];
     $cls = '';
-    if($image_align == 'top') $cls = 'col-md-12 order-last';
-    elseif($image_align == 'right') $cls = 'col-md-6';
-    elseif($image_align == 'bottom') $cls = 'col-md-12';
-    elseif($image_align == 'left') $cls = 'col-md-6 order-last';
+    if($image_align == 'top') $cls = 'col-lg-12 order-last';
+    elseif($image_align == 'right') $cls = 'col-lg-6';
+    elseif($image_align == 'bottom') $cls = 'col-lg-12';
+    elseif($image_align == 'left') $cls = 'col-lg-6 order-last';
 
 
     if ($readmore == 'scroll') $class = "with-scroll"; 
@@ -525,10 +529,10 @@ function mos_welcome_media_fnc () {
     $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);    
     $image_align = $mosacademy_options['sections-welcome-media-align'];
     $cls = '';
-    if($image_align == 'top') $cls = 'col-md-12 order-first';
-    elseif($image_align == 'right') $cls = 'col-md-6';
-    elseif($image_align == 'bottom') $cls = 'col-md-12';
-    elseif($image_align == 'left') $cls = 'col-md-6 order-first';
+    if($image_align == 'top') $cls = 'col-lg-12 order-first';
+    elseif($image_align == 'right') $cls = 'col-lg-6';
+    elseif($image_align == 'bottom') $cls = 'col-lg-12';
+    elseif($image_align == 'left') $cls = 'col-lg-6 order-first';
     if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
 }
 add_action( 'action_after_gallery', 'gallery_link_func', 1, 1 );

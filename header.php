@@ -50,13 +50,7 @@ do_action( 'action_above_header', $page_details );
         <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     <?php endif; ?>
     </div>
-<?php endif; ?>
-
-
-
-
-
-    <?php echo do_shortcode( '[site_identity container_class="small-logo d-flex d-lg-none d-xl-none" class="mr-auto ml-auto"]' ) ?>          
+<?php endif; ?>         
 
     <header id="main-header">
         <div class="content-wrap d-none d-lg-block">

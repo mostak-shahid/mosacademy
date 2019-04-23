@@ -342,28 +342,40 @@ function mobile_menu ($value) {
     ?>
     <div class="<?php echo $tc ?>">
     <?php foreach ( $value as $key => $value ) : ?>
-        <?php if ( $key == 'menu' ) : ?>  
-        <div class="<?php echo $bc ?>">              
+        <?php if ( $key == 'menu' ) : ?>
+            <?php $menu = ($mosacademy_options['misc-sticky-menutext']) ? $mosacademy_options['misc-sticky-menutext'] : '<i class="fa fa-bars"></i><span class="text"> Menu</span>' ?>  
+        <div class="sticky-menu <?php echo $bc ?>">              
             <a href="javascript:void(0)" class="small-menu">
-                <i class="fa fa-bars"></i><span class="text"> Menu</span> 
+                 <?php echo $menu ?>
             </a>
         </div>
         <?php elseif ( $key == 'phone' ) : ?>
-            <div class="<?php echo $bc ?>">
-                <a class="small-phone" href="tel:<?php echo preg_replace('/[^0-9]/', '', $contact_phone[0]) ?>"><i class="fa fa-phone-square"></i><span class="text"> Call Us</span></a>
+            <?php $call = ($mosacademy_options['misc-sticky-call']) ? $mosacademy_options['misc-sticky-call'] : '<i class="fa fa-phone-square"></i><span class="text"> Call Us</span>' ?> 
+            <div class="sticky-call <?php echo $bc ?>">
+                <a class="small-phone" href="tel:<?php echo preg_replace('/[^0-9]/', '', $contact_phone[0]) ?>"><?php echo $call ?></a>
             </div>
             
         <?php elseif ( $key == 'email' ) : ?>
-            <div class="<?php echo $bc ?>">
-                <a class="small-email" href="mailto:<?php echo $contact_email[0];?>"><i class="fa fa-envelope"></i><span class="text"> Email Us</span></a> 
+            <?php $email = ($mosacademy_options['misc-sticky-email']) ? $mosacademy_options['misc-sticky-email'] : '<i class="fa fa-envelope"></i><span class="text"> Email Us</span>' ?>
+            <div class="sticky-email <?php echo $bc ?>">
+                <a class="small-email" href="mailto:<?php echo $contact_email[0];?>"><?php echo $email ?></a> 
             </div>        
         <?php elseif ( $key == 'smlogo' ) : ?>
-            <div class="sm-logo">
+            <div class="sticky-logo  <?php echo $bc ?>">
                 <?php
-                    $attachment_id = get_option( 'site_icon' );
-                    $img_url = aq_resize(wp_get_attachment_url( $attachment_id ), 33, 33, true);
+                    if ($mosacademy_options['misc-sticky-logo']['id']){
+                        $attachment_id = $mosacademy_options['misc-sticky-logo']['id'];
+                        $width = $mosacademy_options['misc-sticky-logo']['width'];
+                        $height = $mosacademy_options['misc-sticky-logo']['height'];
+                        $img_url = wp_get_attachment_url( $attachment_id );
+                    } else {
+                        $attachment_id = get_option( 'site_icon' );
+                        $width = 33;
+                        $height = 33;
+                        $img_url = aq_resize(wp_get_attachment_url( $attachment_id ), 33, 33, true);
+                    }
                 ?>
-                <a class="small-logo" href="<?php echo home_url();?>"><img src="<?php echo $img_url ?>" alt="<?php echo get_bloginfo( 'name' ) ?> - Logo" width="33" height="33"></a> 
+                <a class="small-logo" href="<?php echo home_url();?>"><img src="<?php echo $img_url ?>" alt="<?php echo get_bloginfo( 'name' ) ?> - Logo" width="<?php echo $width ?>" height="<?php echo $height ?>"></a> 
             </div>
         <?php endif; ?>
     <?php endforeach; ?>
