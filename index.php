@@ -11,7 +11,7 @@ $avobe_page = get_post_meta( $page_for_posts, '_mosacademy_avobe_page', true );
 $before_page = get_post_meta( $page_for_posts, '_mosacademy_before_page', true );
 $after_page = get_post_meta( $page_for_posts, '_mosacademy_after_page', true );
 $below_page = get_post_meta( $page_for_posts, '_mosacademy_below_page', true );
-if($sections ) {
+if($sections) {
 	$shift = array_shift($sections);
 }
 ?>

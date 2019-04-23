@@ -2140,7 +2140,15 @@
                     'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
                 ),
                 'required' => array( 'sections-banner-select', '!=', 'shortcode' ),
-            ),            
+            ),  
+            array(
+                'id'       => 'sections-banner-type',
+                'type'     => 'switch',
+                'title'    => __( 'Background Slider', 'redux-framework-demo' ),
+                'options' => array('Background', 'Image'),
+                'default'  => false,
+                'required' => array( 'sections-banner-select', '!=', 'shortcode' ),
+            ),          
             array(
                 'id'       => 'sections-banner-shortcode',
                 'type'     => 'text',

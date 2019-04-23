@@ -7,6 +7,7 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 $select = $mosacademy_options['sections-banner-select'];
 $slides = $mosacademy_options['sections-banner-details'];
 $shortcode = $mosacademy_options['sections-banner-shortcode'];
+$background = $mosacademy_options['sections-banner-type'];
 $n = 1;
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
 do_action( 'action_before_banner', $page_details );
@@ -19,8 +20,10 @@ do_action( 'action_before_banner', $page_details );
 
 		<div <?php if ( $select == 'banner' ) echo 'class="static-banner"'; else echo 'id="section-banner-owl" class="owl-carousel owl-theme"';   ?>>
 		<?php foreach ($slides as $slide) : ?>
-			<div class="wrapper">
-				<?php echo wp_get_attachment_image( $slide["attachment_id"], 'full', false, array( 'class' => 'img-responsive img-fluid img-banner', 'alt' => $alt_tag['inner'] . strip_tags(do_shortcode( $slide["title"] )) )) ?>
+			<div class="wrapper <?php if (!$background) echo 'text-abs'; else echo 'image-bg' ?>" <?php if ($background) : ?> style="background-image: url(<?php echo wp_get_attachment_url( $slide["attachment_id"] ) ?>);" <?php endif; ?>>
+				<?php if (!$background) : ?>
+					<?php echo wp_get_attachment_image( $slide["attachment_id"], 'full', false, array( 'class' => 'img-responsive img-fluid img-banner', 'alt' => $alt_tag['inner'] . strip_tags(do_shortcode( $slide["title"] )) )) ?>
+				<?php endif ?>
 				<?php do_action( 'action_before_banner_content', $page_details ); ?>
 				<div class="banner-content">
 					<?php 

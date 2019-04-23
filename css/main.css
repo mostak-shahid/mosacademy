@@ -640,7 +640,7 @@ img.alignright {
     width: 100%;
     height: auto;
 }
-#section-banner .banner-content {
+#section-banner .text-abs .banner-content {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -986,7 +986,7 @@ img.alignright {
     .site-branding {
         padding: 62px 10px 10px;
     }
-    #section-banner .banner-content {
+    #section-banner .text-abs .banner-content {
         position: relative;
         padding: 10px;
     }
