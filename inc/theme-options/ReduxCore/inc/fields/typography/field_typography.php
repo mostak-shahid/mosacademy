@@ -27,6 +27,7 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
             "Old Standard TT"                                      => "Old Standard TT",
             "OpenSans"                                             => "OpenSans",
             "Poppins"                                              => "Poppins",
+            "PT Sans"                                              => "PT Sans",
             "Roboto"                                               => "Roboto",
             "Source Sans Pro"                                      => "Source Sans Pro",
             "Source Serif Pro"                                     => "Source Serif Pro",

@@ -26,6 +26,10 @@ function mosacademy_enqueue_scripts() {
 		wp_register_style( 'poppins.min', get_template_directory_uri() . '/fonts/Poppins/css/poppins.min.css' );
 		wp_enqueue_style( 'poppins.min' );
 	}
+	if ($mosacademy_options["typography-fonts"]["ptsans"]) {
+		wp_register_style( 'ptsans.min', get_template_directory_uri() . '/fonts/PTSans/css/ptsans.min.css' );
+		wp_enqueue_style( 'ptsans.min' );
+	}
 	if ($mosacademy_options["typography-fonts"]["montserrat"]) {
 		wp_register_style( 'montserrat.min', get_template_directory_uri() . '/fonts/Montserrat/css/montserrat.min.css' );
 		wp_enqueue_style( 'montserrat.min' );

@@ -378,6 +378,7 @@
                     'oldstandard' => 'Old Standard TT',
                     'opensans' => 'OpenSans',
                     'poppins' => 'Poppins',
+                    'ptsans' => 'Pt Sans',
                     'montserrat' => 'Montserrat',
                     'roboto' => 'Roboto',
                     'sourcesanspro' => 'Source Sans Pro',
@@ -387,14 +388,15 @@
                 ),
                 //See how std has changed? you also don't need to specify opts that are 0.
                 'default'  => array(
-                    'font-awesome' => '1',
-                    'dosis' => '0',
-                    'oldstandard' => '0',
-                    'opensans' => '0',
-                    'poppins' => '0',
-                    'montserrat' => '0',
-                    'roboto' => '0',
-                    'ubuntu' => '0'
+                    'font-awesome' => 1,
+                    'dosis' => 0,
+                    'oldstandard' => 0,
+                    'opensans' => 0,
+                    'poppins' => 0,
+                    'ptsans' => 0,
+                    'montserrat' => 0,
+                    'roboto' => 0,
+                    'ubuntu' => 0
                 )
             ),
             array(
@@ -466,6 +468,14 @@
                 'subtitle' => __( 'Choose Size and Style for h5.', 'redux-framework-demo' ),
                 'google'   => false,
                 'output' => array('h5', '.h5'),
+            ),
+            array(
+                'id'       => 'typography-h6-font',
+                'type'     => 'typography',
+                'title'    => __( 'H6 Headings', 'redux-framework-demo' ),
+                'subtitle' => __( 'Choose Size and Style for h6.', 'redux-framework-demo' ),
+                'google'   => false,
+                'output' => array('h6', '.h6'),
             ),
         )
     ) );
