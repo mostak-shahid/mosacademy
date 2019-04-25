@@ -59,13 +59,33 @@ do_action( 'action_avobe_newgallery', $page_details );
 					}
 					$i = $j = 1;
 					?>
-					<?php $attachment_ids = explode(',', $gallery); ?>
+					<?php 
+					$attachment_ids = explode(',', $gallery); 
+					$total = sizeof($attachment_ids);
+					$current = 1;
+					// $x = explode('.',$total/4);
+					// if (end($x)) $extra = end($x)/25;
+					$extra = ((($total/4) - floor($total/4)) * 4);
+					$loop_end = $total-$extra;
+					?>
 					<?php foreach ($attachment_ids as $attachment_id) : ?>
 						<?php 
 						$attachment_url = wp_get_attachment_url( $attachment_id );
 						$attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
-
-						if (($j%2==0 AND $i==2) OR ($j%2!=0 AND $i==1)) :
+						if ($loop_end<$current AND $extra != 1) :
+							if ($extra == 2 AND @$tada) :
+								$img_url = aq_resize(wp_get_attachment_url( $attachment_id ), $wide_w, $wide_h, true);
+								$con_class= "eight";
+								$width = $wide_w;
+								$height = $wide_h;
+							else :
+								$img_url = aq_resize(wp_get_attachment_url( $attachment_id ), $med_w, $med_w, true);
+								$con_class= "four";
+								$width = $med_w;
+								$height = $med_w;
+								$tada = 1;
+							endif;						
+						elseif (($j%2==0 AND $i==2) OR ($j%2!=0 AND $i==1)) :
 							$img_url = aq_resize(wp_get_attachment_url( $attachment_id ), $wide_w, $wide_h, true);
 							$con_class= "eight";
 							$width = $wide_w;
@@ -93,6 +113,7 @@ do_action( 'action_avobe_newgallery', $page_details );
 							$i=0;
 						}
 						$i++;
+						$current++;
 						?>
 					<?php endforeach ?>
 				</div>
