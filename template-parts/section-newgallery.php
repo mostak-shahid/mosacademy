@@ -119,7 +119,7 @@ do_action( 'action_avobe_newgallery', $page_details );
 				</div>
 
 					<?php if (@$gal_url) : ?>
-						<div class="row"><div class="col-md-4 col-md-offset-4"><a class="btn btn-block btn-gallery" href="<?php echo esc_url( do_shortcode( $gal_url ) ) ?>">View More</a></div></div>
+						<div class="row"><div class="col-md-4 offset-md-4"><a class="btn btn-block btn-gallery" href="<?php echo esc_url( do_shortcode( $gal_url ) ) ?>">View More</a></div></div>
 					<?php endif ?>
 				<?php endif ?>
 		<?php 
