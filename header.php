@@ -39,6 +39,10 @@ if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
 <!-- <span class="text-danger"><?php echo get_page_template(); ?></span> -->
 <?php 
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
+/*
+ * Hook 'action_above_header', 
+ * Hooked 'small_device_logo_fnc'
+ */
 do_action( 'action_above_header', $page_details );
 ?>
 <input id="loader-status" type="hidden" value="<?php echo $mosacademy_options['misc-page-loader'] ?>">

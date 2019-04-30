@@ -326,42 +326,29 @@ function mobile_menu ($value) {
     global $mosacademy_options;
     $contact_phone = $mosacademy_options['contact-phone'];
     $contact_email = $mosacademy_options['contact-email'];
-    $size = sizeof($value) - 1;
-    if ($size == 3) {
-        $tc = 'row icon-menu';
-        $bc = 'col-4';
-    }
-    elseif ($size == 2) {
-        $tc = 'row text-menu';
-        $bc = 'col-6';
-    }
-    else {
-        $tc = 'full-menu';
-        $bc = '';
-    }
     ?>
-    <div class="<?php echo $tc ?>">
+    <div class="wrapper">
     <?php foreach ( $value as $key => $value ) : ?>
         <?php if ( $key == 'menu' ) : ?>
             <?php $menu = ($mosacademy_options['misc-sticky-menutext']) ? $mosacademy_options['misc-sticky-menutext'] : '<i class="fa fa-bars"></i><span class="text"> Menu</span>' ?>  
-        <div class="sticky-menu <?php echo $bc ?>">              
+        <div class="sticky-menu">              
             <a href="javascript:void(0)" class="small-menu">
                  <?php echo $menu ?>
             </a>
         </div>
         <?php elseif ( $key == 'phone' ) : ?>
             <?php $call = ($mosacademy_options['misc-sticky-call']) ? $mosacademy_options['misc-sticky-call'] : '<i class="fa fa-phone-square"></i><span class="text"> Call Us</span>' ?> 
-            <div class="sticky-call <?php echo $bc ?>">
+            <div class="sticky-call">
                 <a class="small-phone" href="tel:<?php echo preg_replace('/[^0-9]/', '', $contact_phone[0]) ?>"><?php echo $call ?></a>
             </div>
             
         <?php elseif ( $key == 'email' ) : ?>
             <?php $email = ($mosacademy_options['misc-sticky-email']) ? $mosacademy_options['misc-sticky-email'] : '<i class="fa fa-envelope"></i><span class="text"> Email Us</span>' ?>
-            <div class="sticky-email <?php echo $bc ?>">
+            <div class="sticky-email">
                 <a class="small-email" href="mailto:<?php echo $contact_email[0];?>"><?php echo $email ?></a> 
             </div>        
         <?php elseif ( $key == 'smlogo' ) : ?>
-            <div class="sticky-logo  <?php echo $bc ?>">
+            <div class="sticky-logo">
                 <?php
                     if ($mosacademy_options['misc-sticky-logo']['id']){
                         $attachment_id = $mosacademy_options['misc-sticky-logo']['id'];
