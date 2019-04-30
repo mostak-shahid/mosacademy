@@ -207,7 +207,7 @@ footer,
     width: 100%;
     line-height: 52px;
     font-weight: 600;
-    z-index: 1;
+    z-index: 999;
     text-align: center;
 }
 .small-nav.top {

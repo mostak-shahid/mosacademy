@@ -30,27 +30,27 @@ do_action( 'action_avobe_widgets', $page_details );
 			<div class="content-wrapper"><?php echo do_shortcode( $content ); ?></h2></div>
 		<?php endif; ?>
 			<div class="row">
-				<div class="col-md-<?php echo $colsize; ?> widgets-wrapper widgets-one">
+				<div class="col-lg-<?php echo $colsize; ?> widgets-wrapper widgets-one">
 					<?php if ( is_active_sidebar( 'footer_1' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_1' ); ?>
 					<?php endif; ?>
 				</div>
 				<?php if($widget_layout != '1') : ?>
-				<div class="col-md-<?php echo $colsize; ?> widgets-wrapper widgets-two">
+				<div class="col-lg-<?php echo $colsize; ?> widgets-wrapper widgets-two">
 					<?php if ( is_active_sidebar( 'footer_2' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_2' ); ?>
 					<?php endif; ?>					
 				</div>
 				<?php endif; ?>
 				<?php if($widget_layout == '3' OR $widget_layout == '4') : ?>
-				<div class="col-md-<?php echo $colsize; ?>  widgets-wrapper widgets-three">
+				<div class="col-lg-<?php echo $colsize; ?>  widgets-wrapper widgets-three">
 					<?php if ( is_active_sidebar( 'footer_3' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_3' ); ?>
 					<?php endif; ?>					
 				</div>
 				<?php endif; ?>
 				<?php if($widget_layout == '4') : ?>
-				<div class="col-md-<?php echo $colsize; ?>  widgets-wrapper widgets-four">
+				<div class="col-lg-<?php echo $colsize; ?>  widgets-wrapper widgets-four">
 					<?php if ( is_active_sidebar( 'footer_4' ) ) : ?>
 					    <?php dynamic_sidebar( 'footer_4' ); ?>
 					<?php endif; ?>					
