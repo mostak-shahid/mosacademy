@@ -39,7 +39,7 @@ function shortcodes_page(){
 			<li>[fax offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays fax from theme option</span></li>
 			<li>[hours] <span class="sdetagils">displays business hours from theme option</span></li>
 			<li>[product_search] <span class="sdetagils">displays product search form</span></li>
-			<li>[mos_post post_type='post/custom post type' taxonomy='' terms='' count='-1' grid='' format='title, content, excerpt-x, image, meta:meta_field_name']<span class="sdetagils">displays post with shortcode</span></li>
+			<li>[mos_post post_type='post/custom post type' taxonomy='' terms='' count='-1' grid='' format='title, content, excerpt-x, image-width-height, meta:meta_field_name, link:meta_field_name']<span class="sdetagils">displays post with shortcode</span></li>
 			<li>[wp_login_form]<span class="sdetagils">displays login form if user is not logged in</span></li>
 
 		</ol>
@@ -628,7 +628,7 @@ function mos_post_func( $atts = array(), $content = '' ) {
 		'terms'	=> '',
 		'count' => '-1',
 		'grid' => '',
-		'format' => 'title, content, excerpt-x, image, meta:meta_field_name'
+		'format' => 'title, content, excerpt-x, image-width-height, meta:meta_field_name, link:meta_field_name'
 	), $atts, 'mos_post' );
 	$count = ($atts['count']) ? $atts['count'] : '-1' ;
 	$args = array(
@@ -644,6 +644,10 @@ function mos_post_func( $atts = array(), $content = '' ) {
 			)
 		);
 	}
+	if ( $atts['grid'] == 6) $grid = 'col-lg-2';
+	elseif ( $atts['grid'] == 4) $grid = 'col-lg-3';
+	elseif ( $atts['grid'] == 3) $grid = 'col-lg-4';
+	elseif ( $atts['grid'] == 2) $grid = 'col-lg-6';
 	$query = new WP_Query($args); 
 	$count_posts = wp_count_posts($atts['post_type']);
 	$total = ($count > 0)? $count : $count_posts->publish;
@@ -651,17 +655,30 @@ function mos_post_func( $atts = array(), $content = '' ) {
 	if ($query -> have_posts()) : 
 		if ($atts['grid'] > 1) $html .= '<div class="row">';
 		while ($query -> have_posts()) : $query -> the_post(); 
-			$html .= '<div class="'.$atts['post_type'].'-wrapper">';
+			$html .= '<div class="'.$grid .' '. $atts['post_type'].'-wrapper">';
 			$slices = explode(',', str_replace(' ', '', $atts['format']));
 			foreach ($slices as $slice) {
 				if ($slice == 'title') {
 					$html .= '<h3 class="'.$atts['post_type'].'-title">';
 					$html .= get_the_title();
 					$html .= '</h3><!--/.'.$atts['post_type'].'-title-->';
-				} elseif ($slice == 'image') {
-					$html .= '<div class="'.$atts['post_type'].'-image">';
-					$html .= '<img class="img-responsive img-fluid img-"'.$atts['post_type'].'" src="'.get_the_post_thumbnail_url().'" />';
-					$html .= '</div><!--/.'.$atts['post_type'].'-image-->';					
+				} elseif (preg_match("/image/i", $slice)) {
+					if (has_post_thumbnail()) {
+						$src = get_the_post_thumbnail_url();
+						$attachment_id = get_post_thumbnail_id();
+						$attachment_alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+						$slice = explode('-', $slice);
+						if (sizeof($slice) == 3){
+							$src = aq_resize($src, $slice[1], $slice[2], true);
+						}
+						elseif (sizeof($slice) == 2){
+							$src = aq_resize($src, $slice[1]);
+						}
+						list($width, $height, $type) = getimagesize($src);
+						$html .= '<div class="'.$atts['post_type'].'-image">';
+						$html .= '<img class="img-responsive img-fluid img-'.$atts['post_type'].'" src="'.$src.'" alt="'.$attachment_alt.'" width="'.$width.'" height="'.$height.'" />';
+						$html .= '</div><!--/.'.$atts['post_type'].'-image-->';	
+					}				
 				} elseif ($slice == 'content') {
 					$html .= '<div class="'.$atts['post_type'].'-content">';
 					$html .= get_the_content();
@@ -678,6 +695,11 @@ function mos_post_func( $atts = array(), $content = '' ) {
 					$html .= '<div class="'.$atts['post_type'].'-meta-'.end($pieces).'">';
 					$html .= get_post_meta( get_the_ID(), end($pieces), true );
 					$html .= '</div><!--/.'.$atts['post_type'].'-meta-'.end($pieces).'-->';					
+				} elseif (preg_match("/link/i", $slice)) {					
+					$pieces = explode(':', $slice);
+					if (sizeof($slice) > 1) $url = get_post_meta( get_the_ID(), end($pieces), true );
+					else $url = get_the_permalink();
+					$html .= '<a class="read-more" href="'.$url.'">Read More</a>';			
 				}
 			}
 
