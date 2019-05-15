@@ -172,6 +172,7 @@ function theme_creadit_func( $atts = array(), $content = '' ) {
 	$html = "";
 	$atts = shortcode_atts( array(
 		'icon' => '',
+		'alt' => 'BeLocal Today Logo'
 	), $atts, 'theme_creadit' );
 	$html .= '<div class="copyright">';
 	$html .= '&copy; '. date("Y") .' <a href="'.esc_url( home_url( '/' ) ).'"> '.get_bloginfo('name') .'</a>. All Rights Reserved. ';
@@ -179,7 +180,7 @@ function theme_creadit_func( $atts = array(), $content = '' ) {
 		$icon_1 = str_replace('home_url()', home_url(), $atts['icon']);
 		$icon = str_replace('{{home_url}}', home_url(), $icon_1);
 		list($width, $height) = getimagesize($icon);
-		$html .= '<img class="belocal-icon" src="'. $icon . '" alt="BeLocal Today Logo" width="'.$width.'" height="'.$height.'">';
+		$html .= '<img class="belocal-icon" src="'. $icon . '" alt="'.$atts['alt'].'" width="'.$width.'" height="'.$height.'">';
 	}
 	$html .= 'Digital Transformation by <a href="https://www.belocal.today/" class="belocal" target="_blank" >BeLocal Today</a>';
 	$html .= '</div>';

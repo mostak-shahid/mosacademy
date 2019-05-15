@@ -949,7 +949,7 @@
     //Alt Text
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Alt Text', 'redux-framework-demo' ),
-        'id'               => 'misc-plugins',
+        'id'               => 'misc-alt',
         'subsection'       => true,
         'desc'             => '',
         'customizer_width' => '450px',
