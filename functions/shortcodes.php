@@ -628,7 +628,8 @@ function mos_post_func( $atts = array(), $content = '' ) {
 		'terms'	=> '',
 		'count' => '-1',
 		'grid' => '',
-		'format' => 'title, content, excerpt-x, image-width-height, meta:meta_field_name, link:meta_field_name'
+		'format' => 'title, content, excerpt-x, image-width-height, meta:meta_field_name, link:meta_field_name',
+		'pagination' => 0
 	), $atts, 'mos_post' );
 	$count = ($atts['count']) ? $atts['count'] : '-1' ;
 	$args = array(
@@ -699,7 +700,7 @@ function mos_post_func( $atts = array(), $content = '' ) {
 					$pieces = explode(':', $slice);
 					if (sizeof($slice) > 1) $url = get_post_meta( get_the_ID(), end($pieces), true );
 					else $url = get_the_permalink();
-					$html .= '<a class="read-more" href="'.$url.'">Read More</a>';			
+					if ($url) $html .= '<a class="read-more" href="'.$url.'">Read More</a>';			
 				}
 			}
 
@@ -709,6 +710,23 @@ function mos_post_func( $atts = array(), $content = '' ) {
 		if ($atts['grid'] > 1) $html .= '</div>';
 	endif;
 	wp_reset_postdata();
+	if ($atts['pagination']) :
+	    $html .= '<div class="pagination-wrapper '. $atts['post_type'].'-pagination">'; 
+	        $html .= '<nav class="navigation pagination" role="navigation">';
+	            $html .= '<div class="nav-links">'; 
+	            $big = 999999999; // need an unlikely integer
+	            $html .= paginate_links( array(
+	                'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+	                'format' => '?paged=%#%',
+	                'current' => max( 1, get_query_var('paged') ),
+	                'total' => $query->max_num_pages,
+	                'prev_text'          => __('Prev'),
+	                'next_text'          => __('Next')
+	            ) );
+	            $html .= '</div>';
+	        $html .= '</nav>';
+	    $html .= '</div>';
+	endif;
 	return $html;
 }
 add_shortcode( 'mos_post', 'mos_post_func' );

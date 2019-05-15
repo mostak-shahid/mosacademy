@@ -945,6 +945,23 @@
         'customizer_width' => '400px',
         'icon'             => 'el el-css',
     ) );
+
+    //Alt Text
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Alt Text', 'redux-framework-demo' ),
+        'id'               => 'misc-plugins',
+        'subsection'       => true,
+        'desc'             => '',
+        'customizer_width' => '450px',
+        'icon'             => 'el el-move',
+        'fields'     => array(
+            array(
+                'id'       => 'misc-alt-text',
+                'type'     => 'multi_text',
+                'title'    => __( 'Add Text', 'redux-framework-demo' ),
+            ),            
+        )
+    ) );
     //Js Plugins
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Js Plugins', 'redux-framework-demo' ),
