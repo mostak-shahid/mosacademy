@@ -919,7 +919,7 @@
                 'title'    => __( 'Default description', 'redux-framework-demo' ),
                 'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
                 'validate' => 'no_html',
-                'default'  => 'No HTML is allowed in here.'
+                'default'  => 'No HTML is allowed in here.',
                 'required' => array( 'snippets-option', '=', 1 ),
             ),
             array(
