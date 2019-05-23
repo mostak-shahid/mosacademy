@@ -19,6 +19,12 @@ $schema_postal = @$mosacademy_options['schema-postal'];
 $schema_slides = @$mosacademy_options['schema-slides'];
 $snippets_option = @$mosacademy_options['snippets-option'];
 $snippets_name = @$mosacademy_options['snippets-name'];
+$snippets_brand = @$mosacademy_options['snippets-brand'];
+$page_desc = get_post_meta( get_the_ID(),'_yoast_wpseo_metadesc', true );
+$snippets_description = ($page_desc) ? $page_desc : @$mosacademy_options['snippets-description'];
+$snippets_author = @$mosacademy_options['snippets-author'];
+$snippets_best_value = @$mosacademy_options['snippets-best-value'];
+$snippets_worst_value = @$mosacademy_options['snippets-worst-value'];
 $snippets_value = @$mosacademy_options['snippets-value'];
 $snippets_count = @$mosacademy_options['snippets-count'];
 ?>
@@ -78,16 +84,64 @@ $snippets_count = @$mosacademy_options['snippets-count'];
 <?php endif; ?>
 <?php if ($snippets_option) : ?>
     <script type="application/ld+json">
+
+    <?php
+        $image_url = get_the_post_thumbnail_url();
+        $image_url == true ? $image_url: get_post_meta( get_the_ID(), 'true', true );
+        $image_url == true ? $image_url: $mosacademy_options['sections-title-background-solid']['background-image'];
+        $image_url == true ? $image_url: $mosacademy_options['logo']['url'];
+    ?>
+
+    { "@context": "http://schema.org",
+      "@type": "Product",
+      "name": "<?php echo $snippets_name ?>", //Primary Keyword or Page Name, 
+      "brand": "<?php echo $snippets_brand ?>", //Business Name
+      "description": "<?php echo $snippets_description ?>", //Meta Description dynamic
+      "mpn": "0000",
+      "image": "<?php echo $image_url ?>", //Page Feature Image
+      "offers": {
+        "@type": "Offer",
+        "availability": "http://schema.org/InStock",
+        "price": "00.00",
+        "priceValidUntil": "2050-12-10",
+        "url":"<?php the_permalink(); ?>",
+        "priceCurrency": "AUD"
+      },
+      "review": {
+          "@type": "Review",
+          "author": "<?php echo $snippets_author ?>",  //Author
+          "datePublished": "",
+          "description": "",
+          "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "<?php echo $snippets_best_value ?>",
+            "ratingValue": "<?php echo $snippets_value ?>", //Review Value
+            "worstRating": "<?php echo $snippets_worst_value ?>"
+          }
+        },
+     
+      "sku": "<?php global $post; $post_slug=$post->post_name; echo $post_slug; ?>", //page slug
+      "aggregateRating":
+        {"@type": "AggregateRating",
+         "ratingValue": "<?php echo $snippets_value ?>",  //Review Value
+         "reviewCount": "<?php echo $snippets_count ?>"  //Review Count
+        }
+    }
+    </script> 
+
+
+
+    <!-- <script type="application/ld+json">
     { 
         "@context": "http://schema.org",
         "@type": "Product",
-        "name": "<?php echo $snippets_name ?>",//Primary Keyword
+        "name": "<?php // echo $snippets_name ?>",//Primary Keyword
         "aggregateRating":
         {
             "@type": "AggregateRating",
-            "ratingValue": "<?php echo $snippets_value ?>",//Google review rating
-            "reviewCount": "<?php echo $snippets_count ?>"//Google review count
+            "ratingValue": "<?php // echo $snippets_value ?>",//Google review rating
+            "reviewCount": "<?php // echo $snippets_count ?>"//Google review count
         }
     }
-    </script>
+    </script> -->
 <?php endif; ?>

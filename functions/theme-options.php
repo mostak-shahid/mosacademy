@@ -378,7 +378,6 @@
                     'oldstandard' => 'Old Standard TT',
                     'opensans' => 'OpenSans',
                     'poppins' => 'Poppins',
-                    'ptsans' => 'Pt Sans',
                     'montserrat' => 'Montserrat',
                     'roboto' => 'Roboto',
                     'sourcesanspro' => 'Source Sans Pro',
@@ -388,15 +387,14 @@
                 ),
                 //See how std has changed? you also don't need to specify opts that are 0.
                 'default'  => array(
-                    'font-awesome' => 1,
-                    'dosis' => 0,
-                    'oldstandard' => 0,
-                    'opensans' => 0,
-                    'poppins' => 0,
-                    'ptsans' => 0,
-                    'montserrat' => 0,
-                    'roboto' => 0,
-                    'ubuntu' => 0
+                    'font-awesome' => '1',
+                    'dosis' => '0',
+                    'oldstandard' => '0',
+                    'opensans' => '0',
+                    'poppins' => '0',
+                    'montserrat' => '0',
+                    'roboto' => '0',
+                    'ubuntu' => '0'
                 )
             ),
             array(
@@ -468,14 +466,6 @@
                 'subtitle' => __( 'Choose Size and Style for h5.', 'redux-framework-demo' ),
                 'google'   => false,
                 'output' => array('h5', '.h5'),
-            ),
-            array(
-                'id'       => 'typography-h6-font',
-                'type'     => 'typography',
-                'title'    => __( 'H6 Headings', 'redux-framework-demo' ),
-                'subtitle' => __( 'Choose Size and Style for h6.', 'redux-framework-demo' ),
-                'google'   => false,
-                'output' => array('h6', '.h6'),
             ),
         )
     ) );
@@ -916,6 +906,49 @@
                 'required' => array( 'snippets-option', '=', 1 ),
             ),
             array(
+                'id'       => 'snippets-brand',
+                'type'     => 'text',
+                'title'    => __( 'Brand', 'redux-framework-demo' ),
+                'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
+                'validate' => 'no_html',
+                'required' => array( 'snippets-option', '=', 1 ),
+            ),
+            array(
+                'id'       => 'snippets-description',
+                'type'     => 'textarea',
+                'title'    => __( 'Default description', 'redux-framework-demo' ),
+                'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
+                'validate' => 'no_html',
+                'default'  => 'No HTML is allowed in here.'
+                'required' => array( 'snippets-option', '=', 1 ),
+            ),
+            array(
+                'id'       => 'snippets-author',
+                'type'     => 'text',
+                'title'    => __( 'Author', 'redux-framework-demo' ),
+                'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
+                'validate' => 'no_html',
+                'required' => array( 'snippets-option', '=', 1 ),
+            ),
+            array(
+                'id'       => 'snippets-best-value',
+                'type'     => 'text',
+                'title'    => __( 'Best Rating Value', 'redux-framework-demo' ),
+                'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
+                'validate' => 'no_html',
+                'required' => array( 'snippets-option', '=', 1 ),
+                'default' => 5,
+            ),
+            array(
+                'id'       => 'snippets-worst-value',
+                'type'     => 'text',
+                'title'    => __( 'Best Rating Value', 'redux-framework-demo' ),
+                'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
+                'validate' => 'no_html',
+                'required' => array( 'snippets-option', '=', 1 ),
+                'default' => 1,
+            ),
+            array(
                 'id'       => 'snippets-value',
                 'type'     => 'text',
                 'title'    => __( 'Rating Value', 'redux-framework-demo' ),
@@ -944,23 +977,6 @@
         'desc'             => '',
         'customizer_width' => '400px',
         'icon'             => 'el el-css',
-    ) );
-
-    //Alt Text
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Alt Text', 'redux-framework-demo' ),
-        'id'               => 'misc-alt',
-        'subsection'       => true,
-        'desc'             => '',
-        'customizer_width' => '450px',
-        'icon'             => 'el el-move',
-        'fields'     => array(
-            array(
-                'id'       => 'misc-alt-text',
-                'type'     => 'multi_text',
-                'title'    => __( 'Add Text', 'redux-framework-demo' ),
-            ),            
-        )
     ) );
     //Js Plugins
     Redux::setSection( $opt_name, array(
