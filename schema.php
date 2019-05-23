@@ -1,5 +1,5 @@
 <?php 
-global $mosacademy_options; 
+global $mosacademy_options, $post; 
 $logo_url = $mosacademy_options['logo']['url'];
 $contact_phone = @$mosacademy_options['contact-phone'][0];
 $contact_email = @$mosacademy_options['contact-email'][0];
@@ -18,6 +18,7 @@ $schema_region = @$mosacademy_options['schema-region'];
 $schema_postal = @$mosacademy_options['schema-postal'];
 $schema_slides = @$mosacademy_options['schema-slides'];
 $snippets_option = @$mosacademy_options['snippets-option'];
+$snippets_logo = @$mosacademy_options['snippets-logo'];
 $snippets_name = @$mosacademy_options['snippets-name'];
 $snippets_brand = @$mosacademy_options['snippets-brand'];
 $page_desc = get_post_meta( get_the_ID(),'_yoast_wpseo_metadesc', true );
@@ -84,21 +85,13 @@ $snippets_count = @$mosacademy_options['snippets-count'];
 <?php endif; ?>
 <?php if ($snippets_option) : ?>
     <script type="application/ld+json">
-
-    <?php
-        $image_url = get_the_post_thumbnail_url();
-        $image_url == true ? $image_url: get_post_meta( get_the_ID(), 'true', true );
-        $image_url == true ? $image_url: $mosacademy_options['sections-title-background-solid']['background-image'];
-        $image_url == true ? $image_url: $mosacademy_options['logo']['url'];
-    ?>
-
     { "@context": "http://schema.org",
       "@type": "Product",
       "name": "<?php echo $snippets_name ?>", //Primary Keyword or Page Name, 
       "brand": "<?php echo $snippets_brand ?>", //Business Name
       "description": "<?php echo $snippets_description ?>", //Meta Description dynamic
       "mpn": "0000",
-      "image": "<?php echo $image_url ?>", //Page Feature Image
+      "image": "<?php echo $snippets_logo['url'] ?>", //Page Feature Image
       "offers": {
         "@type": "Offer",
         "availability": "http://schema.org/InStock",
@@ -120,7 +113,7 @@ $snippets_count = @$mosacademy_options['snippets-count'];
           }
         },
      
-      "sku": "<?php global $post; $post_slug=$post->post_name; echo $post_slug; ?>", //page slug
+      "sku": "<?php $post_slug=$post->post_name; echo $post_slug; ?>", //page slug
       "aggregateRating":
         {"@type": "AggregateRating",
          "ratingValue": "<?php echo $snippets_value ?>",  //Review Value

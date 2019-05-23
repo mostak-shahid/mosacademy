@@ -898,6 +898,13 @@
                 'off'      => 'Disabled',
             ),
             array(
+                'id'       => 'snippets-logo',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Image', 'redux-framework-demo' ),
+                'compiler' => 'true',
+            ),
+            array(
                 'id'       => 'snippets-name',
                 'type'     => 'text',
                 'title'    => __( 'Primary Keyword', 'redux-framework-demo' ),
@@ -908,7 +915,7 @@
             array(
                 'id'       => 'snippets-brand',
                 'type'     => 'text',
-                'title'    => __( 'Brand', 'redux-framework-demo' ),
+                'title'    => __( 'Business Name', 'redux-framework-demo' ),
                 'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
                 'validate' => 'no_html',
                 'required' => array( 'snippets-option', '=', 1 ),
@@ -919,7 +926,6 @@
                 'title'    => __( 'Default description', 'redux-framework-demo' ),
                 'subtitle' => __( 'All HTML will be stripped', 'redux-framework-demo' ),
                 'validate' => 'no_html',
-                'default'  => 'No HTML is allowed in here.',
                 'required' => array( 'snippets-option', '=', 1 ),
             ),
             array(
