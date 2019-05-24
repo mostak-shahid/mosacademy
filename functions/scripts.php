@@ -22,6 +22,14 @@ function mosacademy_enqueue_scripts() {
 		wp_register_style( 'khand.min', get_template_directory_uri() . '/fonts/Khand/css/khand.min.css' );
 		wp_enqueue_style( 'khand.min' );
 	}
+	if ($mosacademy_options["typography-fonts"]["montserrat"]) {
+		wp_register_style( 'montserrat.min', get_template_directory_uri() . '/fonts/Montserrat/css/montserrat.min.css' );
+		wp_enqueue_style( 'montserrat.min' );
+	}
+	if ($mosacademy_options["typography-fonts"]["muli"]) {
+		wp_register_style( 'muli.min', get_template_directory_uri() . '/fonts/Muli/css/muli.min.css' );
+		wp_enqueue_style( 'muli.min' );
+	}
 	if ($mosacademy_options["typography-fonts"]["oldstandard"]) {
 		wp_register_style( 'oldstandard.min', get_template_directory_uri() . '/fonts/OldStandard/css/oldstandard.min.css' );
 		wp_enqueue_style( 'oldstandard.min' );
@@ -37,10 +45,6 @@ function mosacademy_enqueue_scripts() {
 	if ($mosacademy_options["typography-fonts"]["ptsans"]) {
 		wp_register_style( 'ptsans.min', get_template_directory_uri() . '/fonts/PTSans/css/ptsans.min.css' );
 		wp_enqueue_style( 'ptsans.min' );
-	}
-	if ($mosacademy_options["typography-fonts"]["montserrat"]) {
-		wp_register_style( 'montserrat.min', get_template_directory_uri() . '/fonts/Montserrat/css/montserrat.min.css' );
-		wp_enqueue_style( 'montserrat.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["roboto"]) {
 		wp_register_style( 'roboto.min', get_template_directory_uri() . '/fonts/Roboto/css/roboto.min.css' );

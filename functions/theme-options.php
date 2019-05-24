@@ -378,6 +378,7 @@
                     'hind' => 'Hind',
                     'khand' => 'Khand',
                     'montserrat' => 'Montserrat',
+                    'muli' => 'Muli',
                     'oldstandard' => 'Old Standard TT',
                     'opensans' => 'OpenSans',
                     'poppins' => 'Poppins',
