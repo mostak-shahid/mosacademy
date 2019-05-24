@@ -14,6 +14,14 @@ function mosacademy_enqueue_scripts() {
 		wp_register_style( 'dosis.min', get_template_directory_uri() . '/fonts/Dosis/css/dosis.min.css' );
 		wp_enqueue_style( 'dosis.min' );
 	}
+	if ($mosacademy_options["typography-fonts"]["hind"]) {
+		wp_register_style( 'hind.min', get_template_directory_uri() . '/fonts/Hind/css/hind.min.css' );
+		wp_enqueue_style( 'hind.min' );
+	}
+	if ($mosacademy_options["typography-fonts"]["khand"]) {
+		wp_register_style( 'khand.min', get_template_directory_uri() . '/fonts/Khand/css/khand.min.css' );
+		wp_enqueue_style( 'khand.min' );
+	}
 	if ($mosacademy_options["typography-fonts"]["oldstandard"]) {
 		wp_register_style( 'oldstandard.min', get_template_directory_uri() . '/fonts/OldStandard/css/oldstandard.min.css' );
 		wp_enqueue_style( 'oldstandard.min' );
@@ -45,10 +53,6 @@ function mosacademy_enqueue_scripts() {
 	if ($mosacademy_options["typography-fonts"]["sourceserifpro"]) {
 		wp_register_style( 'sourceserifpro.min', get_template_directory_uri() . '/fonts/SourceSerifPro/css/sourceserifpro.min.css' );
 		wp_enqueue_style( 'sourceserifpro.min' );
-	}
-	if ($mosacademy_options["typography-fonts"]["khand"]) {
-		wp_register_style( 'khand.min', get_template_directory_uri() . '/fonts/Khand/css/khand.min.css' );
-		wp_enqueue_style( 'khand.min' );
 	}
 	if ($mosacademy_options["typography-fonts"]["ubuntu"]) {
 		wp_register_style( 'ubuntu.min', get_template_directory_uri() . '/fonts/Ubuntu/css/ubuntu.min.css' );
