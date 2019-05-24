@@ -22,6 +22,7 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
         private $std_fonts = array(
             "Arimo"                                                => "Arimo",
             "Dosis"                                                => "Dosis",
+            "Hind"                                                => "Hind",
             "Khand"                                                => "Khand",
             "Montserrat"                                           => "Montserrat",
             "Old Standard TT"                                      => "Old Standard TT",
