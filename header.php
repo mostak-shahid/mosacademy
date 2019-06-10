@@ -297,7 +297,8 @@ if (!is_front_page()) :
     <section id="page-title" <?php if ($banner_image) echo 'style="background-image: url('.$banner_image.');"'?> >
         <div class="content-wrap">
             <?php do_action( 'action_before_title', $page_details ); ?>
-            <span>
+            <?php $tag = ($mosacademy_options['sections-title-tag'])?$mosacademy_options['sections-title-tag']:'span' ?>
+            <<?php echo $tag ?>>
         	<?php 
         	if (is_home()) 
                 echo get_the_title( get_option('page_for_posts', true) );
@@ -319,7 +320,7 @@ if (!is_front_page()) :
             }
         	elseif(!$hide_title) the_title();
         	?>            	
-            </span>
+            </<?php echo $tag ?>>
             <?php do_action( 'action_after_title', $page_details ); ?>
         </div>
     </section>

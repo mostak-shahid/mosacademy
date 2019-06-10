@@ -427,7 +427,7 @@
                 'title'    => __( 'Page Title Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'This Styles Your Page Titles.', 'redux-framework-demo' ),
                 'google'   => false,
-                'output' => array('#page-title span'),
+                'output' => array('#page-title span','#page-title h1'),
             ),
             array(
                 'id'       => 'typography-h1-font',
@@ -1976,10 +1976,21 @@
             array(
                 'id'       => 'sections-title-border',
                 'type'     => 'border',
-                'title'    => __( 'Page Title Border', 'redux-framework-demo' ),
+                'title'    => __( 'Section Border', 'redux-framework-demo' ),
                 'output'   => array( '#page-title .content-wrap' ),
                 'all'      => false,
             ), 
+            array(
+                'id'       => 'sections-title-tag',
+                'type'     => 'button_set',
+                'title'    => __( 'Title tag', 'redux-framework-demo' ),
+                //Must provide key => value pairs for radio options
+                'options'  => array(
+                    'h1' => 'H1',
+                    'span' => 'Span',
+                ),
+                'default'  => 'span'
+            ),
             array(
                 'id'       => 'sections-title-background-type',
                 'type'     => 'button_set',
