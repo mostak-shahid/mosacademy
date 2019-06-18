@@ -22,7 +22,7 @@ function shortcodes_page(){
 			<li>[element_start name='div' class='' id='' href='' src='' imgwidth='if only name img' imgheight='if there is imgwidth' atts=''] <span class="sdetagils">starts an element. **you can use home_url() as dynamick link**</span></li>
 			<li>[element_end name='div' class='' id=''] <span class="sdetagils">ends an element</span></li>
 			<li>[mosmenu container='nav' container_class='mosmenu' menu_class='mos-menu' location='' menu_name=''] <span class="sdetagils">displays menu according to configuration</span></li>
-			<li>[theme_creadit icon=''] <span class="sdetagils">displays theme creadit</span></li>
+			<li>[theme_creadit icon='' alt='BeLocal Today Logo'] <span class="sdetagils">displays theme creadit</span></li>
 			<li>[this_year] <span class="sdetagils">displays current year</span></li>
 			<li>[home_url] <span class="sdetagils">displays home page URL</span></li>
 			<li>[phone_number] <span class="sdetagils">displays the 1st phone number from theme option</span></li>
