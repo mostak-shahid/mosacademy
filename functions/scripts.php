@@ -111,6 +111,21 @@ function mosacademy_enqueue_scripts() {
 		wp_enqueue_script( 'jquery.lazy.min' );
 	endif;
 	
+	if ($mosacademy_options['misc-settings-css-additional']) {
+		foreach ($mosacademy_options['misc-settings-css-additional'] as $css) {
+			$n = 1;
+			wp_enqueue_style( 'additional-css-'.$n, $css );
+			$n++;
+		}
+	}
+	if ($mosacademy_options['misc-settings-js-additional']) {
+		$n = 1;
+		foreach ($mosacademy_options['misc-settings-js-additional'] as $js) {			
+			// var_dump($js);
+			wp_enqueue_script( 'additional-js-'.$n, $js) ;
+			$n++;
+		}
+	}	
 
 	// wp_register_style( 'theme-style', get_stylesheet_uri() );
 	// wp_enqueue_style( 'theme-style' );

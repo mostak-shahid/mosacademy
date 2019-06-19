@@ -1135,6 +1135,11 @@
                 //'default'  => "body{\n   margin: 0 auto;\n}"
             ),
             array(
+                'id'       => 'misc-settings-css-additional',
+                'type'     => 'multi_text',
+                'title'    => __( 'Additional Css', 'redux-framework-demo' ),
+            ),
+            array(
                 'id'       => 'misc-settings-js',
                 'type'     => 'ace_editor',
                 'title'    => __( 'JS Code', 'redux-framework-demo' ),
@@ -1143,6 +1148,11 @@
                 'theme'    => 'chrome',
                 //'desc'     => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_mosacademy">' . 'http://' . 'ace.c9.io/</a>.',
                 //'default'  => "jQuery(document).ready(function(){\n\n});"
+            ),
+            array(
+                'id'       => 'misc-settings-js-additional',
+                'type'     => 'multi_text',
+                'title'    => __( 'Additional Js', 'redux-framework-demo' ),
             ),
         )
     ) );
