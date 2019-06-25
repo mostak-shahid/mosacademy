@@ -406,9 +406,11 @@ if (!(is_admin() )) {
     add_filter( 'clean_url', 'mos_academy_defer_parsing_of_js', 11, 1 );
 }
 /*Remove query string*/
-function mos_academy_remove_script_version( $src ){ 
-    $parts = explode( '?', $src );  
-    return $parts[0]; 
+function mos_academy_remove_script_version( $src ){
+    if (!preg_match('/googleapis.com/', $src)) {
+        $parts = explode( '?', $src );  
+        return $parts[0]; 
+    }
 } 
 add_filter( 'script_loader_src', 'mos_academy_remove_script_version', 15, 1 ); 
 add_filter( 'style_loader_src', 'mos_academy_remove_script_version', 15, 1 );
