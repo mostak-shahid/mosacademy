@@ -404,7 +404,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'Body Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 //'line-height'   => false,
                 'default'  => array(
                     'color'       => '#000000',
@@ -418,7 +418,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'Section Title Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the Section Title font properties.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('.title'),
             ),
             array(
@@ -426,7 +426,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'Page Title Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'This Styles Your Page Titles.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('#page-title span','#page-title h1'),
             ),
             array(
@@ -434,7 +434,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'H1 Headings', 'redux-framework-demo' ),
                 'subtitle' => __( 'This Styles Your Page Titles.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('h1', '.h1'),
             ),
             array(
@@ -442,7 +442,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'H2 Headings', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for h2.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('h2', '.h2'),
             ),
             array(
@@ -450,7 +450,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'H3 Headings', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for h3.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('h3', '.h3'),
             ),
             array(
@@ -458,7 +458,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'H4 Headings', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for h4.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('h4', '.h4'),
             ),
             array(
@@ -466,7 +466,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'H5 Headings', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for h5.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output' => array('h5', '.h5'),
             ),
         )
@@ -2260,7 +2260,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'Slider Title Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for Slider Title.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output'      => array( '#section-banner .banner-content .banner-title' ),
             ),
             array(
@@ -2268,7 +2268,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'Slider Description Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for Slider Description.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output'      => array( '#section-banner .banner-content .banner-desc' ),
             ),
             array(
@@ -2276,7 +2276,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'Slider Link Title Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Choose Size and Style for Slider Link Title.', 'redux-framework-demo' ),
-                'google'   => false,
+                'google'   => true,
                 'output'      => array( '#section-banner .banner-content .btn-banner' ),
             ),
 
