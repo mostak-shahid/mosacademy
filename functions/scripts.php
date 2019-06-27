@@ -120,9 +120,8 @@ function mosacademy_enqueue_scripts() {
 	}
 	if ($mosacademy_options['misc-settings-js-additional']) {
 		$n = 1;
-		foreach ($mosacademy_options['misc-settings-js-additional'] as $js) {			
-			// var_dump($js);
-			wp_enqueue_script( 'additional-js-'.$n, $js) ;
+		foreach ($mosacademy_options['misc-settings-js-additional'] as $js) {
+		wp_enqueue_script( 'additional-js-'.$n, $js);
 			$n++;
 		}
 	}	

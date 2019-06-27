@@ -525,8 +525,7 @@ function mos_welcome_media_fnc () {
     if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
         $alt_tag = mos_alt_generator(get_the_ID());
     } 
-    global $mosacademy_options; 
-    $title = $mosacademy_options['sections-welcome-title'];   
+    global $mosacademy_options;    
     $image = wp_get_attachment_url( $mosacademy_options['sections-welcome-media']['id']);    
     $image_align = $mosacademy_options['sections-welcome-media-align'];
     $cls = '';
@@ -534,7 +533,7 @@ function mos_welcome_media_fnc () {
     elseif($image_align == 'right') $cls = 'col-lg-6';
     elseif($image_align == 'bottom') $cls = 'col-lg-12';
     elseif($image_align == 'left') $cls = 'col-lg-6 order-first';
-    if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . strip_tags(do_shortcode($title)) . '"></div></div>';
+    if ($image) echo '<div class="'. $cls .'"><img class="img-responsive img-fluid img-centered img-welcome" src="'.$image.'" width="'.$mosacademy_options['sections-welcome-media']['width'].'" height="'.$mosacademy_options['sections-welcome-media']['height'].'" alt="'.$alt_tag['inner'] . $title.'"></div></div>';
 }
 add_action( 'action_after_gallery', 'gallery_link_func', 1, 1 );
 function gallery_link_func($page_details){
