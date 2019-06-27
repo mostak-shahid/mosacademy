@@ -753,7 +753,7 @@
                         $style .= $key . ':' . $value . ';';
                     }
                     if ( isset( $this->parent->args['async_typography'] ) && $this->parent->args['async_typography'] ) {
-                        $style .= 'opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;';
+                        $style .= 'opacity: 1;visibility: visible;-webkit-transition: all 0.3s ease-out;-moz-transition: all 0.3s ease-out;transition: all 0.3s ease-out;';
                     }
                 }
 
