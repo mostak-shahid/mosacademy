@@ -31,8 +31,9 @@ function shortcodes_page(){
 			<li>[title wrapper_element='div' wrapper_atts='' link='' link_field='' link_atts=''] <span class="sdetagils">displays title of post</span></li>
 			<li>[meta wrapper_element='div' wrapper_atts='' field=''] <span class="sdetagils">displays title of post</span></li>
 			<li>[content wrapper_element='div' wrapper_atts='' limit='' text_after='' text='' link=''] <span class="sdetagils">displays content of post according to settings</span></li>
-			<li>[post_author wrapper_element='div' wrapper_atts=''] <span class="sdetagils">displays author of post</span></li>
-			<li>[post_date wrapper_element='div' wrapper_atts='' format = 'd m Y'] <span class="sdetagils">displays date of post</span></li>
+			<li>[post_author wrapper_element='span' wrapper_atts='class="post-author"'] <span class="sdetagils">displays author of post</span></li>
+			<li>[post_date wrapper_element='span' wrapper_atts='class="post-time"' format = 'd m Y'] <span class="sdetagils">displays date of post</span></li>
+			<li>[post_url url_atts='class="post-url" url_text='Read More'] <span class="sdetagils">displays url of post</span></li>
 			<li>[address offset=0 map=0 address=1] <span class="sdetagils">displays address from theme option</span></li>
 			<li>[email offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays email from theme option</span></li>
 			<li>[phone offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays phone from theme option</span></li>
@@ -295,7 +296,9 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 add_shortcode( 'social_menu', 'social_menu_fnc' );
 
 function feature_image_func( $atts = array(), $content = '' ) {
+	global $mosacademy_options;
 	$html = '';
+	$img = '';
 	$atts = shortcode_atts( array(
 		'wrapper_element' => 'div',
 		'wrapper_atts' => '',
@@ -303,24 +306,26 @@ function feature_image_func( $atts = array(), $content = '' ) {
 		'width' => '',
 	), $atts, 'feature_image' );
 
-	if (has_post_thumbnail()):
+	if (has_post_thumbnail()) $img = get_the_post_thumbnail_url();	
+	elseif(@$mosacademy_options['blog-archive-default']['id']) $img = wp_get_attachment_url( $mosacademy_options['blog-archive-default']['id'] ); 
+	if ($img){
 		if ($atts['wrapper_element']) $html .= '<'. $atts['wrapper_element'];
 		if ($atts['wrapper_atts']) $html .= ' ' . $atts['wrapper_atts'];
 		if ($atts['wrapper_element']) $html .= '>';
-		list($width, $height) = getimagesize(get_the_post_thumbnail_url());
+		list($width, $height) = getimagesize($img);
 		if ($atts['width'] AND $atts['height']) :
-			if ($width > $atts['width'] AND $height > $atts['height']) $img = aq_resize(get_the_post_thumbnail_url(), $atts['width'], $atts['height'], true);
-			else $img = get_the_post_thumbnail_url();
+			if ($width > $atts['width'] AND $height > $atts['height']) $img_url = aq_resize($img, $atts['width'], $atts['height'], true);
+			else $img_url = $img;
 		elseif ($atts['width']) :
-			if ($width > $atts['width']) $img = aq_resize(get_the_post_thumbnail_url(), $atts['width']);
-			else $img = get_the_post_thumbnail_url();
+			if ($width > $atts['width']) $img_url = aq_resize($img, $atts['width']);
+			else $img_url = $img;
 		else : 
-			$img = get_the_post_thumbnail_url();
+			$img_url = $img;
 		endif;
-		list($fwidth, $fheight) = getimagesize($img);
-		$html .= '<img class="img-responsive img-fluid img-featured" src="'.$img.'" alt="'.get_the_title().'" width="'.$fwidth.'" height="'.$fheight.'" />';
-		if ($atts['wrapper_element']) $html .= '</'. $atts['wrapper_element'] . '>';		
-	endif;
+		list($fwidth, $fheight) = getimagesize($img_url);
+		$html .= '<img class="img-responsive img-fluid img-featured" src="'.$img_url.'" alt="'.get_the_title().'" width="'.$fwidth.'" height="'.$fheight.'" />';
+		if ($atts['wrapper_element']) $html .= '</'. $atts['wrapper_element'] . '>';
+	}
 	return $html;
 }
 add_shortcode( 'feature_image', 'feature_image_func' );
@@ -395,7 +400,7 @@ function content_func( $atts = array(), $content = '' ) {
 }
 add_shortcode( 'content', 'content_func' );
 
-function post_author_func( $atts = array(), $post_author = '' ) {
+function post_author_func( $atts = array(), $content = '' ) {
 	$html = '';
 	$atts = shortcode_atts( array(
 		'wrapper_element' => 'span',
@@ -410,7 +415,7 @@ function post_author_func( $atts = array(), $post_author = '' ) {
 }
 add_shortcode( 'post_author', 'post_author_func' );
 
-function post_date_func( $atts = array(), $post_date = '' ) {
+function post_date_func( $atts = array(), $content = '' ) {
 	$html = '';
 	$atts = shortcode_atts( array(
 		'wrapper_element' => 'span',
@@ -425,6 +430,21 @@ function post_date_func( $atts = array(), $post_date = '' ) {
 	return $html;
 }
 add_shortcode( 'post_date', 'post_date_func' );
+
+function post_url_func( $atts = array(), $content = '' ) {
+	$html = '';
+	$atts = shortcode_atts( array(
+		'url_text' => 'Read More',
+		'url_atts' => 'post-url',
+	), $atts, 'post_url' );
+	$html .= '<a href="'.get_the_permalink().'"';
+	if ($atts['url_atts']) $html .= ' ' . $atts['url_atts'];
+	$html .= '>';
+	if ($atts['url_text']) $html .= $atts['url_text'];	
+	$html .= '</a>';
+	return $html;
+}
+add_shortcode( 'post_url', 'post_url_func' );
 
 function address_func( $atts = array(), $content = '' ) {
 	global $mosacademy_options;

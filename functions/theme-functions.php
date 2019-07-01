@@ -395,8 +395,8 @@ function mos_home_url_replace($data) {
 /********************/
 /** Theme Speed Up **/
 /********************/
-/*Defer parsing of javascript.*/
-if (!(is_admin() )) {
+//Defer parsing of javascript.
+/*if (!(is_admin() )) {
     function mos_academy_defer_parsing_of_js ( $url ) {
         if ( FALSE === strpos( $url, '.js' ) ) return $url;
         if ( strpos( $url, 'jquery.js' ) ) return $url;
@@ -405,7 +405,7 @@ if (!(is_admin() )) {
     }
     add_filter( 'clean_url', 'mos_academy_defer_parsing_of_js', 11, 1 );
 }
-/*Remove query string*/
+//Remove query string
 function mos_academy_remove_script_version( $src ){
     if (!preg_match('/googleapis.com/', $src)) {
         $parts = explode( '?', $src );  
@@ -413,5 +413,4 @@ function mos_academy_remove_script_version( $src ){
     }
 } 
 add_filter( 'script_loader_src', 'mos_academy_remove_script_version', 15, 1 ); 
-add_filter( 'style_loader_src', 'mos_academy_remove_script_version', 15, 1 );
-
+add_filter( 'style_loader_src', 'mos_academy_remove_script_version', 15, 1 );*/
