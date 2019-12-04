@@ -628,16 +628,6 @@ function product_search_fnc( $atts = array(), $content = '' ) {
 	$form .= '<input type="hidden" name="post_type" value="product" />';
 	$form .= '</form>';
 	return $form;
-
-	/*
-                <div class="input-group">
-                    <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-                    <input type="search" placeholder="Search Products" value="'.get_search_query().'" name="s" class="form-control" required>
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                    </span>
-                </div>
-	*/
 }
 add_shortcode( 'product_search', 'product_search_fnc' );
 
