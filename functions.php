@@ -34,6 +34,7 @@ require_once('inc/theme-options/ReduxCore/framework.php');
 //require_once('inc/theme-options/sample/sample-config.php');
 require_once('functions/theme-options.php');
 require_once('inc/theme-options/loader.php');
+
 require_once('inc/metabox/init.php'); 
 require_once('inc/metabox/custom-cmb2-fields.php'); 
 require_once('inc/metabox/extensions/cmb-field-sorter/cmb-field-sorter.php');
